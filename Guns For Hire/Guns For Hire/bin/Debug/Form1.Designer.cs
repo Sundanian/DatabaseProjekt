@@ -33,10 +33,11 @@
             this.Btn_quit = new System.Windows.Forms.Button();
             this.Btn_new_game = new System.Windows.Forms.Button();
             this.Btn_Load = new System.Windows.Forms.Button();
-            this.Btn__Save_Load = new System.Windows.Forms.Button();
+            this.Btn_Back = new System.Windows.Forms.Button();
             this.btn_Assassins = new System.Windows.Forms.Button();
             this.btn_Quit_InGame = new System.Windows.Forms.Button();
             this.Btn_Missions = new System.Windows.Forms.Button();
+            this.Btn_Save_Load = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Start_Game
@@ -89,15 +90,15 @@
             this.Btn_Load.UseVisualStyleBackColor = true;
             this.Btn_Load.Click += new System.EventHandler(this.Btn_Load_Click);
             // 
-            // Btn__Save_Load
+            // Btn_Back
             // 
-            this.Btn__Save_Load.Location = new System.Drawing.Point(675, 13);
-            this.Btn__Save_Load.Name = "Btn__Save_Load";
-            this.Btn__Save_Load.Size = new System.Drawing.Size(325, 150);
-            this.Btn__Save_Load.TabIndex = 5;
-            this.Btn__Save_Load.Text = "Save/Load";
-            this.Btn__Save_Load.UseVisualStyleBackColor = true;
-            this.Btn__Save_Load.Click += new System.EventHandler(this.Btn_Back_Click);
+            this.Btn_Back.Location = new System.Drawing.Point(675, 13);
+            this.Btn_Back.Name = "Btn_Back";
+            this.Btn_Back.Size = new System.Drawing.Size(325, 150);
+            this.Btn_Back.TabIndex = 5;
+            this.Btn_Back.Text = "Back";
+            this.Btn_Back.UseVisualStyleBackColor = true;
+            this.Btn_Back.Click += new System.EventHandler(this.Btn_Back_Click);
             // 
             // btn_Assassins
             // 
@@ -129,21 +130,32 @@
             this.Btn_Missions.UseVisualStyleBackColor = true;
             this.Btn_Missions.Click += new System.EventHandler(this.Btn_Missions_Click);
             // 
+            // Btn_Save_Load
+            // 
+            this.Btn_Save_Load.Location = new System.Drawing.Point(675, 12);
+            this.Btn_Save_Load.Name = "Btn_Save_Load";
+            this.Btn_Save_Load.Size = new System.Drawing.Size(325, 150);
+            this.Btn_Save_Load.TabIndex = 9;
+            this.Btn_Save_Load.Text = "Save/Load";
+            this.Btn_Save_Load.UseVisualStyleBackColor = true;
+            this.Btn_Save_Load.Click += new System.EventHandler(this.Btn_Save_Load_Click);
+            // 
             // btn_star_game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(2134, 174);
+            this.Controls.Add(this.Btn_Save_Load);
             this.Controls.Add(this.Btn_Missions);
             this.Controls.Add(this.btn_Quit_InGame);
             this.Controls.Add(this.btn_Assassins);
-            this.Controls.Add(this.Btn__Save_Load);
             this.Controls.Add(this.Btn_Load);
             this.Controls.Add(this.Btn_new_game);
-            this.Controls.Add(this.Btn_quit);
             this.Controls.Add(this.Btn_how_to_play);
             this.Controls.Add(this.Btn_Start_Game);
+            this.Controls.Add(this.Btn_Back);
+            this.Controls.Add(this.Btn_quit);
             this.Name = "btn_star_game";
             this.Text = "Main Menu";
             this.ResumeLayout(false);
@@ -157,10 +169,11 @@
         private System.Windows.Forms.Button Btn_quit;
         private System.Windows.Forms.Button Btn_new_game;
         private System.Windows.Forms.Button Btn_Load;
-        private System.Windows.Forms.Button Btn__Save_Load;
+        private System.Windows.Forms.Button Btn_Back;
         private System.Windows.Forms.Button btn_Assassins;
         private System.Windows.Forms.Button btn_Quit_InGame;
         private System.Windows.Forms.Button Btn_Missions;
+        private System.Windows.Forms.Button Btn_Save_Load;
     }
 }
 

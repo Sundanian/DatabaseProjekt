@@ -39,22 +39,23 @@ namespace Guns_For_Hire
         {
             Btn_new_game.Visible = false;
             Btn_Load.Visible = false;
-            Btn__Save_Load.Visible = false;
+            Btn_Back.Visible = false;
         }
 
         private void ShowMenu2()
         {
             Btn_new_game.Visible = true;
             Btn_Load.Visible = true;
-            Btn__Save_Load.Visible = true;
+            Btn_Back.Visible = true;
         }
 
         private void HideIngameMenu()
         {
 
             btn_Assassins.Visible = false;
-            Btn__Save_Load.Visible = false;
+            Btn_Back.Visible = false;
             Btn_Missions.Visible = false;
+            Btn_Save_Load.Visible = false;
             btn_Quit_InGame.Visible = false;
 
         }
@@ -62,8 +63,9 @@ namespace Guns_For_Hire
         private void ShowIngameMenu()
         {
             btn_Assassins.Visible = true;
-            Btn__Save_Load.Visible = true;
+            Btn_Back.Visible = true;
             Btn_Missions.Visible = true;
+            Btn_Save_Load.Visible = true;
             btn_Quit_InGame.Visible = true;
         }
         #endregion
@@ -116,12 +118,15 @@ namespace Guns_For_Hire
             f3.ShowDialog();
         }
 
+        private void Btn_Save_Load_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_Quit_InGame_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-
 
     }
 }
