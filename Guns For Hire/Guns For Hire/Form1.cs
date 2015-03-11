@@ -24,29 +24,57 @@ namespace Guns_For_Hire
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
+            #region AssassinsProfile
             sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
             command = new SQLiteCommand(sql, dbcon);
             command.ExecuteNonQuery();
 
-            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500$)";
+            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500$)";
             command = new SQLiteCommand(sql, dbcon);
             command.ExecuteNonQuery();
 
-            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350$)";
+            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350$)";
             command = new SQLiteCommand(sql, dbcon);
             command.ExecuteNonQuery();
 
-            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Karl', 0, 1, 370$)";
+            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Karl', 0, 1, 370$)";
             command = new SQLiteCommand(sql, dbcon);
             command.ExecuteNonQuery();
 
-            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Olga', 0, 1, 200$)";
+            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Olga', 0, 1, 200$)";
             command = new SQLiteCommand(sql, dbcon);
             command.ExecuteNonQuery();
 
-            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Niels', 0, 1, 500$)";
+            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Niels', 0, 1, 500$)";
             command = new SQLiteCommand(sql, dbcon);
             command.ExecuteNonQuery();
+            #endregion
+
+            #region AssasinStats
+            sql = "create table if not exists AssassinsStats (id integer, charisma int, coverUp int, disguise int)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (1, 70, 10, 50)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (2, 30, 60, 20)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (3, 10, 60, 30)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (4, 30, 20, 30)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (5, 5, 20, 100)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+            #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
