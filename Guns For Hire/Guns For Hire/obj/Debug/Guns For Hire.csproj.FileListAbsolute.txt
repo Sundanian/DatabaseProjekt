@@ -1,0 +1,18 @@
+C:\Users\Mirza\Desktop\SVN\Trunk Database\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
+C:\Users\Mirza\Desktop\SVN\Trunk Database\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe
+C:\Users\Mirza\Desktop\SVN\Trunk Database\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.pdb
+C:\Users\Mirza\Desktop\SVN\Trunk Database\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csprojResolveAssemblyReference.cache
+C:\Users\Mirza\Desktop\SVN\Trunk Database\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.btn_star_game.resources
+C:\Users\Mirza\Desktop\SVN\Trunk Database\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Properties.Resources.resources
+C:\Users\Mirza\Desktop\SVN\Trunk Database\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
+C:\Users\Mirza\Desktop\SVN\Trunk Database\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
+C:\Users\Mirza\Desktop\SVN\Trunk Database\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.pdb
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csprojResolveAssemblyReference.cache
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.btn_star_game.resources
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Properties.Resources.resources
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
