@@ -44,3 +44,6 @@ C:\Users\ThomasKrog\Dropbox\eadania\andet semester\database projekt\DatabaseProj
 C:\Users\ThomasKrog\Dropbox\eadania\andet semester\database projekt\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
 C:\Users\ThomasKrog\Dropbox\eadania\andet semester\database projekt\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
 >>>>>>> origin/master
+C:\Users\ThomasKrog\Dropbox\EADania\Andet Semester\Database Projekt\DatabaseSourceTree\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
+C:\Users\ThomasKrog\Dropbox\EADania\Andet Semester\Database Projekt\DatabaseSourceTree\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
+C:\Users\ThomasKrog\Dropbox\EADania\Andet Semester\Database Projekt\DatabaseSourceTree\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
