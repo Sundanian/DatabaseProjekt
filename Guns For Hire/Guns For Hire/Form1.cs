@@ -90,6 +90,7 @@ namespace Guns_For_Hire
         {
             HideMenu2();
             ShowIngameMenu();
+            Form2 f2 = new Form2();
         }
 
         private void Btn_Load_Click(object sender, EventArgs e)
@@ -105,12 +106,14 @@ namespace Guns_For_Hire
 
         private void btn_Assassins_Click(object sender, EventArgs e)
         {
-
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
         }
 
         private void Btn_Missions_Click(object sender, EventArgs e)
         {
-
+            Form3 f3 = new Form3();
+            f3.ShowDialog();
         }
 
         private void btn_Quit_InGame_Click(object sender, EventArgs e)

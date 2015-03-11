@@ -16,3 +16,5 @@ C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Deb
 C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.btn_star_game.resources
 C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Properties.Resources.resources
 C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form2.resources
+C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form3.resources

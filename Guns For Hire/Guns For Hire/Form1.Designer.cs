@@ -144,7 +144,7 @@
             this.Controls.Add(this.Btn_how_to_play);
             this.Controls.Add(this.Btn_Start_Game);
             this.Name = "btn_star_game";
-            this.Text = "Form1";
+            this.Text = "Main Menu";
             this.ResumeLayout(false);
 
         }
