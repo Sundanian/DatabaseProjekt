@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Guns_For_Hire
 {
@@ -17,6 +18,18 @@ namespace Guns_For_Hire
             InitializeComponent();
             HideMenu2();
             HideIngameMenu();
+            //SQLite ting
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
+            dbcon.Open();
+            String sql = "";
+            SQLiteCommand command = new SQLiteCommand(sql, dbcon);
+
+            //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
+            //sql = "";
+            //command.CommandText = sql;
+            //command.ExecuteNonQuery();
+
+
         }
 
         #region Show Hide Menu
