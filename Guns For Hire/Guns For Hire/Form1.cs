@@ -24,6 +24,30 @@ namespace Guns_For_Hire
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
+            sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
+            command = new SQLiteCommand(sql, dbcon);
+            command.ExecuteNonQuery();
+
+            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500$)";
+            command = new SQLiteCommand(sql, dbcon);
+            command.ExecuteNonQuery();
+
+            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350$)";
+            command = new SQLiteCommand(sql, dbcon);
+            command.ExecuteNonQuery();
+
+            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Karl', 0, 1, 370$)";
+            command = new SQLiteCommand(sql, dbcon);
+            command.ExecuteNonQuery();
+
+            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Olga', 0, 1, 200$)";
+            command = new SQLiteCommand(sql, dbcon);
+            command.ExecuteNonQuery();
+
+            sql = "insert into AssassinsProfie (navn, XP, Level, Pris) values ('Niels', 0, 1, 500$)";
+            command = new SQLiteCommand(sql, dbcon);
+            command.ExecuteNonQuery();
+
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
