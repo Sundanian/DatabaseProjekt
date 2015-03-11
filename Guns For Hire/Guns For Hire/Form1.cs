@@ -33,6 +33,7 @@ namespace Guns_For_Hire
         }
 
         #region Show Hide Menu
+        //Den samling af metoder som Viser og skjluer menu knapper alter efter hvilken menu men er i
         private void HideMenu1()
         {
             Btn_Start_Game.Visible = false;
@@ -88,8 +89,6 @@ namespace Guns_For_Hire
             HideMenu1();
             ShowMenu2();
         }
-        
-
 
         private void Btn_how_to_play_Click(object sender, EventArgs e)
         {
@@ -122,13 +121,13 @@ namespace Guns_For_Hire
         private void btn_Assassins_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
-            f2.ShowDialog();
+            f2.Show();
         }
 
         private void Btn_Missions_Click(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();
-            f3.ShowDialog();
+            f3.Show();
         }
 
         private void Btn_Save_Load_Click(object sender, EventArgs e)

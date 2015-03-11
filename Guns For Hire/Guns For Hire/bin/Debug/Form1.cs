@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Guns_For_Hire
 {
@@ -17,9 +18,22 @@ namespace Guns_For_Hire
             InitializeComponent();
             HideMenu2();
             HideIngameMenu();
+            //SQLite ting
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
+            dbcon.Open();
+            String sql = "";
+            SQLiteCommand command = new SQLiteCommand(sql, dbcon);
+
+            //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
+            //sql = "";
+            //command.CommandText = sql;
+            //command.ExecuteNonQuery();
+
+
         }
 
         #region Show Hide Menu
+        //Den samling af metoder som Viser og skjluer menu knapper alter efter hvilken menu men er i
         private void HideMenu1()
         {
             Btn_Start_Game.Visible = false;
@@ -75,8 +89,6 @@ namespace Guns_For_Hire
             HideMenu1();
             ShowMenu2();
         }
-        
-
 
         private void Btn_how_to_play_Click(object sender, EventArgs e)
         {
@@ -109,13 +121,13 @@ namespace Guns_For_Hire
         private void btn_Assassins_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
-            f2.ShowDialog();
+            f2.Show();
         }
 
         private void Btn_Missions_Click(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();
-            f3.ShowDialog();
+            f3.Show();
         }
 
         private void Btn_Save_Load_Click(object sender, EventArgs e)
