@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Guns_For_Hire
 {
@@ -17,6 +18,52 @@ namespace Guns_For_Hire
             InitializeComponent();
             HideMenu2();
             HideIngameMenu();
+            //SQLite ting
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
+            dbcon.Open();
+            String sql = "";
+            SQLiteCommand command = new SQLiteCommand(sql, dbcon);
+
+            sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Karl', 0, 1, 370)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Olga', 0, 1, 200)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Niels', 0, 1, 500)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            //Opretter mission tabel
+            sql = "create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            //Tilføjer 5 missioner
+            sql = "insert or ignore into mission values (1, 1, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 1, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
+            //sql = "";
+            //command.CommandText = sql;
+            //command.ExecuteNonQuery();
+
+
         }
 
         #region Show Hide Menu
