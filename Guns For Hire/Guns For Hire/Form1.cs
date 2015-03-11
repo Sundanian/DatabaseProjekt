@@ -29,26 +29,25 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-<<<<<<< HEAD
-            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500$)";
-            command = new SQLiteCommand(sql, dbcon);
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500)";
+            command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350$)";
-            command = new SQLiteCommand(sql, dbcon);
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350)";
+            command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Karl', 0, 1, 370$)";
-            command = new SQLiteCommand(sql, dbcon);
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Karl', 0, 1, 370)";
+            command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Olga', 0, 1, 200$)";
-            command = new SQLiteCommand(sql, dbcon);
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Olga', 0, 1, 200)";
+            command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsProfie (navn, XP, Level, Pris) values ('Niels', 0, 1, 500$)";
-            command = new SQLiteCommand(sql, dbcon);
-=======
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Niels', 0, 1, 500)";
+            command.CommandText = sql;
+
             sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
@@ -68,7 +67,8 @@ namespace Guns_For_Hire
             sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Niels', 0, 1, 500)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
-
+#endregion
+            #region Missions
             //Opretter mission tabel
             sql = "create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))";
             command.CommandText = sql;
@@ -77,10 +77,8 @@ namespace Guns_For_Hire
             //Tilføjer 5 missioner
             sql = "insert or ignore into mission values (1, 1, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 1, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
             command.CommandText = sql;
->>>>>>> 1e4c96e2ad22f97d61e84aa37f4475eb512dfead
             command.ExecuteNonQuery();
             #endregion
-
             #region AssasinStats
             sql = "create table if not exists AssassinsStats (id integer, charisma int, coverUp int, disguise int)";
             command.CommandText = sql;
