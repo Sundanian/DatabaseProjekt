@@ -18,6 +18,7 @@ C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Deb
 C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
 C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form2.resources
 C:\Users\Mirza\Desktop\SVN\Trunk Database\75\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form3.resources
+<<<<<<< HEAD
 C:\Users\Mirza\Documents\GitHub\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
 C:\Users\Mirza\Documents\GitHub\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
 C:\Users\Mirza\Documents\GitHub\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
@@ -38,3 +39,8 @@ C:\Users\Mirza\Documents\GitHub\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\
 C:\Users\Mirza\Documents\GitHub\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form3.resources
 C:\Users\Mirza\Documents\GitHub\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Properties.Resources.resources
 C:\Users\Mirza\Documents\GitHub\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
+=======
+C:\Users\ThomasKrog\Dropbox\eadania\andet semester\database projekt\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
+C:\Users\ThomasKrog\Dropbox\eadania\andet semester\database projekt\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
+C:\Users\ThomasKrog\Dropbox\eadania\andet semester\database projekt\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
+>>>>>>> origin/master
