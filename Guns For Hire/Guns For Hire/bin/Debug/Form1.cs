@@ -80,27 +80,27 @@ namespace Guns_For_Hire
             command.ExecuteNonQuery();
             #endregion
             #region AssasinStats
-            sql = "create table if not exists AssassinsStats (id integer, charisma int, coverUp int, disguise int)";
+            sql = "create table if not exists AssassinsStats (id integer primary key, charisma int, coverUp int, disguise int, getAway int)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (1, 70, 10, 50)";
+            sql = "insert or ignore into AssassinsStats values (1, 70, 10, 50, 20)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (2, 30, 60, 20)";
+            sql = "insert or ignore into AssassinsStats values (2, 30, 60, 20, 40)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (3, 10, 60, 30)";
+            sql = "insert or ignore into AssassinsStats values (3, 10, 60, 30, 20)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (4, 30, 20, 30)";
+            sql = "insert or ignore into AssassinsStats values (4, 30, 20, 30, 50)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (5, 5, 20, 100)";
+            sql = "insert or ignore into AssassinsStats values (5, 5, 20, 100, 5)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
