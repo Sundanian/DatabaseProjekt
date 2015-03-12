@@ -20,11 +20,18 @@ namespace Guns_For_Hire
             HideIngameMenu();
 
             HideSaveLoadMenu();
+<<<<<<< HEAD
             HideSaveLoadMenuMainmenu();;
 
             //Tmp database
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
 
+=======
+            HideSaveLoadMenuMainmenu();
+
+            //Tmp database
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
+>>>>>>> 56ca31ef6d9bab387543df81e1a76b7aab7a359a
             dbcon.Open();
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
