@@ -28,23 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.List_Hire_Assassins = new System.Windows.Forms.ListBox();
             this.List_Current_Assassins = new System.Windows.Forms.ListBox();
             this.List_Retired_Assassins = new System.Windows.Forms.ListBox();
             this.Btn_Hire_Assassin = new System.Windows.Forms.Button();
             this.btn_Retire_Assassin = new System.Windows.Forms.Button();
             this.btn_Rehire = new System.Windows.Forms.Button();
+            this.List_Hire_Assassins = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // List_Hire_Assassins
-            // 
-            this.List_Hire_Assassins.FormattingEnabled = true;
-            this.List_Hire_Assassins.ItemHeight = 25;
-            this.List_Hire_Assassins.Location = new System.Drawing.Point(12, 193);
-            this.List_Hire_Assassins.Name = "List_Hire_Assassins";
-            this.List_Hire_Assassins.Size = new System.Drawing.Size(626, 729);
-            this.List_Hire_Assassins.TabIndex = 0;
-            this.List_Hire_Assassins.SelectedIndexChanged += new System.EventHandler(this.List_Hire_Assassins_SelectedIndexChanged);
             // 
             // List_Current_Assassins
             // 
@@ -96,6 +86,16 @@
             this.btn_Rehire.UseVisualStyleBackColor = true;
             this.btn_Rehire.Click += new System.EventHandler(this.btn_Rehire_Click);
             // 
+            // List_Hire_Assassins
+            // 
+            this.List_Hire_Assassins.FormattingEnabled = true;
+            this.List_Hire_Assassins.ItemHeight = 25;
+            this.List_Hire_Assassins.Location = new System.Drawing.Point(12, 193);
+            this.List_Hire_Assassins.Name = "List_Hire_Assassins";
+            this.List_Hire_Assassins.Size = new System.Drawing.Size(626, 729);
+            this.List_Hire_Assassins.TabIndex = 0;
+            this.List_Hire_Assassins.SelectedIndexChanged += new System.EventHandler(this.List_Hire_Assassins_SelectedIndexChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -115,12 +115,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox List_Hire_Assassins;
         private System.Windows.Forms.ListBox List_Current_Assassins;
         private System.Windows.Forms.ListBox List_Retired_Assassins;
         private System.Windows.Forms.Button Btn_Hire_Assassin;
         private System.Windows.Forms.Button btn_Retire_Assassin;
         private System.Windows.Forms.Button btn_Rehire;
+        private System.Windows.Forms.ListBox List_Hire_Assassins;
 
     }
 }

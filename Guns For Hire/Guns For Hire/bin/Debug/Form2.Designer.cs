@@ -28,23 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.List_Hire_Assassins = new System.Windows.Forms.ListBox();
             this.List_Current_Assassins = new System.Windows.Forms.ListBox();
             this.List_Retired_Assassins = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Btn_Hire_Assassin = new System.Windows.Forms.Button();
+            this.btn_Retire_Assassin = new System.Windows.Forms.Button();
+            this.btn_Rehire = new System.Windows.Forms.Button();
+            this.List_Hire_Assassins = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // List_Hire_Assassins
-            // 
-            this.List_Hire_Assassins.FormattingEnabled = true;
-            this.List_Hire_Assassins.ItemHeight = 25;
-            this.List_Hire_Assassins.Location = new System.Drawing.Point(12, 193);
-            this.List_Hire_Assassins.Name = "List_Hire_Assassins";
-            this.List_Hire_Assassins.Size = new System.Drawing.Size(626, 729);
-            this.List_Hire_Assassins.TabIndex = 0;
-            this.List_Hire_Assassins.SelectedIndexChanged += new System.EventHandler(this.List_Hire_Assassins_SelectedIndexChanged);
             // 
             // List_Current_Assassins
             // 
@@ -66,44 +56,54 @@
             this.List_Retired_Assassins.TabIndex = 2;
             this.List_Retired_Assassins.SelectedIndexChanged += new System.EventHandler(this.List_Retired_Assassins_SelectedIndexChanged);
             // 
-            // button1
+            // Btn_Hire_Assassin
             // 
-            this.button1.Location = new System.Drawing.Point(13, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(625, 75);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Hire Selected Assassin";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_Hire_Assassin.Location = new System.Drawing.Point(13, 112);
+            this.Btn_Hire_Assassin.Name = "Btn_Hire_Assassin";
+            this.Btn_Hire_Assassin.Size = new System.Drawing.Size(626, 75);
+            this.Btn_Hire_Assassin.TabIndex = 3;
+            this.Btn_Hire_Assassin.Text = "Hire Selected Assassin";
+            this.Btn_Hire_Assassin.UseVisualStyleBackColor = true;
+            this.Btn_Hire_Assassin.Click += new System.EventHandler(this.Btn_Hire_Assassin_Click);
             // 
-            // button2
+            // btn_Retire_Assassin
             // 
-            this.button2.Location = new System.Drawing.Point(759, 112);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(625, 75);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Retire Selected Assassin";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Retire_Assassin.Location = new System.Drawing.Point(759, 112);
+            this.btn_Retire_Assassin.Name = "btn_Retire_Assassin";
+            this.btn_Retire_Assassin.Size = new System.Drawing.Size(626, 75);
+            this.btn_Retire_Assassin.TabIndex = 4;
+            this.btn_Retire_Assassin.Text = "Retire Selected Assassin";
+            this.btn_Retire_Assassin.UseVisualStyleBackColor = true;
+            this.btn_Retire_Assassin.Click += new System.EventHandler(this.btn_Retire_Assassin_Click);
             // 
-            // button3
+            // btn_Rehire
             // 
-            this.button3.Location = new System.Drawing.Point(1496, 112);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(625, 75);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Rehire Selected Assassin";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_Rehire.Location = new System.Drawing.Point(1496, 112);
+            this.btn_Rehire.Name = "btn_Rehire";
+            this.btn_Rehire.Size = new System.Drawing.Size(626, 75);
+            this.btn_Rehire.TabIndex = 5;
+            this.btn_Rehire.Text = "Rehire Selected Assassin";
+            this.btn_Rehire.UseVisualStyleBackColor = true;
+            this.btn_Rehire.Click += new System.EventHandler(this.btn_Rehire_Click);
+            // 
+            // List_Hire_Assassins
+            // 
+            this.List_Hire_Assassins.FormattingEnabled = true;
+            this.List_Hire_Assassins.ItemHeight = 25;
+            this.List_Hire_Assassins.Location = new System.Drawing.Point(12, 193);
+            this.List_Hire_Assassins.Name = "List_Hire_Assassins";
+            this.List_Hire_Assassins.Size = new System.Drawing.Size(626, 729);
+            this.List_Hire_Assassins.TabIndex = 0;
+            this.List_Hire_Assassins.SelectedIndexChanged += new System.EventHandler(this.List_Hire_Assassins_SelectedIndexChanged);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2134, 934);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Rehire);
+            this.Controls.Add(this.btn_Retire_Assassin);
+            this.Controls.Add(this.Btn_Hire_Assassin);
             this.Controls.Add(this.List_Retired_Assassins);
             this.Controls.Add(this.List_Current_Assassins);
             this.Controls.Add(this.List_Hire_Assassins);
@@ -115,12 +115,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox List_Hire_Assassins;
         private System.Windows.Forms.ListBox List_Current_Assassins;
         private System.Windows.Forms.ListBox List_Retired_Assassins;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Btn_Hire_Assassin;
+        private System.Windows.Forms.Button btn_Retire_Assassin;
+        private System.Windows.Forms.Button btn_Rehire;
+        private System.Windows.Forms.ListBox List_Hire_Assassins;
 
     }
 }

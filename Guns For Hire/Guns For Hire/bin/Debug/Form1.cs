@@ -18,11 +18,94 @@ namespace Guns_For_Hire
             InitializeComponent();
             HideMenu2();
             HideIngameMenu();
+            HideSaveLoadMenu();
+            HideSaveLoadMenuMainmenu();
             //SQLite ting
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
             dbcon.Open();
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
+
+            #region AssassinsProfile
+            sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Karl', 0, 1, 370)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Olga', 0, 1, 200)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Niels', 0, 1, 500)";
+            command.CommandText = sql;
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Karl', 0, 1, 370)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Olga', 0, 1, 200)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Niels', 0, 1, 500)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+#endregion
+            #region Missions
+            //Opretter mission tabel
+            sql = "create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            //Tilføjer 5 missioner
+            sql = "insert or ignore into mission values (1, 1, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 1, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+            #endregion
+            #region AssasinStats
+            sql = "create table if not exists AssassinsStats (id integer, charisma int, coverUp int, disguise int)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (1, 70, 10, 50)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (2, 30, 60, 20)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (3, 10, 60, 30)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (4, 30, 20, 30)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (5, 5, 20, 100)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+            #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
@@ -82,6 +165,43 @@ namespace Guns_For_Hire
             Btn_Save_Load.Visible = true;
             btn_Quit_InGame.Visible = true;
         }
+
+        private void HideSaveLoadMenu()
+        {
+            btn_Save.Visible = false;
+            Btn_Load_ingame.Visible = false;
+            Btn_Back_SL.Visible = false;
+            btn_Save_1.Visible = false;
+            btn_Save_2.Visible = false;
+            btn_Save_3.Visible = false;
+        }
+
+        private void ShowSaveLoadMenu()
+        {
+            btn_Save.Visible = true;
+            Btn_Load_ingame.Visible = true;
+            Btn_Back_SL.Visible = true;
+            btn_Save_1.Visible = true;
+            btn_Save_2.Visible = true;
+            btn_Save_3.Visible = true;
+        }
+
+        private void HideSaveLoadMenuMainmenu()
+        {
+            btn_save_1_Mainmenu.Visible = false;
+            btn_Save_2_Mainmenu.Visible = false;
+            Btn_Save_3_Mainmenu.Visible = false;
+            btn_Load_Mainmenu.Visible = false;
+        }
+
+        private void ShowSaveLoadMenuMainmenu()
+        {
+            btn_save_1_Mainmenu.Visible = true;
+            btn_Save_2_Mainmenu.Visible = true;
+            Btn_Save_3_Mainmenu.Visible = true;
+            btn_Load_Mainmenu.Visible = true;
+        }
+
         #endregion
 
         private void Btn_Start_Game_Click(object sender, EventArgs e)
@@ -109,7 +229,8 @@ namespace Guns_For_Hire
 
         private void Btn_Load_Click(object sender, EventArgs e)
         {
-            
+            ShowSaveLoadMenuMainmenu();
+            HideMenu2();
         }
 
         private void Btn_Back_Click(object sender, EventArgs e)
@@ -132,12 +253,47 @@ namespace Guns_For_Hire
 
         private void Btn_Save_Load_Click(object sender, EventArgs e)
         {
-
+            HideIngameMenu();
+            ShowSaveLoadMenu();
+            HideSaveLoadMenuMainmenu();
         }
 
         private void btn_Quit_InGame_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_Save_1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Save_2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_Save_3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Load_ingame_Click(object sender, EventArgs e)
+        {
+            HideSaveLoadMenu();
+            ShowIngameMenu();
+            HideSaveLoadMenuMainmenu();
+        }
+
+        private void Btn_Back_SL_Click(object sender, EventArgs e)
+        {
+            HideSaveLoadMenu();
+            ShowIngameMenu();
         }
 
     }
