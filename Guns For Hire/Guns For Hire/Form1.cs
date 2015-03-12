@@ -124,7 +124,11 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-
+            #region TransferWindow
+            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+            #endregion
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;

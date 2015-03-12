@@ -18,11 +18,31 @@ namespace Guns_For_Hire
             InitializeComponent();
             HideMenu2();
             HideIngameMenu();
-            //SQLite ting
-            SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
+            //Tmp database
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
             dbcon.Open();
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
+            //Save1
+            SQLiteConnection dbcon1 = new SQLiteConnection("Data Source = save1.db;Version=3");
+            dbcon1.Open();
+            String sql1 = "";
+            SQLiteCommand command1 = new SQLiteCommand(sql1, dbcon);
+            //Save2
+            SQLiteConnection dbcon2 = new SQLiteConnection("Data Source = save2.db;Version=3");
+            dbcon2.Open();
+            String sql2 = "";
+            SQLiteCommand command2 = new SQLiteCommand(sql2, dbcon);
+            //Save3
+            SQLiteConnection dbcon3 = new SQLiteConnection("Data Source = save3.db;Version=3");
+            dbcon3.Open();
+            String sql3 = "";
+            SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
+            //Save4
+            SQLiteConnection dbcon4 = new SQLiteConnection("Data Source = save4.db;Version=3");
+            dbcon4.Open();
+            String sql4 = "";
+            SQLiteCommand command4 = new SQLiteCommand(sql4, dbcon);
 
             #region AssassinsProfile
             sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
@@ -104,7 +124,11 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-
+            #region TransferWindow
+            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+            #endregion
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
