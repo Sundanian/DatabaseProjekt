@@ -125,7 +125,7 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-
+            #region AssassinsList
             //Opretter lister over egne assassins tabel
             sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
             command.CommandText = sql;
