@@ -19,6 +19,7 @@ C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\De
 C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
 C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
@@ -86,3 +87,5 @@ C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debu
 C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
 >>>>>>> d703e1e2689afbae4dd68994a2949f9e4c633289
 >>>>>>> 084ade64c47416f74c0e0f8e098ebf904450f85f
+=======
+>>>>>>> b2fd5376639f65b9dee5e4ae545f63fb1966e5bc

@@ -18,15 +18,12 @@ namespace Guns_For_Hire
             InitializeComponent();
             HideMenu2();
             HideIngameMenu();
-<<<<<<< HEAD
+
             HideSaveLoadMenu();
-            HideSaveLoadMenuMainmenu();
-            //SQLite ting
-            SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
-=======
+            HideSaveLoadMenuMainmenu();;
+
             //Tmp database
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
->>>>>>> 084ade64c47416f74c0e0f8e098ebf904450f85f
             dbcon.Open();
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
@@ -51,42 +48,23 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500)";
+            sql = "insert or ignore into AssassinsProfile values (1, 'Hugo', 0, 1, 500)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350)";
+            sql = "insert or ignore into AssassinsProfile values (2, 'Fritz', 0, 1, 350)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Karl', 0, 1, 370)";
+            sql = "insert or ignore into AssassinsProfile values (3, 'Karl', 0, 1, 370)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Olga', 0, 1, 200)";
+            sql = "insert or ignore into AssassinsProfile values (4, 'Olga', 0, 1, 200)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Niels', 0, 1, 500)";
-            command.CommandText = sql;
-
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Hugo', 0, 1, 500)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Fritz', 0, 1, 350)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Karl', 0, 1, 370)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Olga', 0, 1, 200)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Niels', 0, 1, 500)";
+            sql = "insert or ignore into AssassinsProfile values (5, 'Niels', 0, 1, 500)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 			#endregion
@@ -106,52 +84,34 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (1, 70, 10, 50)";
+            sql = "insert or ignore into AssassinsStats values (1, 70, 10, 50)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (2, 30, 60, 20)";
+            sql = "insert or ignore into AssassinsStats values (2, 30, 60, 20)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (3, 10, 60, 30)";
+            sql = "insert or ignore into AssassinsStats values (3, 10, 60, 30)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (4, 30, 20, 30)";
+            sql = "insert or ignore into AssassinsStats values (4, 30, 20, 30)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats (id, charisma, coverUp, disguise) values (5, 5, 20, 100)";
+            sql = "insert or ignore into AssassinsStats values (5, 5, 20, 100)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-<<<<<<< HEAD
-            #region TransferWindow
-            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-<<<<<<< HEAD
-=======
             #region MissionList
             //Opretter missionlist tabel
             sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-
-            //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, id int, Foreign Key (id), references AssassinsProfile (id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-
->>>>>>> d703e1e2689afbae4dd68994a2949f9e4c633289
-=======
-            #region AssassinsList
-            //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
+			#region TransferWindow
+            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
@@ -161,8 +121,13 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-
->>>>>>> 7adf65f4e0fb694abfc354f154edbdd60899371b
+            #region AssassinsList
+            //Opretter lister over egne assassins tabel
+            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+			#endregion
+			
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
