@@ -38,11 +38,6 @@ namespace Guns_For_Hire
             dbcon3.Open();
             String sql3 = "";
             SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
-            //Save4
-            SQLiteConnection dbcon4 = new SQLiteConnection("Data Source = save4.db;Version=3");
-            dbcon4.Open();
-            String sql4 = "";
-            SQLiteCommand command4 = new SQLiteCommand(sql4, dbcon);
 
             #region AssassinsProfile
             sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
@@ -130,12 +125,18 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-
+            #region AssassinsList
             //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, id int, Foreign Key (id), references AssassinsProfile (id))";
+            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
-
+            #endregion
+            #region Toolbar
+            //Opretter missionlist tabel
+            sql = "create table if not exists toolbar (ID integer primary key not NULL, valuta integer)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+            #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";

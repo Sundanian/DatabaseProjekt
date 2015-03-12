@@ -130,7 +130,13 @@ namespace Guns_For_Hire
             sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
-
+            #endregion
+            #region Toolbar
+            //Opretter missionlist tabel
+            sql = "create table if not exists toolbar (ID integer primary key not NULL, valuta integer)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+            #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
