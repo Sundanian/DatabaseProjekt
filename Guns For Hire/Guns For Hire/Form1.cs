@@ -125,6 +125,12 @@ namespace Guns_For_Hire
             command.ExecuteNonQuery();
             #endregion
 
+            //Opretter lister over egne assassins tabel
+            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
