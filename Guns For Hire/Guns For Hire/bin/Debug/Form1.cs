@@ -18,8 +18,15 @@ namespace Guns_For_Hire
             InitializeComponent();
             HideMenu2();
             HideIngameMenu();
+<<<<<<< HEAD
+            HideSaveLoadMenu();
+            HideSaveLoadMenuMainmenu();
+            //SQLite ting
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
+=======
             //Tmp database
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
+>>>>>>> 084ade64c47416f74c0e0f8e098ebf904450f85f
             dbcon.Open();
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
@@ -152,6 +159,7 @@ namespace Guns_For_Hire
         }
 
         #region Show Hide Menu
+        //Den samling af metoder som Viser og skjluer menu knapper alter efter hvilken menu men er i
         private void HideMenu1()
         {
             Btn_Start_Game.Visible = false;
@@ -200,6 +208,43 @@ namespace Guns_For_Hire
             Btn_Save_Load.Visible = true;
             btn_Quit_InGame.Visible = true;
         }
+
+        private void HideSaveLoadMenu()
+        {
+            btn_Save.Visible = false;
+            Btn_Load_ingame.Visible = false;
+            Btn_Back_SL.Visible = false;
+            btn_Save_1.Visible = false;
+            btn_Save_2.Visible = false;
+            btn_Save_3.Visible = false;
+        }
+
+        private void ShowSaveLoadMenu()
+        {
+            btn_Save.Visible = true;
+            Btn_Load_ingame.Visible = true;
+            Btn_Back_SL.Visible = true;
+            btn_Save_1.Visible = true;
+            btn_Save_2.Visible = true;
+            btn_Save_3.Visible = true;
+        }
+
+        private void HideSaveLoadMenuMainmenu()
+        {
+            btn_save_1_Mainmenu.Visible = false;
+            btn_Save_2_Mainmenu.Visible = false;
+            Btn_Save_3_Mainmenu.Visible = false;
+            btn_Load_Mainmenu.Visible = false;
+        }
+
+        private void ShowSaveLoadMenuMainmenu()
+        {
+            btn_save_1_Mainmenu.Visible = true;
+            btn_Save_2_Mainmenu.Visible = true;
+            Btn_Save_3_Mainmenu.Visible = true;
+            btn_Load_Mainmenu.Visible = true;
+        }
+
         #endregion
 
         private void Btn_Start_Game_Click(object sender, EventArgs e)
@@ -207,8 +252,6 @@ namespace Guns_For_Hire
             HideMenu1();
             ShowMenu2();
         }
-        
-
 
         private void Btn_how_to_play_Click(object sender, EventArgs e)
         {
@@ -229,7 +272,8 @@ namespace Guns_For_Hire
 
         private void Btn_Load_Click(object sender, EventArgs e)
         {
-            
+            ShowSaveLoadMenuMainmenu();
+            HideMenu2();
         }
 
         private void Btn_Back_Click(object sender, EventArgs e)
@@ -241,23 +285,58 @@ namespace Guns_For_Hire
         private void btn_Assassins_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
-            f2.ShowDialog();
+            f2.Show();
         }
 
         private void Btn_Missions_Click(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();
-            f3.ShowDialog();
+            f3.Show();
         }
 
         private void Btn_Save_Load_Click(object sender, EventArgs e)
         {
-
+            HideIngameMenu();
+            ShowSaveLoadMenu();
+            HideSaveLoadMenuMainmenu();
         }
 
         private void btn_Quit_InGame_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_Save_1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Save_2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_Save_3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Load_ingame_Click(object sender, EventArgs e)
+        {
+            HideSaveLoadMenu();
+            ShowIngameMenu();
+            HideSaveLoadMenuMainmenu();
+        }
+
+        private void Btn_Back_SL_Click(object sender, EventArgs e)
+        {
+            HideSaveLoadMenu();
+            ShowIngameMenu();
         }
 
     }
