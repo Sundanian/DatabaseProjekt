@@ -38,6 +38,16 @@
             this.btn_Quit_InGame = new System.Windows.Forms.Button();
             this.Btn_Missions = new System.Windows.Forms.Button();
             this.Btn_Save_Load = new System.Windows.Forms.Button();
+            this.btn_Save_1 = new System.Windows.Forms.Button();
+            this.btn_Save_2 = new System.Windows.Forms.Button();
+            this.btn_Save_3 = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.Btn_Load_ingame = new System.Windows.Forms.Button();
+            this.Btn_Back_SL = new System.Windows.Forms.Button();
+            this.btn_save_1_Mainmenu = new System.Windows.Forms.Button();
+            this.btn_Save_2_Mainmenu = new System.Windows.Forms.Button();
+            this.Btn_Save_3_Mainmenu = new System.Windows.Forms.Button();
+            this.btn_Load_Mainmenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Start_Game
@@ -140,12 +150,121 @@
             this.Btn_Save_Load.UseVisualStyleBackColor = true;
             this.Btn_Save_Load.Click += new System.EventHandler(this.Btn_Save_Load_Click);
             // 
+            // btn_Save_1
+            // 
+            this.btn_Save_1.Location = new System.Drawing.Point(12, 12);
+            this.btn_Save_1.Name = "btn_Save_1";
+            this.btn_Save_1.Size = new System.Drawing.Size(325, 150);
+            this.btn_Save_1.TabIndex = 10;
+            this.btn_Save_1.Text = "Save 1";
+            this.btn_Save_1.UseVisualStyleBackColor = true;
+            this.btn_Save_1.Click += new System.EventHandler(this.btn_Save_1_Click);
+            // 
+            // btn_Save_2
+            // 
+            this.btn_Save_2.Location = new System.Drawing.Point(344, 13);
+            this.btn_Save_2.Name = "btn_Save_2";
+            this.btn_Save_2.Size = new System.Drawing.Size(325, 150);
+            this.btn_Save_2.TabIndex = 11;
+            this.btn_Save_2.Text = "Save 2";
+            this.btn_Save_2.UseVisualStyleBackColor = true;
+            this.btn_Save_2.Click += new System.EventHandler(this.btn_Save_2_Click);
+            // 
+            // btn_Save_3
+            // 
+            this.btn_Save_3.Location = new System.Drawing.Point(675, 13);
+            this.btn_Save_3.Name = "btn_Save_3";
+            this.btn_Save_3.Size = new System.Drawing.Size(325, 150);
+            this.btn_Save_3.TabIndex = 12;
+            this.btn_Save_3.Text = "Save 3";
+            this.btn_Save_3.UseVisualStyleBackColor = true;
+            this.btn_Save_3.Click += new System.EventHandler(this.btn_Save_3_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(1006, 12);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(325, 150);
+            this.btn_Save.TabIndex = 13;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // Btn_Load_ingame
+            // 
+            this.Btn_Load_ingame.Location = new System.Drawing.Point(1337, 12);
+            this.Btn_Load_ingame.Name = "Btn_Load_ingame";
+            this.Btn_Load_ingame.Size = new System.Drawing.Size(325, 150);
+            this.Btn_Load_ingame.TabIndex = 14;
+            this.Btn_Load_ingame.Text = "Load";
+            this.Btn_Load_ingame.UseVisualStyleBackColor = true;
+            this.Btn_Load_ingame.Click += new System.EventHandler(this.Btn_Load_ingame_Click);
+            // 
+            // Btn_Back_SL
+            // 
+            this.Btn_Back_SL.Location = new System.Drawing.Point(1797, 12);
+            this.Btn_Back_SL.Name = "Btn_Back_SL";
+            this.Btn_Back_SL.Size = new System.Drawing.Size(325, 150);
+            this.Btn_Back_SL.TabIndex = 15;
+            this.Btn_Back_SL.Text = "Back";
+            this.Btn_Back_SL.UseVisualStyleBackColor = true;
+            this.Btn_Back_SL.Click += new System.EventHandler(this.Btn_Back_SL_Click);
+            // 
+            // btn_save_1_Mainmenu
+            // 
+            this.btn_save_1_Mainmenu.Location = new System.Drawing.Point(13, 13);
+            this.btn_save_1_Mainmenu.Name = "btn_save_1_Mainmenu";
+            this.btn_save_1_Mainmenu.Size = new System.Drawing.Size(325, 150);
+            this.btn_save_1_Mainmenu.TabIndex = 16;
+            this.btn_save_1_Mainmenu.Text = "Save 1";
+            this.btn_save_1_Mainmenu.UseVisualStyleBackColor = true;
+            this.btn_save_1_Mainmenu.Click += new System.EventHandler(this.btn_Save_1_Click);
+            // 
+            // btn_Save_2_Mainmenu
+            // 
+            this.btn_Save_2_Mainmenu.Location = new System.Drawing.Point(343, 13);
+            this.btn_Save_2_Mainmenu.Name = "btn_Save_2_Mainmenu";
+            this.btn_Save_2_Mainmenu.Size = new System.Drawing.Size(325, 150);
+            this.btn_Save_2_Mainmenu.TabIndex = 17;
+            this.btn_Save_2_Mainmenu.Text = "Save 2";
+            this.btn_Save_2_Mainmenu.UseVisualStyleBackColor = true;
+            this.btn_Save_2_Mainmenu.Click += new System.EventHandler(this.btn_Save_2_Click);
+            // 
+            // Btn_Save_3_Mainmenu
+            // 
+            this.Btn_Save_3_Mainmenu.Location = new System.Drawing.Point(675, 13);
+            this.Btn_Save_3_Mainmenu.Name = "Btn_Save_3_Mainmenu";
+            this.Btn_Save_3_Mainmenu.Size = new System.Drawing.Size(325, 150);
+            this.Btn_Save_3_Mainmenu.TabIndex = 18;
+            this.Btn_Save_3_Mainmenu.Text = "Save 3";
+            this.Btn_Save_3_Mainmenu.UseVisualStyleBackColor = true;
+            // 
+            // btn_Load_Mainmenu
+            // 
+            this.btn_Load_Mainmenu.Location = new System.Drawing.Point(1006, 12);
+            this.btn_Load_Mainmenu.Name = "btn_Load_Mainmenu";
+            this.btn_Load_Mainmenu.Size = new System.Drawing.Size(325, 150);
+            this.btn_Load_Mainmenu.TabIndex = 19;
+            this.btn_Load_Mainmenu.Text = "Load";
+            this.btn_Load_Mainmenu.UseVisualStyleBackColor = true;
+            this.btn_Load_Mainmenu.Click += new System.EventHandler(this.Btn_Load_ingame_Click);
+            // 
             // btn_star_game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(2134, 174);
+            this.Controls.Add(this.btn_Load_Mainmenu);
+            this.Controls.Add(this.Btn_Save_3_Mainmenu);
+            this.Controls.Add(this.btn_Save_2_Mainmenu);
+            this.Controls.Add(this.btn_save_1_Mainmenu);
+            this.Controls.Add(this.Btn_Back_SL);
+            this.Controls.Add(this.Btn_Load_ingame);
+            this.Controls.Add(this.btn_Save);
+            this.Controls.Add(this.btn_Save_3);
+            this.Controls.Add(this.btn_Save_2);
+            this.Controls.Add(this.btn_Save_1);
             this.Controls.Add(this.Btn_Save_Load);
             this.Controls.Add(this.Btn_Missions);
             this.Controls.Add(this.btn_Quit_InGame);
@@ -174,6 +293,16 @@
         private System.Windows.Forms.Button btn_Quit_InGame;
         private System.Windows.Forms.Button Btn_Missions;
         private System.Windows.Forms.Button Btn_Save_Load;
+        private System.Windows.Forms.Button btn_Save_1;
+        private System.Windows.Forms.Button btn_Save_2;
+        private System.Windows.Forms.Button btn_Save_3;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button Btn_Load_ingame;
+        private System.Windows.Forms.Button Btn_Back_SL;
+        private System.Windows.Forms.Button btn_save_1_Mainmenu;
+        private System.Windows.Forms.Button btn_Save_2_Mainmenu;
+        private System.Windows.Forms.Button Btn_Save_3_Mainmenu;
+        private System.Windows.Forms.Button btn_Load_Mainmenu;
     }
 }
 

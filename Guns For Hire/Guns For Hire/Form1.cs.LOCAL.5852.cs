@@ -18,33 +18,13 @@ namespace Guns_For_Hire
             InitializeComponent();
             HideMenu2();
             HideIngameMenu();
-<<<<<<< HEAD
             HideSaveLoadMenu();
             HideSaveLoadMenuMainmenu();
             //SQLite ting
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
-=======
-            //Tmp database
-            SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
->>>>>>> 084ade64c47416f74c0e0f8e098ebf904450f85f
             dbcon.Open();
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
-            //Save1
-            SQLiteConnection dbcon1 = new SQLiteConnection("Data Source = save1.db;Version=3");
-            dbcon1.Open();
-            String sql1 = "";
-            SQLiteCommand command1 = new SQLiteCommand(sql1, dbcon);
-            //Save2
-            SQLiteConnection dbcon2 = new SQLiteConnection("Data Source = save2.db;Version=3");
-            dbcon2.Open();
-            String sql2 = "";
-            SQLiteCommand command2 = new SQLiteCommand(sql2, dbcon);
-            //Save3
-            SQLiteConnection dbcon3 = new SQLiteConnection("Data Source = save3.db;Version=3");
-            dbcon3.Open();
-            String sql3 = "";
-            SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
 
             #region AssassinsProfile
             sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
@@ -89,7 +69,7 @@ namespace Guns_For_Hire
             sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Niels', 0, 1, 500)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
-			#endregion
+#endregion
             #region Missions
             //Opretter mission tabel
             sql = "create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))";
@@ -126,48 +106,7 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-<<<<<<< HEAD
-<<<<<<< HEAD
-            #region TransferWindow
-=======
-            #region MissionList
-            //Opretter missionlist tabel
-            sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-			#region TransferWindow
->>>>>>> 7adf65f4e0fb694abfc354f154edbdd60899371b
-            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-<<<<<<< HEAD
-=======
-            #region MissionList
-            //Opretter missionlist tabel
-            sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
-=======
-            #region Toolbar
-            //Opretter missionlist tabel
-            sql = "create table if not exists toolbar (ID integer primary key not NULL, valuta integer)";
->>>>>>> 7adf65f4e0fb694abfc354f154edbdd60899371b
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region AssassinsList
-            //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-<<<<<<< HEAD
 
-
->>>>>>> d703e1e2689afbae4dd68994a2949f9e4c633289
-=======
-			#endregion
-			
->>>>>>> 7adf65f4e0fb694abfc354f154edbdd60899371b
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
