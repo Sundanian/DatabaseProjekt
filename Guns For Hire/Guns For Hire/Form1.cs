@@ -38,11 +38,6 @@ namespace Guns_For_Hire
             dbcon3.Open();
             String sql3 = "";
             SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
-            //Save4
-            SQLiteConnection dbcon4 = new SQLiteConnection("Data Source = save4.db;Version=3");
-            dbcon4.Open();
-            String sql4 = "";
-            SQLiteCommand command4 = new SQLiteCommand(sql4, dbcon);
 
             #region AssassinsProfile
             sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
