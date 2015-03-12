@@ -123,13 +123,12 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-            #region TransferWindow
-            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
+            #region MissionList
+            //Opretter missionlist tabel
+            sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-<<<<<<< HEAD
-=======
 			#region TransferWindow
             sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
             command.CommandText = sql;
@@ -141,25 +140,13 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
->>>>>>> 05a18703e38d9790bc615bfd6d1b8160dc5b639a
             #region AssassinsList
             //Opretter lister over egne assassins tabel
             sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
-<<<<<<< HEAD
-            #endregion
-            #region Toolbar
-            //Opretter missionlist tabel
-            sql = "create table if not exists toolbar (ID integer primary key not NULL, valuta integer)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-
-=======
 			#endregion
 			
->>>>>>> 05a18703e38d9790bc615bfd6d1b8160dc5b639a
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
