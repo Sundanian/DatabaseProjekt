@@ -18,15 +18,13 @@ namespace Guns_For_Hire
             InitializeComponent();
             HideMenu2();
             HideIngameMenu();
-<<<<<<< HEAD
+
             HideSaveLoadMenu();
-            HideSaveLoadMenuMainmenu();
-            //SQLite ting
-            SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
-=======
+            HideSaveLoadMenuMainmenu();;
+
             //Tmp database
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
->>>>>>> 084ade64c47416f74c0e0f8e098ebf904450f85f
+
             dbcon.Open();
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
@@ -126,32 +124,14 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-<<<<<<< HEAD
-            #region TransferWindow
-            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-<<<<<<< HEAD
-=======
             #region MissionList
             //Opretter missionlist tabel
             sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-
-            //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, id int, Foreign Key (id), references AssassinsProfile (id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-
->>>>>>> d703e1e2689afbae4dd68994a2949f9e4c633289
-=======
-            #region AssassinsList
-            //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
+			#region TransferWindow
+            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
@@ -161,8 +141,13 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-
->>>>>>> 7adf65f4e0fb694abfc354f154edbdd60899371b
+            #region AssassinsList
+            //Opretter lister over egne assassins tabel
+            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+			#endregion
+			
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
