@@ -82,7 +82,7 @@ namespace Guns_For_Hire
             sql = "insert or ignore into AssassinsProfile (navn, XP, Level, Pris) values ('Niels', 0, 1, 500)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
-#endregion
+			#endregion
             #region Missions
             //Opretter mission tabel
             sql = "create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))";
@@ -119,9 +119,8 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-            #region MissionList
-            //Opretter missionlist tabel
-            sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
+            #region TransferWindow
+            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
