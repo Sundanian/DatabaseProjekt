@@ -20,7 +20,7 @@ namespace Guns_For_Hire
             HideIngameMenu();
 
             HideSaveLoadMenu();
-            HideSaveLoadMenuMainmenu();;
+            HideSaveLoadMenuMainmenu(); ;
 
             //Tmp database
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
@@ -67,7 +67,7 @@ namespace Guns_For_Hire
             sql = "insert or ignore into AssassinsProfile values (5, 'Niels', 0, 1, 500)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
-			#endregion
+            #endregion
             #region Missions
             //Opretter mission tabel
             sql = "create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))";
@@ -110,7 +110,7 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-			#region TransferWindow
+            #region TransferWindow
             sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
@@ -126,15 +126,18 @@ namespace Guns_For_Hire
             sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
-			#endregion
-			
-            //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
-            //sql = "";
-            //command.CommandText = sql;
-            //command.ExecuteNonQuery();
+            #endregion
 
 
+            sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
         }
+
+        //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
+        //sql = "";
+        //command.CommandText = sql;
+        //command.ExecuteNonQuery();
 
         #region Show Hide Menu
         //Den samling af metoder som Viser og skjluer menu knapper alter efter hvilken menu men er i
@@ -233,7 +236,7 @@ namespace Guns_For_Hire
 
         private void Btn_how_to_play_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Btn_quit_Click(object sender, EventArgs e)
@@ -291,7 +294,7 @@ namespace Guns_For_Hire
 
         private void btn_Save_2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_Save_3_Click(object sender, EventArgs e)
