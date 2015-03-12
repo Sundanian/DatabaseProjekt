@@ -124,6 +124,12 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
+            #region MissionList
+            //Opretter missionlist tabel
+            sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+            #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
