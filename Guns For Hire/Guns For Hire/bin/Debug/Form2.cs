@@ -15,7 +15,7 @@ namespace Guns_For_Hire
     public partial class Form2 : Form
     {
 
-        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
+        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
         private static String sql = "";
         private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
@@ -55,12 +55,19 @@ namespace Guns_For_Hire
 
         private void btn_Retire_Assassin_Click(object sender, EventArgs e)
         {
-
+            sql = "insert into RetiredAssassins (assassin) values (" + List_Current_Assassins.SelectedIndex + ")";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
         }
 
         private void btn_Rehire_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            dbcon.Open();
         }
     }
 }
