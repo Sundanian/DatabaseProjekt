@@ -15,6 +15,9 @@ namespace Guns_For_Hire
         public Form3()
         {
             InitializeComponent();
+
+        
+
         }
     }
 }
