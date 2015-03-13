@@ -109,6 +109,7 @@
             this.Controls.Add(this.List_Hire_Assassins);
             this.Name = "Form2";
             this.Text = "Assassin Management";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }

@@ -1,29 +1,3 @@
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form1.resx
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form2.resx
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form3.resx
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form1.cs
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form1.Designer.cs
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form2.cs
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form2.Designer.cs
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form3.cs
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form3.Designer.cs
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.pdb
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csprojResolveAssemblyReference.cache
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.btn_star_game.resources
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form2.resources
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form3.resources
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Properties.Resources.resources
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
-C:\Users\ThomasKrog\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
-C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
-C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form1.resx
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form2.resx
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form3.resx
@@ -33,6 +7,7 @@ C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\F
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form2.Designer.cs
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form3.cs
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form3.Designer.cs
+C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.pdb
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\System.Data.SQLite.dll
@@ -42,50 +17,5 @@ C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\G
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form3.resources
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Properties.Resources.resources
 C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
->>>>>>> 7adf65f4e0fb694abfc354f154edbdd60899371b
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form1.resx
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form2.resx
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form3.resx
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form1.cs
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form1.Designer.cs
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form2.cs
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form2.Designer.cs
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form3.cs
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Form3.Designer.cs
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.pdb
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\bin\Debug\System.Data.SQLite.dll
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csprojResolveAssemblyReference.cache
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.btn_star_game.resources
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form2.resources
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form3.resources
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Properties.Resources.resources
-C:\Users\nikolaj\Documents\Databaser\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe.config
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Form1.resx
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Form2.resx
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Form3.resx
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Form1.cs
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Form1.Designer.cs
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Form2.cs
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Form2.Designer.cs
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Form3.cs
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Form3.Designer.cs
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.exe
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\Guns For Hire.pdb
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\bin\Debug\System.Data.SQLite.dll
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csprojResolveAssemblyReference.cache
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.btn_star_game.resources
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form2.resources
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Form3.resources
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debug\Guns_For_Hire.Properties.Resources.resources
-C:\Users\KimLouise\Documents\Guns for Hires\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.csproj.GenerateResource.Cache
->>>>>>> d703e1e2689afbae4dd68994a2949f9e4c633289
->>>>>>> 084ade64c47416f74c0e0f8e098ebf904450f85f
-=======
->>>>>>> b2fd5376639f65b9dee5e4ae545f63fb1966e5bc
+C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.exe
+C:\Users\Mirza\Documents\DatabaseProjekt\Guns For Hire\Guns For Hire\obj\Debug\Guns For Hire.pdb
