@@ -16,7 +16,7 @@ namespace Guns_For_Hire
         public btn_star_game()
         {
             InitializeComponent();
-<<<<<<< HEAD
+
             HideMenu2();
             HideIngameMenu();
 
@@ -133,8 +133,7 @@ namespace Guns_For_Hire
             sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
             command.CommandText = sql;
             command.ExecuteNonQuery();
-=======
->>>>>>> aaa695957a42ec4965d46d64d5dfb31e25f5ceb0
+
         }
 
         //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
