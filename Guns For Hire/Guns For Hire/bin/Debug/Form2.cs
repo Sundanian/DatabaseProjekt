@@ -58,7 +58,9 @@ namespace Guns_For_Hire
 
         private void btn_Retire_Assassin_Click(object sender, EventArgs e)
         {
-
+            sql = "insert into RetiredAssassins (assassin) values (" + List_Current_Assassins.SelectedIndex + ")";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
         }
 
         private void btn_Rehire_Click(object sender, EventArgs e)
