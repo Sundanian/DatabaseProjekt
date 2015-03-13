@@ -34,7 +34,6 @@ namespace Guns_For_Hire
             SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                sche
             }
         }
 

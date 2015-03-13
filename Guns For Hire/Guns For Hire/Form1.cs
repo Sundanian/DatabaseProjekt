@@ -120,6 +120,11 @@ namespace Guns_For_Hire
             sql = "create table if not exists toolbar (ID integer primary key not NULL, valuta integer)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
+
+            sql = "insert or ignore into toolbar values (1, 0)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
             #endregion
             #region AssassinsList
             //Opretter lister over egne assassins tabel
@@ -127,13 +132,18 @@ namespace Guns_For_Hire
             command.CommandText = sql;
             command.ExecuteNonQuery();
 			#endregion
-			
+
+            #region HowToCheckOrSetCurrency
+            BankAccount bankAcc = new BankAccount();
+
+            bankAcc.Currency = 230;
+
+            int amount=bankAcc.Currency;
+            #endregion
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
             //command.ExecuteNonQuery();
-
-
         }
 
         #region Show Hide Menu
