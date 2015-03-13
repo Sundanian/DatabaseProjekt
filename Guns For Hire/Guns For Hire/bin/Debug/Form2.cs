@@ -32,9 +32,12 @@ namespace Guns_For_Hire
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
             command.ExecuteNonQuery();
             SQLiteDataReader reader = command.ExecuteReader();
+            int tempId = reader.GetInt32(1);
+
+
             while (reader.Read())
             {
-                
+                List_Current_Assassins.Items.Add(tempId);
             }
         }
 

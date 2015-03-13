@@ -28,14 +28,7 @@ namespace Guns_For_Hire
 
         private void List_Hire_Assassins_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sql = "select * from AssassinsProfile";
-            SQLiteCommand command = new SQLiteCommand(sql, dbcon);
-            command.ExecuteNonQuery();
-            SQLiteDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                
-            }
+           
         }
 
         private void List_Current_Assassins_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,27 +48,32 @@ namespace Guns_For_Hire
 
         private void btn_Retire_Assassin_Click(object sender, EventArgs e)
         {
-            //sql = "insert into RetiredAssassins (assassin) values (" + List_Current_Assassins.SelectedIndex + ")";
-            //command.CommandText = sql;
-            //command.ExecuteNonQuery();
-            //sql = "delete from table ListOfAssassins where ID="; //Mangler ID
-            //command.CommandText = sql;
-            //command.ExecuteNonQuery();
+
         }
 
         private void btn_Rehire_Click(object sender, EventArgs e)
         {
-            //sql = "insert into ListOfAssassins (EgneAssassins) values (" + List_Retired_Assassins.SelectedIndex + ")";
-            //command.CommandText = sql;
-            //command.ExecuteNonQuery();
-            //sql = "delete from table RetiredAssassins where ID="; //Mangler ID
-            //command.CommandText = sql;
-            //command.ExecuteNonQuery();
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             dbcon.Open();
+        }
+
+        private void List_Hire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void List_Retire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void List_Rehire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
