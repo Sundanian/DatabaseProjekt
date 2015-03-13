@@ -96,5 +96,20 @@ namespace Guns_For_Hire
         {
 
         }
+
+        private void List_Hire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void List_Retire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void List_Rehire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
