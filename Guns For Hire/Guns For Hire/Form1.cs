@@ -16,125 +16,6 @@ namespace Guns_For_Hire
         public btn_star_game()
         {
             InitializeComponent();
-<<<<<<< HEAD
-            HideMenu2();
-            HideIngameMenu();
-
-            HideSaveLoadMenu();
-            HideSaveLoadMenuMainmenu(); ;
-
-            //Tmp database
-            SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
-            dbcon.Open();
-            String sql = "";
-            SQLiteCommand command = new SQLiteCommand(sql, dbcon);
-            //Save1
-            SQLiteConnection dbcon1 = new SQLiteConnection("Data Source = save1.db;Version=3");
-            dbcon1.Open();
-            String sql1 = "";
-            SQLiteCommand command1 = new SQLiteCommand(sql1, dbcon);
-            //Save2
-            SQLiteConnection dbcon2 = new SQLiteConnection("Data Source = save2.db;Version=3");
-            dbcon2.Open();
-            String sql2 = "";
-            SQLiteCommand command2 = new SQLiteCommand(sql2, dbcon);
-            //Save3
-            SQLiteConnection dbcon3 = new SQLiteConnection("Data Source = save3.db;Version=3");
-            dbcon3.Open();
-            String sql3 = "";
-            SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
-
-            #region AssassinsProfile
-            sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (1, 'Hugo', 0, 1, 500)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (2, 'Fritz', 0, 1, 350)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (3, 'Karl', 0, 1, 370)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (4, 'Olga', 0, 1, 200)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (5, 'Niels', 0, 1, 500)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region Missions
-            //Opretter mission tabel
-            sql = "create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            //Tilføjer 5 missioner
-            sql = "insert or ignore into mission values (1, 1, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 1, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region AssasinStats
-            sql = "create table if not exists AssassinsStats (id integer, charisma int, coverUp int, disguise int)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (1, 70, 10, 50)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (2, 30, 60, 20)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (3, 10, 60, 30)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (4, 30, 20, 30)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (5, 5, 20, 100)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region MissionList
-            //Opretter missionlist tabel
-            sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region TransferWindow
-            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region Toolbar
-            //Opretter missionlist tabel
-            sql = "create table if not exists toolbar (ID integer primary key not NULL, valuta integer)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region AssassinsList
-            //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-
-
-            sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-=======
->>>>>>> aaa695957a42ec4965d46d64d5dfb31e25f5ceb0
         }
 
         //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
@@ -446,6 +327,10 @@ namespace Guns_For_Hire
             //sql = "";
             //command.CommandText = sql;
             //command.ExecuteNonQuery();
+
+            sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
         }
     }
 }

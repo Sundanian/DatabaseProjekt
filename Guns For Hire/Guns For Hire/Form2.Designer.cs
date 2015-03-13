@@ -41,7 +41,7 @@
             this.List_Current_Assassins.FormattingEnabled = true;
             this.List_Current_Assassins.ItemHeight = 16;
             this.List_Current_Assassins.Location = new System.Drawing.Point(506, 124);
-            this.List_Current_Assassins.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.List_Current_Assassins.Margin = new System.Windows.Forms.Padding(2);
             this.List_Current_Assassins.Name = "List_Current_Assassins";
             this.List_Current_Assassins.Size = new System.Drawing.Size(419, 468);
             this.List_Current_Assassins.TabIndex = 1;
@@ -52,7 +52,7 @@
             this.List_Retired_Assassins.FormattingEnabled = true;
             this.List_Retired_Assassins.ItemHeight = 16;
             this.List_Retired_Assassins.Location = new System.Drawing.Point(997, 124);
-            this.List_Retired_Assassins.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.List_Retired_Assassins.Margin = new System.Windows.Forms.Padding(2);
             this.List_Retired_Assassins.Name = "List_Retired_Assassins";
             this.List_Retired_Assassins.Size = new System.Drawing.Size(419, 468);
             this.List_Retired_Assassins.TabIndex = 2;
@@ -61,7 +61,7 @@
             // Btn_Hire_Assassin
             // 
             this.Btn_Hire_Assassin.Location = new System.Drawing.Point(9, 72);
-            this.Btn_Hire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Hire_Assassin.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Hire_Assassin.Name = "Btn_Hire_Assassin";
             this.Btn_Hire_Assassin.Size = new System.Drawing.Size(417, 48);
             this.Btn_Hire_Assassin.TabIndex = 3;
@@ -72,7 +72,7 @@
             // btn_Retire_Assassin
             // 
             this.btn_Retire_Assassin.Location = new System.Drawing.Point(506, 72);
-            this.btn_Retire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Retire_Assassin.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Retire_Assassin.Name = "btn_Retire_Assassin";
             this.btn_Retire_Assassin.Size = new System.Drawing.Size(417, 48);
             this.btn_Retire_Assassin.TabIndex = 4;
@@ -83,7 +83,7 @@
             // btn_Rehire
             // 
             this.btn_Rehire.Location = new System.Drawing.Point(997, 72);
-            this.btn_Rehire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Rehire.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Rehire.Name = "btn_Rehire";
             this.btn_Rehire.Size = new System.Drawing.Size(417, 48);
             this.btn_Rehire.TabIndex = 5;
@@ -96,7 +96,7 @@
             this.List_Hire_Assassins.FormattingEnabled = true;
             this.List_Hire_Assassins.ItemHeight = 16;
             this.List_Hire_Assassins.Location = new System.Drawing.Point(8, 124);
-            this.List_Hire_Assassins.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.List_Hire_Assassins.Margin = new System.Windows.Forms.Padding(2);
             this.List_Hire_Assassins.Name = "List_Hire_Assassins";
             this.List_Hire_Assassins.Size = new System.Drawing.Size(419, 468);
             this.List_Hire_Assassins.TabIndex = 0;
@@ -106,14 +106,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 598);
+            this.ClientSize = new System.Drawing.Size(1429, 598);
             this.Controls.Add(this.btn_Rehire);
             this.Controls.Add(this.btn_Retire_Assassin);
             this.Controls.Add(this.Btn_Hire_Assassin);
             this.Controls.Add(this.List_Retired_Assassins);
             this.Controls.Add(this.List_Current_Assassins);
             this.Controls.Add(this.List_Hire_Assassins);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Assassin Management";
             this.Load += new System.EventHandler(this.Form2_Load);
