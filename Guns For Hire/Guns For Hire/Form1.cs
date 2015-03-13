@@ -16,7 +16,7 @@ namespace Guns_For_Hire
         public btn_star_game()
         {
             InitializeComponent();
-<<<<<<< HEAD
+
             HideMenu2();
             HideIngameMenu();
 
@@ -76,7 +76,7 @@ namespace Guns_For_Hire
             command.ExecuteNonQuery();
 
             //Tilføjer 5 missioner
-            sql = "insert or ignore into mission values (1, 1, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 1, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
+            sql = "insert or ignore into mission values (1, 2, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 2, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
@@ -129,12 +129,35 @@ namespace Guns_For_Hire
             command.ExecuteNonQuery();
             #endregion
 
+            sql = "select Level from mission WHERE id=";
+            command = new SQLiteCommand(sql, dbcon);
 
-            sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-=======
->>>>>>> aaa695957a42ec4965d46d64d5dfb31e25f5ceb0
+            switch (Convert.ToInt32(command.ExecuteScalar()))
+            {
+                case 1:
+                    sql = "Update AssassinsProfile SET XP=XP+100 WHERE id=1";
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+                    break;
+
+                case 2:
+                    sql = "Update AssassinsProfile SET XP=XP+200 WHERE id=1";
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+                    break;
+
+                case 3:
+                    sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+                    break;
+                default:
+                    break;
+            }
+
+
+
+
         }
 
         //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
