@@ -19,7 +19,8 @@ namespace Guns_For_Hire
 
         public SQLiteDatabaseHelper()
         {
-            dbConnection = "Data Source=current.db;Version=3";
+            SaveLoad save = new SaveLoad();
+            dbConnection = string.Format("Data Source={0}", save.loadedDatabase);
         }
 
         /// <summary>
