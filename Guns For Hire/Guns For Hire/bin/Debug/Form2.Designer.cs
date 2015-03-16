@@ -39,6 +39,13 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List_Retire_Assassin = new System.Windows.Forms.ListView();
             this.List_Rehire_Assassin = new System.Windows.Forms.ListView();
+
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+
             this.SuspendLayout();
             // 
             // Btn_Hire_Assassin
@@ -93,6 +100,7 @@
             this.List_Hire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Hire_Assassin_SelectedIndexChanged);
             // 
             // columnHeader2
+
             // 
             this.columnHeader2.Text = "Id";
             this.columnHeader2.Width = 30;
@@ -115,6 +123,52 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Pris";
+            // 
+            // List_Retire_Assassin
+            // 
+            this.List_Retire_Assassin.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.List_Retire_Assassin.Location = new System.Drawing.Point(759, 194);
+            this.List_Retire_Assassin.Name = "List_Retire_Assassin";
+            this.List_Retire_Assassin.Size = new System.Drawing.Size(626, 728);
+            this.List_Retire_Assassin.TabIndex = 7;
+            this.List_Retire_Assassin.UseCompatibleStateImageBehavior = false;
+            this.List_Retire_Assassin.View = System.Windows.Forms.View.Details;
+            this.List_Retire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Retire_Assassin_SelectedIndexChanged);
+            // 
+            // List_Rehire_Assassin
+
+            // 
+            this.columnHeader2.Text = "Id";
+            this.columnHeader2.Width = 30;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Id";
+            // 
+
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Name";
+            // 
+            // columnHeader8
+
+            // columnHeader3
+
+            // 
+            this.columnHeader8.Text = "Xp";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Level";
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Pris";
             // 
             // List_Retire_Assassin
             // 
@@ -168,6 +222,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
 
     }
 }

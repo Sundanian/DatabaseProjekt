@@ -39,14 +39,13 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List_Retire_Assassin = new System.Windows.Forms.ListView();
             this.List_Rehire_Assassin = new System.Windows.Forms.ListView();
-<<<<<<< HEAD
+
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-=======
->>>>>>> 0bf712550a21f885585481cd4f8f6d8e0d013ec2
+
             this.SuspendLayout();
             // 
             // Btn_Hire_Assassin
@@ -101,7 +100,7 @@
             this.List_Hire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Hire_Assassin_SelectedIndexChanged);
             // 
             // columnHeader2
-<<<<<<< HEAD
+
             // 
             this.columnHeader2.Text = "Id";
             this.columnHeader2.Width = 30;
@@ -142,8 +141,7 @@
             this.List_Retire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Retire_Assassin_SelectedIndexChanged);
             // 
             // List_Rehire_Assassin
-=======
->>>>>>> 0bf712550a21f885585481cd4f8f6d8e0d013ec2
+
             // 
             this.columnHeader2.Text = "Id";
             this.columnHeader2.Width = 30;
@@ -152,15 +150,15 @@
             // 
             this.columnHeader6.Text = "Id";
             // 
-<<<<<<< HEAD
+
             // columnHeader7
             // 
             this.columnHeader7.Text = "Name";
             // 
             // columnHeader8
-=======
+
             // columnHeader3
->>>>>>> 0bf712550a21f885585481cd4f8f6d8e0d013ec2
+
             // 
             this.columnHeader8.Text = "Xp";
             // 
