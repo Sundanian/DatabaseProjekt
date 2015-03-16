@@ -28,7 +28,6 @@ namespace Guns_For_Hire
 
         private void List_Hire_Assassins_SelectedIndexChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             string sql = "select * from AssassinsProfile";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
             command.ExecuteNonQuery();
@@ -36,9 +35,6 @@ namespace Guns_For_Hire
             while (reader.Read())
             {
             }
-=======
-           
->>>>>>> 215fa73f4cb3b2e45422a9a36dcb2390f672715d
         }
 
         private void List_Current_Assassins_SelectedIndexChanged(object sender, EventArgs e)

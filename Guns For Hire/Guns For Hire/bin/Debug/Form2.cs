@@ -15,7 +15,7 @@ namespace Guns_For_Hire
     public partial class Form2 : Form
     {
 
-        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = mindb2.db;Version=3");
+        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
         private static String sql = "";
         private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
@@ -58,6 +58,47 @@ namespace Guns_For_Hire
         }
 
         private void btn_Rehire_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            dbcon.Open();
+
+
+            SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile", dbcon);
+            //command.ExecuteNonQuery();
+            SQLiteDataReader reader = list.ExecuteReader();
+            
+            
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["id"].ToString());
+                item.SubItems.Add(reader["navn"].ToString());
+                item.SubItems.Add(reader["XP"].ToString());
+                item.SubItems.Add(reader["Level"].ToString());
+                item.SubItems.Add(reader["Pris"].ToString());
+
+                List_Hire_Assassin.Items.Add(item);
+                List_Retire_Assassin.Items.Add(item);
+                List_Rehire_Assassin.Items.Add(item);
+            }
+
+
+        }
+
+        private void List_Hire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void List_Retire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void List_Rehire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

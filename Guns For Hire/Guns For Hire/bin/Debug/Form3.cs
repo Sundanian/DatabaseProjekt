@@ -19,5 +19,10 @@ namespace Guns_For_Hire
         
 
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
