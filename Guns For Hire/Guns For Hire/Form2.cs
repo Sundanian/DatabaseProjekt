@@ -19,7 +19,7 @@ namespace Guns_For_Hire
         private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
         private static String sql = "";
         private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
-       
+
 
 
         public Form2()
@@ -29,7 +29,7 @@ namespace Guns_For_Hire
 
         private void List_Hire_Assassins_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void List_Current_Assassins_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,27 +44,74 @@ namespace Guns_For_Hire
 
         private void Btn_Hire_Assassin_Click(object sender, EventArgs e)
         {
+            //command.CommandText = "select id from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
 
+            command.CommandText = "insert into ListOfAssassins (EgneAssassins) select id from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+            command.ExecuteNonQuery();
+
+            UpdateTables();
         }
 
         private void btn_Retire_Assassin_Click(object sender, EventArgs e)
         {
-
+            UpdateTables();
         }
 
         private void btn_Rehire_Click(object sender, EventArgs e)
         {
-
+            UpdateTables();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             dbcon.Open();
-            
-            SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile", dbcon);
-            //command.ExecuteNonQuery();
-            SQLiteDataReader reader = list.ExecuteReader();
+            UpdateTables();
+        }
 
+        private void List_Hire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void List_Retire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void List_Rehire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dbcon.Close();
+            Close();
+        }
+        private void UpdateTables()
+        {
+            #region Clear
+            List_Hire_Assassin.Clear();
+            List_Hire_Assassin.Columns.Add("ID", 100);
+            List_Hire_Assassin.Columns.Add("Name", 100);
+            List_Hire_Assassin.Columns.Add("XP", 100);
+            List_Hire_Assassin.Columns.Add("Level", 100);
+            List_Hire_Assassin.Columns.Add("Pris", 100);
+            List_Rehire_Assassin.Clear();
+            List_Rehire_Assassin.Columns.Add("ID", 100);
+            List_Rehire_Assassin.Columns.Add("Name", 100);
+            List_Rehire_Assassin.Columns.Add("XP", 100);
+            List_Rehire_Assassin.Columns.Add("Level", 100);
+            List_Rehire_Assassin.Columns.Add("Pris", 100);
+            List_Retire_Assassin.Clear();
+            List_Retire_Assassin.Columns.Add("ID", 100);
+            List_Retire_Assassin.Columns.Add("Name", 100);
+            List_Retire_Assassin.Columns.Add("XP", 100);
+            List_Retire_Assassin.Columns.Add("Level", 100);
+            List_Retire_Assassin.Columns.Add("Pris", 100);
+            #endregion
+            SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile LEFT JOIN ListOfAssassins ON assassinsprofile.id = ListOfAssassins.Egneassassins where ListOfAssassins.EgneAssassins IS NULL", dbcon);
+            SQLiteDataReader reader = list.ExecuteReader();
 
             while (reader.Read())
             {
@@ -77,7 +124,8 @@ namespace Guns_For_Hire
                 List_Hire_Assassin.Items.Add(item);
 
             }
-
+            SQLiteCommand list2 = new SQLiteCommand("select * from assassinsprofile INNER JOIN ListOfAssassins ON assassinsprofile.id = ListOfAssassins.Egneassassins", dbcon);
+            reader = list2.ExecuteReader();
 
             while (reader.Read())
             {
@@ -86,28 +134,8 @@ namespace Guns_For_Hire
                 item.SubItems.Add(reader["XP"].ToString());
                 item.SubItems.Add(reader["Level"].ToString());
                 item.SubItems.Add(reader["Pris"].ToString());
-
-
                 List_Retire_Assassin.Items.Add(item);
             }
-
-            dbcon.Close();
-        }
-
-        private void List_Hire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            command.CommandText = "select id from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
-
-        }
-
-        private void List_Retire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void List_Rehire_Assassin_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }

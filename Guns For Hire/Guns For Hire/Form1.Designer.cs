@@ -295,6 +295,7 @@
             this.Controls.Add(this.Btn_Start_Game);
             this.Controls.Add(this.Btn_Back);
             this.Controls.Add(this.Btn_quit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "btn_star_game";
             this.Text = "Main Menu";

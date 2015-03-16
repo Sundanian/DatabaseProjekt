@@ -44,6 +44,7 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List_Rehire_Assassin = new System.Windows.Forms.ListView();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Hire_Assassin
@@ -129,6 +130,7 @@
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
+            this.List_Retire_Assassin.FullRowSelect = true;
             this.List_Retire_Assassin.Location = new System.Drawing.Point(506, 124);
             this.List_Retire_Assassin.Margin = new System.Windows.Forms.Padding(2);
             this.List_Retire_Assassin.Name = "List_Retire_Assassin";
@@ -160,6 +162,7 @@
             // 
             // List_Rehire_Assassin
             // 
+            this.List_Rehire_Assassin.FullRowSelect = true;
             this.List_Rehire_Assassin.Location = new System.Drawing.Point(997, 124);
             this.List_Rehire_Assassin.Margin = new System.Windows.Forms.Padding(2);
             this.List_Rehire_Assassin.Name = "List_Rehire_Assassin";
@@ -168,17 +171,29 @@
             this.List_Rehire_Assassin.UseCompatibleStateImageBehavior = false;
             this.List_Rehire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Rehire_Assassin_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1339, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1426, 598);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.List_Rehire_Assassin);
             this.Controls.Add(this.List_Retire_Assassin);
             this.Controls.Add(this.btn_Rehire);
             this.Controls.Add(this.btn_Retire_Assassin);
             this.Controls.Add(this.Btn_Hire_Assassin);
             this.Controls.Add(this.List_Hire_Assassin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Assassin Management";
@@ -205,6 +220,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.Button button1;
 
     }
 }
