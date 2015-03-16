@@ -210,7 +210,7 @@ namespace Guns_For_Hire
             HideIngameMenu();
 
             HideSaveLoadMenu();
-            HideSaveLoadMenuMainmenu(); ;
+            HideSaveLoadMenuMainmenu();
 
             //Tmp database
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
@@ -265,32 +265,32 @@ namespace Guns_For_Hire
             command.ExecuteNonQuery();
 
             //Tilføjer 5 missioner
-            sql = "insert or ignore into mission values (1, 1, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 1, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
+            sql = "insert or ignore into mission values (1, 2, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 2, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
-            #region AssasinStats
-            sql = "create table if not exists AssassinsStats (id integer, charisma int, coverUp int, disguise int)";
+            #region AssassinStats
+            sql = "create table if not exists AssassinsStats (id integer primary key, charisma int, coverUp int, disguise int, getAway int)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (1, 70, 10, 50)";
+            sql = "insert or ignore into AssassinsStats values (1, 70, 10, 50, 20)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (2, 30, 60, 20)";
+            sql = "insert or ignore into AssassinsStats values (2, 30, 60, 20, 40)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (3, 10, 60, 30)";
+            sql = "insert or ignore into AssassinsStats values (3, 10, 60, 30, 20)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (4, 30, 20, 30)";
+            sql = "insert or ignore into AssassinsStats values (4, 30, 20, 30, 50)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
 
-            sql = "insert or ignore into AssassinsStats values (5, 5, 20, 100)";
+            sql = "insert or ignore into AssassinsStats values (5, 5, 20, 100, 5)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
@@ -310,6 +310,10 @@ namespace Guns_For_Hire
             sql = "create table if not exists toolbar (ID integer primary key not NULL, valuta integer)";
             command.CommandText = sql;
             command.ExecuteNonQuery();
+
+            sql = "insert or ignore into toolbar values (1, 0)";
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
             #endregion
             #region AssassinsList
             //Opretter lister over egne assassins tabel
@@ -321,6 +325,38 @@ namespace Guns_For_Hire
             sql = "create table if not exists RetiredAssassins (id integer primary key, assassin integer references AssasinsProfile(ID))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
+            #endregion
+            #region HowToCheckOrSetCurrency
+            BankAccount bankAcc = new BankAccount();
+            bankAcc.Currency = 230;
+            int amount = bankAcc.Currency;
+            #endregion
+            #region MissionLevelTing
+            //sql = "select Level from mission WHERE id=";
+            //command = new SQLiteCommand(sql, dbcon);
+
+
+            //switch (Convert.ToInt32(command.ExecuteScalar()))
+            //{
+            //    case 1:
+            //        sql = "Update AssassinsProfile SET XP=XP+100 WHERE id=1";
+            //        command.CommandText = sql;
+            //        command.ExecuteNonQuery();
+            //        break;
+
+            //    case 2:
+            //        sql = "Update AssassinsProfile SET XP=XP+200 WHERE id=1";
+            //        command.CommandText = sql;
+            //        command.ExecuteNonQuery();
+            //        break;
+            //    case 3:
+            //        sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
+            //        command.CommandText = sql;
+            //        command.ExecuteNonQuery();
+            //        break;
+            //    default:
+            //        break;
+            //}
             #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.

@@ -29,7 +29,13 @@ namespace Guns_For_Hire
 
         private void List_Hire_Assassins_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            string sql = "select * from AssassinsProfile";
+            SQLiteCommand command = new SQLiteCommand(sql, dbcon);
+            command.ExecuteNonQuery();
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+            }
         }
 
         private void List_Current_Assassins_SelectedIndexChanged(object sender, EventArgs e)

@@ -39,18 +39,22 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List_Retire_Assassin = new System.Windows.Forms.ListView();
             this.List_Rehire_Assassin = new System.Windows.Forms.ListView();
+<<<<<<< HEAD
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+=======
+>>>>>>> 0bf712550a21f885585481cd4f8f6d8e0d013ec2
             this.SuspendLayout();
             // 
             // Btn_Hire_Assassin
             // 
-            this.Btn_Hire_Assassin.Location = new System.Drawing.Point(13, 112);
+            this.Btn_Hire_Assassin.Location = new System.Drawing.Point(9, 72);
+            this.Btn_Hire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_Hire_Assassin.Name = "Btn_Hire_Assassin";
-            this.Btn_Hire_Assassin.Size = new System.Drawing.Size(626, 75);
+            this.Btn_Hire_Assassin.Size = new System.Drawing.Size(417, 48);
             this.Btn_Hire_Assassin.TabIndex = 3;
             this.Btn_Hire_Assassin.Text = "Hire Selected Assassin";
             this.Btn_Hire_Assassin.UseVisualStyleBackColor = true;
@@ -58,9 +62,10 @@
             // 
             // btn_Retire_Assassin
             // 
-            this.btn_Retire_Assassin.Location = new System.Drawing.Point(759, 112);
+            this.btn_Retire_Assassin.Location = new System.Drawing.Point(506, 72);
+            this.btn_Retire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Retire_Assassin.Name = "btn_Retire_Assassin";
-            this.btn_Retire_Assassin.Size = new System.Drawing.Size(626, 75);
+            this.btn_Retire_Assassin.Size = new System.Drawing.Size(417, 48);
             this.btn_Retire_Assassin.TabIndex = 4;
             this.btn_Retire_Assassin.Text = "Retire Selected Assassin";
             this.btn_Retire_Assassin.UseVisualStyleBackColor = true;
@@ -68,9 +73,10 @@
             // 
             // btn_Rehire
             // 
-            this.btn_Rehire.Location = new System.Drawing.Point(1496, 112);
+            this.btn_Rehire.Location = new System.Drawing.Point(997, 72);
+            this.btn_Rehire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Rehire.Name = "btn_Rehire";
-            this.btn_Rehire.Size = new System.Drawing.Size(626, 75);
+            this.btn_Rehire.Size = new System.Drawing.Size(417, 48);
             this.btn_Rehire.TabIndex = 5;
             this.btn_Rehire.Text = "Rehire Selected Assassin";
             this.btn_Rehire.UseVisualStyleBackColor = true;
@@ -85,15 +91,17 @@
             this.columnHeader4,
             this.columnHeader5});
             this.List_Hire_Assassin.FullRowSelect = true;
-            this.List_Hire_Assassin.Location = new System.Drawing.Point(13, 194);
+            this.List_Hire_Assassin.Location = new System.Drawing.Point(9, 124);
+            this.List_Hire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.List_Hire_Assassin.Name = "List_Hire_Assassin";
-            this.List_Hire_Assassin.Size = new System.Drawing.Size(626, 728);
+            this.List_Hire_Assassin.Size = new System.Drawing.Size(419, 467);
             this.List_Hire_Assassin.TabIndex = 6;
             this.List_Hire_Assassin.UseCompatibleStateImageBehavior = false;
             this.List_Hire_Assassin.View = System.Windows.Forms.View.Details;
             this.List_Hire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Hire_Assassin_SelectedIndexChanged);
             // 
             // columnHeader2
+<<<<<<< HEAD
             // 
             this.columnHeader2.Text = "Id";
             this.columnHeader2.Width = 30;
@@ -134,23 +142,25 @@
             this.List_Retire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Retire_Assassin_SelectedIndexChanged);
             // 
             // List_Rehire_Assassin
+=======
+>>>>>>> 0bf712550a21f885585481cd4f8f6d8e0d013ec2
             // 
-            this.List_Rehire_Assassin.Location = new System.Drawing.Point(1496, 194);
-            this.List_Rehire_Assassin.Name = "List_Rehire_Assassin";
-            this.List_Rehire_Assassin.Size = new System.Drawing.Size(626, 728);
-            this.List_Rehire_Assassin.TabIndex = 8;
-            this.List_Rehire_Assassin.UseCompatibleStateImageBehavior = false;
-            this.List_Rehire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Rehire_Assassin_SelectedIndexChanged);
+            this.columnHeader2.Text = "Id";
+            this.columnHeader2.Width = 30;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Id";
             // 
+<<<<<<< HEAD
             // columnHeader7
             // 
             this.columnHeader7.Text = "Name";
             // 
             // columnHeader8
+=======
+            // columnHeader3
+>>>>>>> 0bf712550a21f885585481cd4f8f6d8e0d013ec2
             // 
             this.columnHeader8.Text = "Xp";
             // 
@@ -162,17 +172,38 @@
             // 
             this.columnHeader10.Text = "Pris";
             // 
+            // List_Retire_Assassin
+            // 
+            this.List_Retire_Assassin.Location = new System.Drawing.Point(506, 124);
+            this.List_Retire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.List_Retire_Assassin.Name = "List_Retire_Assassin";
+            this.List_Retire_Assassin.Size = new System.Drawing.Size(419, 467);
+            this.List_Retire_Assassin.TabIndex = 7;
+            this.List_Retire_Assassin.UseCompatibleStateImageBehavior = false;
+            this.List_Retire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Retire_Assassin_SelectedIndexChanged);
+            // 
+            // List_Rehire_Assassin
+            // 
+            this.List_Rehire_Assassin.Location = new System.Drawing.Point(997, 124);
+            this.List_Rehire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.List_Rehire_Assassin.Name = "List_Rehire_Assassin";
+            this.List_Rehire_Assassin.Size = new System.Drawing.Size(419, 467);
+            this.List_Rehire_Assassin.TabIndex = 8;
+            this.List_Rehire_Assassin.UseCompatibleStateImageBehavior = false;
+            this.List_Rehire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Rehire_Assassin_SelectedIndexChanged);
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2134, 934);
+            this.ClientSize = new System.Drawing.Size(1276, 598);
             this.Controls.Add(this.List_Rehire_Assassin);
             this.Controls.Add(this.List_Retire_Assassin);
             this.Controls.Add(this.btn_Rehire);
             this.Controls.Add(this.btn_Retire_Assassin);
             this.Controls.Add(this.Btn_Hire_Assassin);
             this.Controls.Add(this.List_Hire_Assassin);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form2";
             this.Text = "Assassin Management";
             this.Load += new System.EventHandler(this.Form2_Load);
