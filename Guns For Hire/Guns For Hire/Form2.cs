@@ -44,8 +44,6 @@ namespace Guns_For_Hire
 
         private void Btn_Hire_Assassin_Click(object sender, EventArgs e)
         {
-            //command.CommandText = "select id from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
-
             command.CommandText = "insert into ListOfAssassins (EgneAssassins) select id from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
             command.ExecuteNonQuery();
 
@@ -54,6 +52,12 @@ namespace Guns_For_Hire
 
         private void btn_Retire_Assassin_Click(object sender, EventArgs e)
         {
+            command.CommandText = "insert or replace into retiredassassins (Assassin) select id from AssassinsProfile where id='" + List_Retire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+            command.ExecuteNonQuery();
+
+            command.CommandText = "delete from ListOfAssassins where EgneAssassins='" + List_Retire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+            command.ExecuteNonQuery();
+
             UpdateTables();
         }
 
@@ -137,6 +141,18 @@ namespace Guns_For_Hire
                 List_Retire_Assassin.Items.Add(item);
             }
 
+            SQLiteCommand list3 = new SQLiteCommand("select * from assassinsprofile INNER JOIN retiredassassins ON assassinsprofile.id = retiredassassins.assassin", dbcon);
+            reader = list3.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["id"].ToString());
+                item.SubItems.Add(reader["navn"].ToString());
+                item.SubItems.Add(reader["XP"].ToString());
+                item.SubItems.Add(reader["Level"].ToString());
+                item.SubItems.Add(reader["Pris"].ToString());
+                List_Rehire_Assassin.Items.Add(item);
+            }
         }
     }
 }
