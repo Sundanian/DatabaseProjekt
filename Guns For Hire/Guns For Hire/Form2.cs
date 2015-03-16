@@ -44,25 +44,49 @@ namespace Guns_For_Hire
 
         private void Btn_Hire_Assassin_Click(object sender, EventArgs e)
         {
-            command.CommandText = "insert into ListOfAssassins (EgneAssassins) select id from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
-            command.ExecuteNonQuery();
-
+            try
+            {
+                command.CommandText = "insert into ListOfAssassins (EgneAssassins) select id from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                
+            }
             UpdateTables();
         }
 
         private void btn_Retire_Assassin_Click(object sender, EventArgs e)
         {
-            command.CommandText = "insert or replace into retiredassassins (Assassin) select id from AssassinsProfile where id='" + List_Retire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
-            command.ExecuteNonQuery();
+            try
+            {
+                command.CommandText = "insert or replace into retiredassassins (Assassin) select id from AssassinsProfile where id='" + List_Retire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+                command.ExecuteNonQuery();
 
-            command.CommandText = "delete from ListOfAssassins where EgneAssassins='" + List_Retire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
-            command.ExecuteNonQuery();
-
+                command.CommandText = "delete from ListOfAssassins where EgneAssassins='" + List_Retire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                
+            }
             UpdateTables();
         }
 
         private void btn_Rehire_Click(object sender, EventArgs e)
         {
+            try
+            {
+                command.CommandText = "insert or replace into ListOfAssassins (EgneAssassins) select id from AssassinsProfile where id='" + List_Rehire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+                command.ExecuteNonQuery();
+
+                command.CommandText = "delete from RetiredAssassins where Assassin='" + List_Rehire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                
+            }
             UpdateTables();
         }
 
@@ -96,23 +120,23 @@ namespace Guns_For_Hire
         {
             #region Clear
             List_Hire_Assassin.Clear();
-            List_Hire_Assassin.Columns.Add("ID", 100);
-            List_Hire_Assassin.Columns.Add("Name", 100);
-            List_Hire_Assassin.Columns.Add("XP", 100);
-            List_Hire_Assassin.Columns.Add("Level", 100);
-            List_Hire_Assassin.Columns.Add("Pris", 100);
+            List_Hire_Assassin.Columns.Add("ID", 75);
+            List_Hire_Assassin.Columns.Add("Name", 75);
+            List_Hire_Assassin.Columns.Add("XP", 75);
+            List_Hire_Assassin.Columns.Add("Level", 75);
+            List_Hire_Assassin.Columns.Add("Pris", 75);
             List_Rehire_Assassin.Clear();
-            List_Rehire_Assassin.Columns.Add("ID", 100);
-            List_Rehire_Assassin.Columns.Add("Name", 100);
-            List_Rehire_Assassin.Columns.Add("XP", 100);
-            List_Rehire_Assassin.Columns.Add("Level", 100);
-            List_Rehire_Assassin.Columns.Add("Pris", 100);
+            List_Rehire_Assassin.Columns.Add("ID", 75);
+            List_Rehire_Assassin.Columns.Add("Name", 75);
+            List_Rehire_Assassin.Columns.Add("XP", 75);
+            List_Rehire_Assassin.Columns.Add("Level", 75);
+            List_Rehire_Assassin.Columns.Add("Pris", 75);
             List_Retire_Assassin.Clear();
-            List_Retire_Assassin.Columns.Add("ID", 100);
-            List_Retire_Assassin.Columns.Add("Name", 100);
-            List_Retire_Assassin.Columns.Add("XP", 100);
-            List_Retire_Assassin.Columns.Add("Level", 100);
-            List_Retire_Assassin.Columns.Add("Pris", 100);
+            List_Retire_Assassin.Columns.Add("ID", 75);
+            List_Retire_Assassin.Columns.Add("Name", 75);
+            List_Retire_Assassin.Columns.Add("XP", 75);
+            List_Retire_Assassin.Columns.Add("Level", 75);
+            List_Retire_Assassin.Columns.Add("Pris", 75);
             #endregion
             SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile LEFT JOIN ListOfAssassins ON assassinsprofile.id = ListOfAssassins.Egneassassins where ListOfAssassins.EgneAssassins IS NULL", dbcon);
             SQLiteDataReader reader = list.ExecuteReader();
