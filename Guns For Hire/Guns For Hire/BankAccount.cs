@@ -27,10 +27,13 @@ namespace Guns_For_Hire
 
             set
             {
-                Dictionary<string, string> dictionary = new Dictionary<string, string>();
+                if (currency - value >= 0)
+                {
+                    Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
-                dictionary.Add("valuta", value.ToString());
-                SQLhelper.Update("toolbar", dictionary, "ID=1");
+                    dictionary.Add("valuta", value.ToString());
+                    SQLhelper.Update("toolbar", dictionary, "ID=1");
+                }
             }
         }
     }
