@@ -13,6 +13,9 @@ namespace Guns_For_Hire
 {
     public partial class btn_star_game : Form
     {
+        static SaveLoad save = new SaveLoad();
+        static Form2 form2 = new Form2();
+
         public btn_star_game()
         {
             InitializeComponent();
@@ -173,17 +176,17 @@ namespace Guns_For_Hire
 
         private void btn_Save_1_Click(object sender, EventArgs e)
         {
-
+            save.LoadGame("save01.db");
         }
 
         private void btn_Save_2_Click(object sender, EventArgs e)
         {
-
+            save.LoadGame("save02.db");
         }
 
         private void btn_Save_3_Click(object sender, EventArgs e)
         {
-
+            save.LoadGame("save03.db");
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -196,6 +199,8 @@ namespace Guns_For_Hire
             HideSaveLoadMenu();
             ShowIngameMenu();
             HideSaveLoadMenuMainmenu();
+            Form2 f2 = new Form2();
+            f2.UpdateTables();
         }
 
         private void Btn_Back_SL_Click(object sender, EventArgs e)
@@ -212,33 +217,35 @@ namespace Guns_For_Hire
             HideSaveLoadMenu();
             HideSaveLoadMenuMainmenu();
 
+            #region SaveLoadSetup
+            SaveLoad save = new SaveLoad();
+            save.LoadGame("save04.db");
+            save.CreateGame(1);
+            save.CreateGame(2);
+            save.CreateGame(3);
+            save.CreateGame(4);
+            #endregion
+
             //Tmp database
-            SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db;Version=3");
             dbcon.Open();
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
             //Save1
-            SQLiteConnection dbcon1 = new SQLiteConnection("Data Source = save1.db;Version=3");
+            SQLiteConnection dbcon1 = new SQLiteConnection("Data Source = save01.db;Version=3");
             dbcon1.Open();
             String sql1 = "";
             SQLiteCommand command1 = new SQLiteCommand(sql1, dbcon);
             //Save2
-            SQLiteConnection dbcon2 = new SQLiteConnection("Data Source = save2.db;Version=3");
+            SQLiteConnection dbcon2 = new SQLiteConnection("Data Source = save02.db;Version=3");
             dbcon2.Open();
             String sql2 = "";
             SQLiteCommand command2 = new SQLiteCommand(sql2, dbcon);
             //Save3
-            SQLiteConnection dbcon3 = new SQLiteConnection("Data Source = save3.db;Version=3");
+            SQLiteConnection dbcon3 = new SQLiteConnection("Data Source = save03.db;Version=3");
             dbcon3.Open();
             String sql3 = "";
             SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
-
-            #region SaveLoadSetup
-            SaveLoad save = new SaveLoad();
-            save.CreateGame(1);
-            save.CreateGame(2);
-            save.CreateGame(3);
-            #endregion
 
             #region MissionLevelTing
             //sql = "select Level from mission WHERE id=";
