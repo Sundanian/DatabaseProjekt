@@ -162,6 +162,50 @@ namespace Guns_For_Hire
             Available_Assassins.Columns.Add("XP", 75);
             Available_Assassins.Columns.Add("Level", 75);
             #endregion
+            SQLiteCommand list = new SQLiteCommand("select * from assassinsprofile INNER JOIN ListOfAssassins ON assassinsprofile.id = ListOfAssassins.Egneassassins", dbcon);
+            SQLiteDataReader reader = list.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["id"].ToString());
+                item.SubItems.Add(reader["navn"].ToString());
+                item.SubItems.Add(reader["XP"].ToString());
+                item.SubItems.Add(reader["Level"].ToString());
+                item.SubItems.Add(reader["Pris"].ToString());
+                Available_Assassins.Items.Add(item);
+            }
+            SQLiteCommand list2 = new SQLiteCommand("select * from mission", dbcon);
+            reader = list2.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["id"].ToString());
+                item.SubItems.Add(reader["level"].ToString());
+                item.SubItems.Add(reader["pay"].ToString());
+                item.SubItems.Add(reader["accident"].ToString());
+                item.SubItems.Add(reader["infiltration"].ToString());
+                item.SubItems.Add(reader["charismakill"].ToString());
+                item.SubItems.Add(reader["publicass"].ToString());
+                item.SubItems.Add(reader["primary type"].ToString());
+                item.SubItems.Add(reader["secondary type"].ToString());
+                list_Mission.Items.Add(item);
+            }
+            SQLiteCommand list3 = new SQLiteCommand("select * from missionList", dbcon);
+            reader = list3.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["id"].ToString());
+                item.SubItems.Add(reader["level"].ToString());
+                item.SubItems.Add(reader["pay"].ToString());
+                item.SubItems.Add(reader["accident"].ToString());
+                item.SubItems.Add(reader["infiltration"].ToString());
+                item.SubItems.Add(reader["charismakill"].ToString());
+                item.SubItems.Add(reader["publicass"].ToString());
+                item.SubItems.Add(reader["primary type"].ToString());
+                item.SubItems.Add(reader["secondary type"].ToString());
+                list_Mission_Ongoing.Items.Add(item);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
