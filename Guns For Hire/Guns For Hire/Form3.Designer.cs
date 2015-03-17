@@ -38,48 +38,47 @@
             // List_Mission
             // 
             this.List_Mission.FormattingEnabled = true;
-            this.List_Mission.ItemHeight = 16;
-            this.List_Mission.Location = new System.Drawing.Point(8, 124);
+            this.List_Mission.Location = new System.Drawing.Point(6, 101);
             this.List_Mission.Margin = new System.Windows.Forms.Padding(2);
             this.List_Mission.Name = "List_Mission";
-            this.List_Mission.Size = new System.Drawing.Size(419, 468);
+            this.List_Mission.Size = new System.Drawing.Size(315, 381);
             this.List_Mission.TabIndex = 1;
             // 
             // List_Mission_detail
             // 
             this.List_Mission_detail.FormattingEnabled = true;
-            this.List_Mission_detail.ItemHeight = 16;
-            this.List_Mission_detail.Location = new System.Drawing.Point(429, 124);
+            this.List_Mission_detail.Location = new System.Drawing.Point(322, 101);
             this.List_Mission_detail.Margin = new System.Windows.Forms.Padding(2);
             this.List_Mission_detail.Name = "List_Mission_detail";
-            this.List_Mission_detail.Size = new System.Drawing.Size(419, 468);
+            this.List_Mission_detail.Size = new System.Drawing.Size(315, 381);
             this.List_Mission_detail.TabIndex = 2;
             // 
             // List_Mission_ongoing
             // 
             this.List_Mission_ongoing.FormattingEnabled = true;
-            this.List_Mission_ongoing.ItemHeight = 16;
-            this.List_Mission_ongoing.Location = new System.Drawing.Point(997, 124);
+            this.List_Mission_ongoing.Location = new System.Drawing.Point(748, 101);
             this.List_Mission_ongoing.Margin = new System.Windows.Forms.Padding(2);
             this.List_Mission_ongoing.Name = "List_Mission_ongoing";
-            this.List_Mission_ongoing.Size = new System.Drawing.Size(419, 468);
+            this.List_Mission_ongoing.Size = new System.Drawing.Size(315, 381);
             this.List_Mission_ongoing.TabIndex = 3;
             // 
             // Btn_Select_Mission
             // 
-            this.Btn_Select_Mission.Location = new System.Drawing.Point(8, 72);
+            this.Btn_Select_Mission.Location = new System.Drawing.Point(6, 58);
             this.Btn_Select_Mission.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Select_Mission.Name = "Btn_Select_Mission";
-            this.Btn_Select_Mission.Size = new System.Drawing.Size(417, 48);
+            this.Btn_Select_Mission.Size = new System.Drawing.Size(313, 39);
             this.Btn_Select_Mission.TabIndex = 4;
             this.Btn_Select_Mission.Text = "Select Mission";
             this.Btn_Select_Mission.UseVisualStyleBackColor = true;
+            this.Btn_Select_Mission.Click += new System.EventHandler(this.Btn_Select_Mission_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1344, 13);
+            this.button1.Location = new System.Drawing.Point(1008, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 5;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -87,9 +86,9 @@
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1431, 598);
+            this.ClientSize = new System.Drawing.Size(1034, 486);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Btn_Select_Mission);
             this.Controls.Add(this.List_Mission_ongoing);

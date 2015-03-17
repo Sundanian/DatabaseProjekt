@@ -340,41 +340,37 @@ namespace Guns_For_Hire
             int amount = bankAcc.Currency;
             #endregion
             #region MissionLevelTing
-            //sql = "select Level from mission WHERE id=";
-            //command = new SQLiteCommand(sql, dbcon);
+
+            command = new SQLiteCommand(sql, dbcon);
 
 
-            //switch (Convert.ToInt32(command.ExecuteScalar()))
-            //{
-            //    case 1:
-            //        sql = "Update AssassinsProfile SET XP=XP+100 WHERE id=1";
-            //        command.CommandText = sql;
-            //        command.ExecuteNonQuery();
-            //        break;
+            switch (command1.CommandText)
+            {
+                case "1":
+                    sql = "Update AssassinsProfile SET XP=XP+100";
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+                    break;
 
-            //    case 2:
-            //        sql = "Update AssassinsProfile SET XP=XP+200 WHERE id=1";
-            //        command.CommandText = sql;
-            //        command.ExecuteNonQuery();
-            //        break;
-            //    case 3:
-            //        sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
-            //        command.CommandText = sql;
-            //        command.ExecuteNonQuery();
-            //        break;
-            //    default:
-            //        break;
-            //}
+                case "2":
+                    sql = "Update AssassinsProfile SET XP=XP+200";
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+                    break;
+                case "3":
+                    sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+                    break;
+                default:
+                    break;
+            }
             #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
             //command.ExecuteNonQuery();
-
-            sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
         }
     }
 }
