@@ -41,8 +41,10 @@ namespace Guns_For_Hire
         private void Btn_Select_Mission_Click(object sender, EventArgs e)
         {
 
-            SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
-            command1.CommandText = "select from mission where Level='" + List_Mission.SelectedItems[0].SubItems[0].Text + "'";
+            //SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
+            //command1.CommandText = "select from mission where Level='" + List_Mission.SelectedItems[0].SubItems[0].Text + "'";
         }
+
     }
+
 }
