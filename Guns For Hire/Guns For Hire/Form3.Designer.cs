@@ -64,6 +64,7 @@
             // 
             // list_Mission
             // 
+            this.list_Mission.FullRowSelect = true;
             this.list_Mission.Location = new System.Drawing.Point(12, 67);
             this.list_Mission.Name = "list_Mission";
             this.list_Mission.Size = new System.Drawing.Size(419, 468);
@@ -74,6 +75,7 @@
             // 
             // list_Mission_Ongoing
             // 
+            this.list_Mission_Ongoing.FullRowSelect = true;
             this.list_Mission_Ongoing.Location = new System.Drawing.Point(948, 67);
             this.list_Mission_Ongoing.Name = "list_Mission_Ongoing";
             this.list_Mission_Ongoing.Size = new System.Drawing.Size(419, 468);
@@ -121,6 +123,7 @@
             // 
             // Available_Assassins
             // 
+            this.Available_Assassins.FullRowSelect = true;
             this.Available_Assassins.Location = new System.Drawing.Point(437, 67);
             this.Available_Assassins.Name = "Available_Assassins";
             this.Available_Assassins.Size = new System.Drawing.Size(419, 468);
