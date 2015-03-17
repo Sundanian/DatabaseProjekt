@@ -40,8 +40,38 @@ namespace Guns_For_Hire
         private void Btn_Select_Mission_Click(object sender, EventArgs e)
         {
 
-            //SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
-            //command1.CommandText = "select from mission where Level='" + List_Mission.SelectedItems[0].SubItems[0].Text + "'";
+            SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
+            command1.CommandText = "select from mission where Level='" + list_Mission.SelectedItems[0].SubItems[0].Text + "'";
+
+            #region MissionLevelTing
+
+            command = new SQLiteCommand(sql, dbcon);
+
+
+            switch (command1.CommandText)
+            {
+                case "1":
+                    sql = "Update AssassinsProfile  SET XP=XP+100 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+                    break;
+
+                case "2":
+                    sql = "Update AssassinsProfile SET XP=XP+200";
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+                    break;
+                case "3":
+                    sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+                    break;
+                default:
+                    break;
+            }
+            #endregion
+
         }
 
         private void list_Mission_SelectedIndexChanged(object sender, EventArgs e)
