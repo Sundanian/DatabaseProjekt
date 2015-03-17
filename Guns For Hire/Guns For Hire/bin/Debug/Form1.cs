@@ -233,6 +233,14 @@ namespace Guns_For_Hire
             String sql3 = "";
             SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
 
+            #region SaveLoadSetup
+            SaveLoad save = new SaveLoad();
+            save.CreateGame(1);
+            save.CreateGame(2);
+            save.CreateGame(3);
+            save.CreateGame(4);
+            #endregion
+
             #region AssassinsProfile
             sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
             command.CommandText = sql;
