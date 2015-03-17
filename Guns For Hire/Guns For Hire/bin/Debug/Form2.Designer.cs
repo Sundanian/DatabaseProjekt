@@ -44,6 +44,11 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List_Rehire_Assassin = new System.Windows.Forms.ListView();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -162,6 +167,12 @@
             // 
             // List_Rehire_Assassin
             // 
+            this.List_Rehire_Assassin.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15});
             this.List_Rehire_Assassin.FullRowSelect = true;
             this.List_Rehire_Assassin.Location = new System.Drawing.Point(997, 124);
             this.List_Rehire_Assassin.Margin = new System.Windows.Forms.Padding(2);
@@ -169,7 +180,28 @@
             this.List_Rehire_Assassin.Size = new System.Drawing.Size(419, 467);
             this.List_Rehire_Assassin.TabIndex = 8;
             this.List_Rehire_Assassin.UseCompatibleStateImageBehavior = false;
+            this.List_Rehire_Assassin.View = System.Windows.Forms.View.Details;
             this.List_Rehire_Assassin.SelectedIndexChanged += new System.EventHandler(this.List_Rehire_Assassin_SelectedIndexChanged);
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "ID";
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Name";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "XP";
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Level";
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Pris";
             // 
             // button1
             // 
@@ -221,6 +253,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
 
     }
 }

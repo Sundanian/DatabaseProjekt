@@ -233,6 +233,14 @@ namespace Guns_For_Hire
             String sql3 = "";
             SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
 
+            #region SaveLoadSetup
+            SaveLoad save = new SaveLoad();
+            save.CreateGame(1);
+            save.CreateGame(2);
+            save.CreateGame(3);
+            save.CreateGame(4);
+            #endregion
+
             #region AssassinsProfile
             sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
             command.CommandText = sql;
@@ -317,12 +325,12 @@ namespace Guns_For_Hire
             #endregion
             #region AssassinsList
             //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassinsProfile(id))";
+            sql = "create table if not exists ListOfAssassins (EgneAssassins integer primary key not NULL references AssassinsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
             #region RetiredAssassins
-            sql = "create table if not exists RetiredAssassins (id integer primary key, assassin integer references AssasinsProfile(ID))";
+            sql = "create table if not exists RetiredAssassins (assassin integer primary key not NULL references AssasinsProfile(ID))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion

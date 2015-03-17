@@ -7,13 +7,16 @@ using System.Data.SQLite;
 
 namespace Guns_For_Hire
 {
-    
-
     class BankAccount
     {
         int currency;
+        string database;
 
-        SQLiteDatabaseHelper SQLhelper = new SQLiteDatabaseHelper("current.db;Version=3");
+        public BankAccount()
+        {
+        }
+
+        SQLiteDatabaseHelper SQLhelper = new SQLiteDatabaseHelper();
 
         public int Currency
         {

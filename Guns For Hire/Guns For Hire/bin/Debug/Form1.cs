@@ -317,12 +317,12 @@ namespace Guns_For_Hire
             #endregion
             #region AssassinsList
             //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassinsProfile(id))";
+            sql = "create table if not exists ListOfAssassins (EgneAssassins integer primary key not NULL references AssassinsProfile(id))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
             #region RetiredAssassins
-            sql = "create table if not exists RetiredAssassins (id integer primary key, assassin integer references AssasinsProfile(ID))";
+            sql = "create table if not exists RetiredAssassins (assassin integer primary key not NULL references AssasinsProfile(ID))";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             #endregion
