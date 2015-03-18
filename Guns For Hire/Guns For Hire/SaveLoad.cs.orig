@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
-using System.IO;
 
 namespace Guns_For_Hire
 {
@@ -90,11 +89,15 @@ namespace Guns_For_Hire
                 //Opretter liste over assassins på pension
                 SQLhelper.ExecuteNonQuery("create table if not exists RetiredAssassins (id integer primary key, assassin integer references AssasinsProfile(ID))");
                 #endregion
+<<<<<<< HEAD
 
                 #region OnMission
                 //Opretter liste over assassins på mission
                 SQLhelper.ExecuteNonQuery("create table if not exists OnMission (id integer primary key, assassin integer references AssasinsProfile(ID))");
                 #endregion
+            }
+=======
+>>>>>>> e9d00218c0c9c645ec26c5b1672946539b3faf5b
         }
 
         public void LoadGame(string loadDatabase)
