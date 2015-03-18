@@ -177,17 +177,17 @@ namespace Guns_For_Hire
 
         private void btn_Save_1_Click(object sender, EventArgs e)
         {
-            save.LoadGame("save01.db");
+            save.SaveGame(1);
         }
 
         private void btn_Save_2_Click(object sender, EventArgs e)
         {
-            save.LoadGame("save02.db");
+            save.LoadGame(2);
         }
 
         private void btn_Save_3_Click(object sender, EventArgs e)
         {
-            save.LoadGame("save03.db");
+
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -200,8 +200,6 @@ namespace Guns_For_Hire
             HideSaveLoadMenu();
             ShowIngameMenu();
             HideSaveLoadMenuMainmenu();
-            Form2 f2 = new Form2();
-            f2.UpdateTables();
         }
 
         private void Btn_Back_SL_Click(object sender, EventArgs e)
@@ -220,7 +218,6 @@ namespace Guns_For_Hire
 
             #region SaveLoadSetup
             SaveLoad save = new SaveLoad();
-            save.LoadGame("save04.db");
             save.CreateGame(1);
             save.CreateGame(2);
             save.CreateGame(3);
