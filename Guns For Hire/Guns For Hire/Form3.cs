@@ -13,8 +13,8 @@ namespace Guns_For_Hire
 {
     public partial class Form3 : Form
     {
-
-        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
+                static SaveLoad save = new SaveLoad();
+        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db");
         private static String sql = "";
         private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
@@ -145,6 +145,12 @@ namespace Guns_For_Hire
                         break;
                 }
                 #endregion
+				#region Move item
+                command.CommandText = "insert into missionList (mission) select id from mission where id='" + list_Mission.SelectedItems[0].SubItems[0].Text + "'";
+                command.ExecuteNonQuery();
+                command.CommandText = "insert into OnMission (assassin) select id from AssassinsProfile where id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                command.ExecuteNonQuery();
+                #endregion
                 UpdateTables();
             }
             catch (Exception)
@@ -197,7 +203,7 @@ namespace Guns_For_Hire
             Available_Assassins.Columns.Add("XP", 75);
             Available_Assassins.Columns.Add("Level", 75);
             #endregion
-            SQLiteCommand list = new SQLiteCommand("select * from assassinsprofile INNER JOIN ListOfAssassins ON assassinsprofile.id = ListOfAssassins.Egneassassins", dbcon);
+            SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile INNER JOIN ListOfAssassins ON AssassinsProfile.id = ListOfAssassins.Egneassassins LEFT JOIN OnMission ON AssassinsProfile.id = OnMission.assassin WHERE OnMission.assassin IS NULL", dbcon);
             SQLiteDataReader reader = list.ExecuteReader();
 
             while (reader.Read())
@@ -209,7 +215,7 @@ namespace Guns_For_Hire
                 item.SubItems.Add(reader["Pris"].ToString());
                 Available_Assassins.Items.Add(item);
             }
-            SQLiteCommand list2 = new SQLiteCommand("select * from mission", dbcon);
+            SQLiteCommand list2 = new SQLiteCommand("select * from mission LEFT JOIN missionList ON mission.id = missionList.id where missionList.id IS NULL", dbcon);
             reader = list2.ExecuteReader();
 
             while (reader.Read())
@@ -220,12 +226,12 @@ namespace Guns_For_Hire
                 item.SubItems.Add(reader["accident"].ToString());
                 item.SubItems.Add(reader["infiltration"].ToString());
                 item.SubItems.Add(reader["charismakill"].ToString());
-                item.SubItems.Add(reader["publicass"].ToString());
+                item.SubItems.Add(reader["publicass"].ToString()); //Haha!
                 item.SubItems.Add(reader["primary type"].ToString());
                 item.SubItems.Add(reader["secondary type"].ToString());
                 list_Mission.Items.Add(item);
             }
-            SQLiteCommand list3 = new SQLiteCommand("select * from missionList", dbcon);
+            SQLiteCommand list3 = new SQLiteCommand("select * from mission INNER JOIN missionList ON mission.id = missionList.mission", dbcon);
             reader = list3.ExecuteReader();
 
             while (reader.Read())
@@ -236,7 +242,7 @@ namespace Guns_For_Hire
                 item.SubItems.Add(reader["accident"].ToString());
                 item.SubItems.Add(reader["infiltration"].ToString());
                 item.SubItems.Add(reader["charismakill"].ToString());
-                item.SubItems.Add(reader["publicass"].ToString());
+                item.SubItems.Add(reader["publicass"].ToString()); //haha!
                 item.SubItems.Add(reader["primary type"].ToString());
                 item.SubItems.Add(reader["secondary type"].ToString());
                 list_Mission_Ongoing.Items.Add(item);
@@ -257,6 +263,10 @@ namespace Guns_For_Hire
         {
             try
             {
+                command.CommandText = "delete from missionList";
+                command.ExecuteNonQuery();
+                command.CommandText = "delete from OnMission";
+                command.ExecuteNonQuery();
                 UpdateTables();
             }
             catch (Exception)

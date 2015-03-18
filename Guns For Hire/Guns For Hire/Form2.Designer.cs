@@ -37,6 +37,10 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List_Retire_Assassin = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,8 +61,8 @@
             // 
             // Btn_Hire_Assassin
             // 
-            this.Btn_Hire_Assassin.Location = new System.Drawing.Point(11, 539);
-            this.Btn_Hire_Assassin.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_Hire_Assassin.Location = new System.Drawing.Point(17, 539);
+            this.Btn_Hire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_Hire_Assassin.Name = "Btn_Hire_Assassin";
             this.Btn_Hire_Assassin.Size = new System.Drawing.Size(419, 48);
             this.Btn_Hire_Assassin.TabIndex = 3;
@@ -69,7 +73,7 @@
             // btn_Retire_Assassin
             // 
             this.btn_Retire_Assassin.Location = new System.Drawing.Point(486, 539);
-            this.btn_Retire_Assassin.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Retire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Retire_Assassin.Name = "btn_Retire_Assassin";
             this.btn_Retire_Assassin.Size = new System.Drawing.Size(419, 48);
             this.btn_Retire_Assassin.TabIndex = 4;
@@ -80,7 +84,7 @@
             // btn_Rehire
             // 
             this.btn_Rehire.Location = new System.Drawing.Point(995, 539);
-            this.btn_Rehire.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Rehire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Rehire.Name = "btn_Rehire";
             this.btn_Rehire.Size = new System.Drawing.Size(420, 48);
             this.btn_Rehire.TabIndex = 5;
@@ -95,10 +99,14 @@
             this.columnHeader1,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader19});
             this.List_Hire_Assassin.FullRowSelect = true;
-            this.List_Hire_Assassin.Location = new System.Drawing.Point(11, 68);
-            this.List_Hire_Assassin.Margin = new System.Windows.Forms.Padding(2);
+            this.List_Hire_Assassin.Location = new System.Drawing.Point(17, 64);
+            this.List_Hire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.List_Hire_Assassin.Name = "List_Hire_Assassin";
             this.List_Hire_Assassin.Size = new System.Drawing.Size(419, 467);
             this.List_Hire_Assassin.TabIndex = 6;
@@ -130,6 +138,22 @@
             // 
             this.columnHeader5.Text = "Pris";
             // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Charisma";
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "CoverUp";
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Disguise";
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "GetAway";
+            // 
             // List_Retire_Assassin
             // 
             this.List_Retire_Assassin.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -140,7 +164,7 @@
             this.columnHeader10});
             this.List_Retire_Assassin.FullRowSelect = true;
             this.List_Retire_Assassin.Location = new System.Drawing.Point(486, 68);
-            this.List_Retire_Assassin.Margin = new System.Windows.Forms.Padding(2);
+            this.List_Retire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.List_Retire_Assassin.Name = "List_Retire_Assassin";
             this.List_Retire_Assassin.Size = new System.Drawing.Size(419, 467);
             this.List_Retire_Assassin.TabIndex = 7;
@@ -178,7 +202,7 @@
             this.columnHeader15});
             this.List_Rehire_Assassin.FullRowSelect = true;
             this.List_Rehire_Assassin.Location = new System.Drawing.Point(995, 68);
-            this.List_Rehire_Assassin.Margin = new System.Windows.Forms.Padding(2);
+            this.List_Rehire_Assassin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.List_Rehire_Assassin.Name = "List_Rehire_Assassin";
             this.List_Rehire_Assassin.Size = new System.Drawing.Size(419, 467);
             this.List_Rehire_Assassin.TabIndex = 8;
@@ -259,7 +283,7 @@
             this.Controls.Add(this.Btn_Hire_Assassin);
             this.Controls.Add(this.List_Hire_Assassin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form2";
             this.Text = "Assassin Management";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -295,6 +319,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
 
     }
 }
