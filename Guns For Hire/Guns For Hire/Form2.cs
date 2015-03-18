@@ -138,7 +138,7 @@ namespace Guns_For_Hire
             List_Retire_Assassin.Columns.Add("Level", 75);
             List_Retire_Assassin.Columns.Add("Pris", 75);
             #endregion
-            SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile LEFT JOIN ListOfAssassins ON assassinsprofile.id = ListOfAssassins.Egneassassins where ListOfAssassins.EgneAssassins IS NULL", dbcon);
+            SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile LEFT JOIN ListOfAssassins ON AssassinsProfile.id = ListOfAssassins.Egneassassins where ListOfAssassins.EgneAssassins IS NULL", dbcon);
             SQLiteDataReader reader = list.ExecuteReader();
 
             while (reader.Read())
@@ -148,11 +148,15 @@ namespace Guns_For_Hire
                 item.SubItems.Add(reader["XP"].ToString());
                 item.SubItems.Add(reader["Level"].ToString());
                 item.SubItems.Add(reader["Pris"].ToString());
+                item.SubItems.Add(reader["charisma"].ToString());
+                item.SubItems.Add(reader["coverUp"].ToString());
+                item.SubItems.Add(reader["disguise"].ToString());
+                item.SubItems.Add(reader["getAway"].ToString());
 
                 List_Hire_Assassin.Items.Add(item);
 
             }
-            SQLiteCommand list2 = new SQLiteCommand("select * from assassinsprofile INNER JOIN ListOfAssassins ON assassinsprofile.id = ListOfAssassins.Egneassassins", dbcon);
+            SQLiteCommand list2 = new SQLiteCommand("select * from AssassinsProfile INNER JOIN ListOfAssassins ON AssassinsProfile.id = ListOfAssassins.Egneassassins", dbcon);
             reader = list2.ExecuteReader();
 
             while (reader.Read())
@@ -165,7 +169,7 @@ namespace Guns_For_Hire
                 List_Retire_Assassin.Items.Add(item);
             }
 
-            SQLiteCommand list3 = new SQLiteCommand("select * from assassinsprofile INNER JOIN retiredassassins ON assassinsprofile.id = retiredassassins.assassin", dbcon);
+            SQLiteCommand list3 = new SQLiteCommand("select * from AssassinsProfile INNER JOIN retiredassassins ON AssassinsProfile.id = retiredassassins.assassin", dbcon);
             reader = list3.ExecuteReader();
 
             while (reader.Read())

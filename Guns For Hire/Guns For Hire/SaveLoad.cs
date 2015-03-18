@@ -28,14 +28,14 @@ namespace Guns_For_Hire
             //Sætter tabellerne op
             #region AssassinsProfile
                 //Opretter tabel med assassin profiler
-                SQLhelper.ExecuteNonQuery("create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)");
+            SQLhelper.ExecuteNonQuery("create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int, charisma int, coverUp int, disguise int, getAway int)");
 
                 //Tilføjer 5 assassins
                 SQLhelper.ExecuteNonQuery(
-                @"insert or ignore into AssassinsProfile values (1, 'Hugo', 0, 1, 500);
-                insert or ignore into AssassinsProfile values (2, 'Fritz', 0, 1, 350);
-                insert or ignore into AssassinsProfile values (3, 'Karl', 0, 1, 370);
-                insert or ignore into AssassinsProfile values (4, 'Olga', 0, 1, 200)");
+                @"insert or ignore into AssassinsProfile values (1, 'Hugo', 0, 1, 500, 70, 10, 50, 20);
+                insert or ignore into AssassinsProfile values (2, 'Fritz', 0, 1, 350, 30, 60, 20, 4);
+                insert or ignore into AssassinsProfile values (3, 'Karl', 0, 1, 370, 10, 60, 30, 20);
+                insert or ignore into AssassinsProfile values (4, 'Olga', 0, 1, 200, 30, 20, 30, 50)");
                 #endregion
 
             #region Missions
@@ -50,18 +50,18 @@ namespace Guns_For_Hire
                 insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')");
                 #endregion
 
-            #region AssassinStats
-                //Tilføjer en tabel over assassin stats
-                SQLhelper.ExecuteNonQuery("create table if not exists AssassinsStats (id integer primary key, charisma int, coverUp int, disguise int, getAway int)");
+           #region AssassinStats
+//                //Tilføjer en tabel over assassin stats
+//                SQLhelper.ExecuteNonQuery("create table if not exists AssassinsStats (id integer primary key references AssassinsProfile, charisma int, coverUp int, disguise int, getAway int)");
 
-                //Sætter de fem assassins fra assassin listens stats
-                SQLhelper.ExecuteNonQuery(
-                @"insert or ignore into AssassinsStats values (1, 70, 10, 50, 20);
-                insert or ignore into AssassinsStats values (2, 30, 60, 20, 40);
-                insert or ignore into AssassinsStats values (3, 10, 60, 30, 20);
-                insert or ignore into AssassinsStats values (4, 30, 20, 30, 50);
-                insert or ignore into AssassinsStats values (5, 5, 20, 100, 5)");
-                #endregion
+//                //Sætter de fem assassins fra assassin listens stats
+//                SQLhelper.ExecuteNonQuery(
+//                @"insert or ignore into AssassinsStats values (1, 70, 10, 50, 20);
+//                insert or ignore into AssassinsStats values (2, 30, 60, 20, 40);
+//                insert or ignore into AssassinsStats values (3, 10, 60, 30, 20);
+//                insert or ignore into AssassinsStats values (4, 30, 20, 30, 50);
+//                insert or ignore into AssassinsStats values (5, 5, 20, 100, 5)");
+            #endregion
 
             #region MissionList
                 //Opretter missionlist tabel
@@ -82,7 +82,7 @@ namespace Guns_For_Hire
 
             #region AssassinsList
                 //Opretter lister over egne assassins tabel
-                SQLhelper.ExecuteNonQuery("create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))");
+                SQLhelper.ExecuteNonQuery("create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassinsProfile(id))");
                 #endregion
 
             #region RetiredAssassins
