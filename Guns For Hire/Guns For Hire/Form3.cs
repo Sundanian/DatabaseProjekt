@@ -143,7 +143,7 @@ namespace Guns_For_Hire
             //Nu Available_Assassins!!!
 
         }
-        private void UpdateTables()
+        public void UpdateTables()
         {
             #region Clear
             list_Mission.Clear();
@@ -228,7 +228,7 @@ namespace Guns_For_Hire
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             try
             {

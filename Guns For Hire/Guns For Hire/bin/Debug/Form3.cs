@@ -83,8 +83,11 @@ namespace Guns_For_Hire
             {
                 #region MissionLevelTing
                 SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
-                command1.CommandText = "select from mission where Level='" + list_Mission.SelectedItems[0].SubItems[0].Text + "'";
+            SQLiteCommand commandSA = new SQLiteCommand(sql, dbcon);
+            command1.CommandText = "select Level from mission where Level='" + list_Mission.SelectedItems[0].SubItems[1].Text + "'";
+            commandSA.CommandText = "select id from AssassinsProfile where id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
                 SQLiteDataReader reader = command1.ExecuteReader();
+            SQLiteDataReader readerSA = commandSA.ExecuteReader();
                 string value = "";
 
                 while (reader.Read())
@@ -140,7 +143,7 @@ namespace Guns_For_Hire
             //Nu Available_Assassins!!!
 
         }
-        private void UpdateTables()
+        public void UpdateTables()
         {
             #region Clear
             list_Mission.Clear();
@@ -225,7 +228,7 @@ namespace Guns_For_Hire
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             try
             {

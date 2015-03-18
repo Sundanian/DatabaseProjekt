@@ -37,6 +37,10 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List_Retire_Assassin = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,10 +57,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // Btn_Hire_Assassin
@@ -102,7 +110,7 @@
             this.columnHeader18,
             this.columnHeader19});
             this.List_Hire_Assassin.FullRowSelect = true;
-            this.List_Hire_Assassin.Location = new System.Drawing.Point(25, 100);
+            this.List_Hire_Assassin.Location = new System.Drawing.Point(25, 109);
             this.List_Hire_Assassin.Name = "List_Hire_Assassin";
             this.List_Hire_Assassin.Size = new System.Drawing.Size(626, 727);
             this.List_Hire_Assassin.TabIndex = 6;
@@ -118,7 +126,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 100;
+            this.columnHeader1.Width = 26;
             // 
             // columnHeader3
             // 
@@ -128,11 +136,31 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Level";
-            this.columnHeader4.Width = 70;
+            this.columnHeader4.Width = 14;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Pris";
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Charisma";
+            this.columnHeader16.Width = 126;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "CoverUp";
+            this.columnHeader17.Width = 114;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Disguise";
+            this.columnHeader18.Width = 96;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "GetAway";
+            this.columnHeader19.Width = 106;
             // 
             // List_Retire_Assassin
             // 
@@ -141,7 +169,11 @@
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9,
-            this.columnHeader10});
+            this.columnHeader10,
+            this.columnHeader20,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23});
             this.List_Retire_Assassin.FullRowSelect = true;
             this.List_Retire_Assassin.Location = new System.Drawing.Point(729, 106);
             this.List_Retire_Assassin.Name = "List_Retire_Assassin";
@@ -178,7 +210,11 @@
             this.columnHeader12,
             this.columnHeader13,
             this.columnHeader14,
-            this.columnHeader15});
+            this.columnHeader15,
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26,
+            this.columnHeader27});
             this.List_Rehire_Assassin.FullRowSelect = true;
             this.List_Rehire_Assassin.Location = new System.Drawing.Point(1492, 106);
             this.List_Rehire_Assassin.Name = "List_Rehire_Assassin";
@@ -249,21 +285,37 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "My Former Assassins";
             // 
-            // columnHeader16
+            // columnHeader20
             // 
-            this.columnHeader16.Text = "Charisma";
+            this.columnHeader20.Text = "Charisma";
             // 
-            // columnHeader17
+            // columnHeader21
             // 
-            this.columnHeader17.Text = "CoverUp";
+            this.columnHeader21.Text = "CoverUP";
             // 
-            // columnHeader18
+            // columnHeader22
             // 
-            this.columnHeader18.Text = "Disguise";
+            this.columnHeader22.Text = "Disguise";
             // 
-            // columnHeader19
+            // columnHeader23
             // 
-            this.columnHeader19.Text = "GetAway";
+            this.columnHeader23.Text = "GetAway";
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Charisma";
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "CoverUP";
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "Disguise";
+            // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "GetAway";
             // 
             // Form2
             // 
@@ -320,6 +372,14 @@
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.ColumnHeader columnHeader18;
         private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
+        private System.Windows.Forms.ColumnHeader columnHeader26;
+        private System.Windows.Forms.ColumnHeader columnHeader27;
 
     }
 }

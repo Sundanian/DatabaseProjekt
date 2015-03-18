@@ -15,6 +15,7 @@ namespace Guns_For_Hire
     {
         static SaveLoad save = new SaveLoad();
         static Form2 form2 = new Form2();
+        
 
         public btn_star_game()
         {
@@ -278,7 +279,36 @@ namespace Guns_For_Hire
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
-            //command.ExecuteNonQuery();
+            //command.ExecuteNonQuery()
+
+            Showcash();
+
         }
+
+
+        private void List_Moneyyyyyyy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+           
+
+        }
+
+        public void Showcash()
+        {
+
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db;version=3 ");
+            dbcon.Open();
+            SQLiteCommand list = new SQLiteCommand("select valuta from toolbar where id= 1", dbcon);
+            SQLiteDataReader reader = list.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["valuta"].ToString());
+
+
+                List_Moneyyyyyyy.Items.Add(item);
+            }
+        }
+
     }
 }
