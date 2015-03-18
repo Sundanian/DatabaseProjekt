@@ -37,11 +37,95 @@ namespace Guns_For_Hire
             Close();
         }
 
+        public void Assassins_Level_Check()
+        {
+            #region TurnXPToVariable
+            SQLiteCommand command2 = new SQLiteCommand(sql, dbcon);
+            command2.CommandText = "select XP from AssassinsProfile";
+            SQLiteDataReader reader = command2.ExecuteReader();
+            int variableXP = 0;
+
+            while (reader.Read())
+            {
+                variableXP = Convert.ToInt32(reader["XP"]);
+            }
+            #endregion
+
+            #region TurnLevelToVariable
+            SQLiteCommand command3 = new SQLiteCommand(sql, dbcon);
+            command3.CommandText = "select Level from AssassinsProfile";
+            SQLiteDataReader reader2 = command3.ExecuteReader();
+            int variableLevel = 0;
+
+            while (reader.Read())
+            {
+                variableLevel = Convert.ToInt32(reader2["Level"]);
+            }
+            #endregion
+
+            int MaxXP = 1000 * variableLevel;
+
+            if (variableXP == MaxXP)
+            {
+                variableLevel++;
+                sql = " Update AssassinsProfile(Level) values (" + variableLevel + ")";
+                command.ExecuteNonQuery();
+
+                sql = "Update AssassinsProfile SET XP=0";
+                command.CommandText = sql;
+                command.ExecuteNonQuery();
+            }
+        }
+
         private void Btn_Select_Mission_Click(object sender, EventArgs e)
         {
+            try
+            {
+                #region MissionLevelTing
+                SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
+            SQLiteCommand commandSA = new SQLiteCommand(sql, dbcon);
+            command1.CommandText = "select Level from mission where Level='" + list_Mission.SelectedItems[0].SubItems[1].Text + "'";
+            commandSA.CommandText = "select id from AssassinsProfile where id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                SQLiteDataReader reader = command1.ExecuteReader();
+            SQLiteDataReader readerSA = commandSA.ExecuteReader();
+                string value = "";
 
-            //SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
-            //command1.CommandText = "select from mission where Level='" + List_Mission.SelectedItems[0].SubItems[0].Text + "'";
+                while (reader.Read())
+                {
+                    value = Convert.ToString(reader["Level"]);
+                }
+
+                command = new SQLiteCommand(sql, dbcon);
+
+                switch (value)
+                {
+                    case "1":
+                        sql = "Update AssassinsProfile  SET XP=XP+100 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                        command.CommandText = sql;
+                        command.ExecuteNonQuery();
+                        Assassins_Level_Check();
+                        break;
+
+                    case "2":
+                        sql = "Update AssassinsProfile  SET XP=XP+200 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                        command.CommandText = sql;
+                        command.ExecuteNonQuery();
+                        break;
+                    case "3":
+                        sql = "Update AssassinsProfile  SET XP=XP+300 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                        command.CommandText = sql;
+                        command.ExecuteNonQuery();
+                        break;
+                    default:
+                        break;
+                }
+                #endregion
+                UpdateTables();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void list_Mission_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,6 +172,50 @@ namespace Guns_For_Hire
             Available_Assassins.Columns.Add("XP", 75);
             Available_Assassins.Columns.Add("Level", 75);
             #endregion
+            SQLiteCommand list = new SQLiteCommand("select * from assassinsprofile INNER JOIN ListOfAssassins ON assassinsprofile.id = ListOfAssassins.Egneassassins", dbcon);
+            SQLiteDataReader reader = list.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["id"].ToString());
+                item.SubItems.Add(reader["navn"].ToString());
+                item.SubItems.Add(reader["XP"].ToString());
+                item.SubItems.Add(reader["Level"].ToString());
+                item.SubItems.Add(reader["Pris"].ToString());
+                Available_Assassins.Items.Add(item);
+            }
+            SQLiteCommand list2 = new SQLiteCommand("select * from mission", dbcon);
+            reader = list2.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["id"].ToString());
+                item.SubItems.Add(reader["level"].ToString());
+                item.SubItems.Add(reader["pay"].ToString());
+                item.SubItems.Add(reader["accident"].ToString());
+                item.SubItems.Add(reader["infiltration"].ToString());
+                item.SubItems.Add(reader["charismakill"].ToString());
+                item.SubItems.Add(reader["publicass"].ToString());
+                item.SubItems.Add(reader["primary type"].ToString());
+                item.SubItems.Add(reader["secondary type"].ToString());
+                list_Mission.Items.Add(item);
+            }
+            SQLiteCommand list3 = new SQLiteCommand("select * from missionList", dbcon);
+            reader = list3.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["id"].ToString());
+                item.SubItems.Add(reader["level"].ToString());
+                item.SubItems.Add(reader["pay"].ToString());
+                item.SubItems.Add(reader["accident"].ToString());
+                item.SubItems.Add(reader["infiltration"].ToString());
+                item.SubItems.Add(reader["charismakill"].ToString());
+                item.SubItems.Add(reader["publicass"].ToString());
+                item.SubItems.Add(reader["primary type"].ToString());
+                item.SubItems.Add(reader["secondary type"].ToString());
+                list_Mission_Ongoing.Items.Add(item);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -102,7 +230,14 @@ namespace Guns_For_Hire
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                UpdateTables();
+            }
+            catch (Exception)
+            {
 
+            }
         }
     }
 }
