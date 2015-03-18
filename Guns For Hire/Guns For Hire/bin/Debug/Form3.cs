@@ -37,41 +37,92 @@ namespace Guns_For_Hire
             Close();
         }
 
-        private void Btn_Select_Mission_Click(object sender, EventArgs e)
+        public void Assassins_Level_Check()
         {
+            #region TurnXPToVariable
+            SQLiteCommand command2 = new SQLiteCommand(sql, dbcon);
+            command2.CommandText = "select XP from AssassinsProfile";
+            SQLiteDataReader reader = command2.ExecuteReader();
+            int variableXP = 0;
 
-            SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
-            command1.CommandText = "select from mission where Level='" + list_Mission.SelectedItems[0].SubItems[0].Text + "'";
-
-            #region MissionLevelTing
-
-            command = new SQLiteCommand(sql, dbcon);
-
-
-            switch (command1.CommandText)
+            while (reader.Read())
             {
-                case "1":
-                    sql = "Update AssassinsProfile  SET XP=XP+100 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
-
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-
-                case "2":
-                    sql = "Update AssassinsProfile SET XP=XP+200";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-                case "3":
-                    sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-                default:
-                    break;
+                variableXP = Convert.ToInt32(reader["XP"]);
             }
             #endregion
 
+            #region TurnLevelToVariable
+            SQLiteCommand command3 = new SQLiteCommand(sql, dbcon);
+            command3.CommandText = "select Level from AssassinsProfile";
+            SQLiteDataReader reader2 = command3.ExecuteReader();
+            int variableLevel = 0;
+
+            while (reader.Read())
+            {
+                variableLevel = Convert.ToInt32(reader2["Level"]);
+            }
+            #endregion
+
+            int MaxXP = 1000 * variableLevel;
+
+            if (variableXP == MaxXP)
+            {
+                variableLevel++;
+                sql = " Update AssassinsProfile(Level) values (" + variableLevel + ")";
+                command.ExecuteNonQuery();
+
+                sql = "Update AssassinsProfile SET XP=0";
+                command.CommandText = sql;
+                command.ExecuteNonQuery();
+            }
+        }
+
+        private void Btn_Select_Mission_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                #region MissionLevelTing
+                SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
+                command1.CommandText = "select from mission where Level='" + list_Mission.SelectedItems[0].SubItems[0].Text + "'";
+                SQLiteDataReader reader = command1.ExecuteReader();
+                string value = "";
+
+                while (reader.Read())
+                {
+                    value = Convert.ToString(reader["Level"]);
+                }
+
+                command = new SQLiteCommand(sql, dbcon);
+
+                switch (value)
+                {
+                    case "1":
+                        sql = "Update AssassinsProfile  SET XP=XP+100 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                        command.CommandText = sql;
+                        command.ExecuteNonQuery();
+                        Assassins_Level_Check();
+                        break;
+
+                    case "2":
+                        sql = "Update AssassinsProfile  SET XP=XP+200 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                        command.CommandText = sql;
+                        command.ExecuteNonQuery();
+                        break;
+                    case "3":
+                        sql = "Update AssassinsProfile  SET XP=XP+300 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                        command.CommandText = sql;
+                        command.ExecuteNonQuery();
+                        break;
+                    default:
+                        break;
+                }
+                #endregion
+                UpdateTables();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void list_Mission_SelectedIndexChanged(object sender, EventArgs e)
@@ -176,7 +227,14 @@ namespace Guns_For_Hire
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                UpdateTables();
+            }
+            catch (Exception)
+            {
 
+            }
         }
     }
 }

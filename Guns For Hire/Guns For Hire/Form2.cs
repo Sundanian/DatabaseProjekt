@@ -15,8 +15,9 @@ namespace Guns_For_Hire
     public partial class Form2 : Form
     {
 
+        static SaveLoad save = new SaveLoad();
 
-        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
+        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = "+save.loadedDatabase);
         private static String sql = "";
         private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
@@ -116,7 +117,7 @@ namespace Guns_For_Hire
             dbcon.Close();
             Close();
         }
-        private void UpdateTables()
+        public void UpdateTables()
         {
             #region Clear
             List_Hire_Assassin.Clear();
