@@ -117,9 +117,10 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 539);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(313, 17);
+            this.label4.Size = new System.Drawing.Size(394, 34);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Remember to select a mission AND an assassin.";
+            this.label4.Text = "Remember to select a mission AND an assassin. \r\nDon\'t mind the visual selection d" +
+    "issapearing, it\'s still selected.";
             // 
             // Available_Assassins
             // 

@@ -17,7 +17,7 @@ namespace Guns_For_Hire
 
         static SaveLoad save = new SaveLoad();
 
-        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = " + save.loadedDatabase);
+        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db");
         private static String sql = "";
         private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
