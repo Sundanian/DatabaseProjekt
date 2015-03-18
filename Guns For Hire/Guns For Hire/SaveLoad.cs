@@ -87,12 +87,17 @@ namespace Guns_For_Hire
 
                 #region AssassinsList
                 //Opretter lister over egne assassins tabel
-                SQLhelper.ExecuteNonQuery("create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))");
+                SQLhelper.ExecuteNonQuery("create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassinsProfile(id))");
                 #endregion
 
                 #region RetiredAssassins
                 //Opretter liste over assassins på pension
                 SQLhelper.ExecuteNonQuery("create table if not exists RetiredAssassins (id integer primary key, assassin integer references AssasinsProfile(ID))");
+                #endregion
+
+                #region OnMission
+                //Opretter liste over assassins på mission
+                SQLhelper.ExecuteNonQuery("create table if not exists OnMission (id integer primary key, assassin integer references AssasinsProfile(ID))");
                 #endregion
             }
         }
