@@ -81,45 +81,6 @@ namespace Guns_For_Hire
         {
             try
             {
-                #region MissionLevelTing
-                SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
-            SQLiteCommand commandSA = new SQLiteCommand(sql, dbcon);
-            command1.CommandText = "select Level from mission where Level='" + list_Mission.SelectedItems[0].SubItems[1].Text + "'";
-            commandSA.CommandText = "select id from AssassinsProfile where id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
-                SQLiteDataReader reader = command1.ExecuteReader();
-            SQLiteDataReader readerSA = commandSA.ExecuteReader();
-                string value = "";
-
-                while (reader.Read())
-                {
-                    value = Convert.ToString(reader["Level"]);
-                }
-
-                command = new SQLiteCommand(sql, dbcon);
-
-                switch (value)
-                {
-                    case "1":
-                        sql = "Update AssassinsProfile  SET XP=XP+100 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
-                        command.CommandText = sql;
-                        command.ExecuteNonQuery();
-                        Assassins_Level_Check();
-                        break;
-
-                    case "2":
-                        sql = "Update AssassinsProfile  SET XP=XP+200 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
-                        command.CommandText = sql;
-                        command.ExecuteNonQuery();
-                        break;
-                    case "3":
-                        sql = "Update AssassinsProfile  SET XP=XP+300 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
-                        command.CommandText = sql;
-                        command.ExecuteNonQuery();
-                        break;
-                    default:
-                        break;
-                }
-                #endregion
 				#region Move item
                 command.CommandText = "insert into missionList (mission) select id from mission where id='" + list_Mission.SelectedItems[0].SubItems[0].Text + "'";
                 command.ExecuteNonQuery();
@@ -238,6 +199,45 @@ namespace Guns_For_Hire
         {
             try
             {
+                #region MissionLevelTing
+                SQLiteCommand command1 = new SQLiteCommand(sql, dbcon);
+                SQLiteCommand commandSA = new SQLiteCommand(sql, dbcon);
+                command1.CommandText = "select Level from mission where Level='" + list_Mission.SelectedItems[0].SubItems[1].Text + "'";
+                commandSA.CommandText = "select id from AssassinsProfile where id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                SQLiteDataReader reader = command1.ExecuteReader();
+                SQLiteDataReader readerSA = commandSA.ExecuteReader();
+                string value = "";
+
+                while (reader.Read())
+                {
+                    value = Convert.ToString(reader["Level"]);
+                }
+
+                command = new SQLiteCommand(sql, dbcon);
+
+                switch (value)
+                {
+                    case "1":
+                        sql = "Update AssassinsProfile  SET XP=XP+100 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                        command.CommandText = sql;
+                        command.ExecuteNonQuery();
+                        Assassins_Level_Check();
+                        break;
+
+                    case "2":
+                        sql = "Update AssassinsProfile  SET XP=XP+200 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                        command.CommandText = sql;
+                        command.ExecuteNonQuery();
+                        break;
+                    case "3":
+                        sql = "Update AssassinsProfile  SET XP=XP+300 WHERE id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                        command.CommandText = sql;
+                        command.ExecuteNonQuery();
+                        break;
+                    default:
+                        break;
+                }
+                #endregion
                 command.CommandText = "delete from missionList";
                 command.ExecuteNonQuery();
                 command.CommandText = "delete from OnMission";
