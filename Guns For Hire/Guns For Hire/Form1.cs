@@ -215,6 +215,8 @@ namespace Guns_For_Hire
                 save.SaveGame(selectedSlot);
                 selectedSlot = 0;
             }
+            Form4 popup = new Form4();
+            popup.Show();
         }
 
         private void Btn_Load_ingame_Click(object sender, EventArgs e)
@@ -228,7 +230,8 @@ namespace Guns_For_Hire
                 HideSaveLoadMenuMainmenu();
                 selectedSlot = 0;
             }
-
+            Form4 popup = new Form4();
+            popup.Show();
         }
 
         private void Btn_Back_SL_Click(object sender, EventArgs e)
