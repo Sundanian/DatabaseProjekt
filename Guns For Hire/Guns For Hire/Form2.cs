@@ -108,7 +108,7 @@ namespace Guns_For_Hire
 
             }
             UpdateTables();
-            form1.Showcash();
+            
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -146,18 +146,31 @@ namespace Guns_For_Hire
             List_Hire_Assassin.Columns.Add("XP", 75);
             List_Hire_Assassin.Columns.Add("Level", 75);
             List_Hire_Assassin.Columns.Add("Pris", 75);
+            List_Hire_Assassin.Columns.Add("Charisma", 75);
+            List_Hire_Assassin.Columns.Add("CoverUp", 75);
+            List_Hire_Assassin.Columns.Add("Disguise", 75);
+            List_Hire_Assassin.Columns.Add("GetAway", 75);
             List_Rehire_Assassin.Clear();
             List_Rehire_Assassin.Columns.Add("ID", 75);
             List_Rehire_Assassin.Columns.Add("Name", 75);
             List_Rehire_Assassin.Columns.Add("XP", 75);
             List_Rehire_Assassin.Columns.Add("Level", 75);
             List_Rehire_Assassin.Columns.Add("Pris", 75);
+            List_Rehire_Assassin.Columns.Add("Charisma", 75);
+            List_Rehire_Assassin.Columns.Add("CoverUp", 75);
+            List_Rehire_Assassin.Columns.Add("Disguise", 75);
+            List_Rehire_Assassin.Columns.Add("GetAway", 75);
             List_Retire_Assassin.Clear();
             List_Retire_Assassin.Columns.Add("ID", 75);
             List_Retire_Assassin.Columns.Add("Name", 75);
             List_Retire_Assassin.Columns.Add("XP", 75);
             List_Retire_Assassin.Columns.Add("Level", 75);
             List_Retire_Assassin.Columns.Add("Pris", 75);
+            List_Retire_Assassin.Columns.Add("Charisma", 75);
+            List_Retire_Assassin.Columns.Add("CoverUp", 75);
+            List_Retire_Assassin.Columns.Add("Disguise", 75);
+            List_Retire_Assassin.Columns.Add("GetAway", 75);
+            
             #endregion
             SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile LEFT JOIN ListOfAssassins ON AssassinsProfile.id = ListOfAssassins.Egneassassins where ListOfAssassins.EgneAssassins IS NULL", dbcon);
             SQLiteDataReader reader = list.ExecuteReader();
@@ -187,6 +200,10 @@ namespace Guns_For_Hire
                 item.SubItems.Add(reader["XP"].ToString());
                 item.SubItems.Add(reader["Level"].ToString());
                 item.SubItems.Add(reader["Pris"].ToString());
+                item.SubItems.Add(reader["charisma"].ToString());
+                item.SubItems.Add(reader["coverUp"].ToString());
+                item.SubItems.Add(reader["disguise"].ToString());
+                item.SubItems.Add(reader["getAway"].ToString());
                 List_Retire_Assassin.Items.Add(item);
             }
 
@@ -200,6 +217,10 @@ namespace Guns_For_Hire
                 item.SubItems.Add(reader["XP"].ToString());
                 item.SubItems.Add(reader["Level"].ToString());
                 item.SubItems.Add(reader["Pris"].ToString());
+                item.SubItems.Add(reader["charisma"].ToString());
+                item.SubItems.Add(reader["coverUp"].ToString());
+                item.SubItems.Add(reader["disguise"].ToString());
+                item.SubItems.Add(reader["getAway"].ToString());
                 List_Rehire_Assassin.Items.Add(item);
             }
         }
