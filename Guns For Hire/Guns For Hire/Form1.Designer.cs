@@ -50,12 +50,13 @@
             this.btn_Load_Mainmenu = new System.Windows.Forms.Button();
             this.List_Moneyyyyyyy = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.News = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // Btn_Start_Game
             // 
             this.Btn_Start_Game.Location = new System.Drawing.Point(9, 8);
-            this.Btn_Start_Game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Start_Game.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Start_Game.Name = "Btn_Start_Game";
             this.Btn_Start_Game.Size = new System.Drawing.Size(217, 96);
             this.Btn_Start_Game.TabIndex = 0;
@@ -66,7 +67,7 @@
             // Btn_how_to_play
             // 
             this.Btn_how_to_play.Location = new System.Drawing.Point(229, 8);
-            this.Btn_how_to_play.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_how_to_play.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_how_to_play.Name = "Btn_how_to_play";
             this.Btn_how_to_play.Size = new System.Drawing.Size(217, 96);
             this.Btn_how_to_play.TabIndex = 1;
@@ -77,7 +78,7 @@
             // Btn_quit
             // 
             this.Btn_quit.Location = new System.Drawing.Point(450, 8);
-            this.Btn_quit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_quit.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_quit.Name = "Btn_quit";
             this.Btn_quit.Size = new System.Drawing.Size(217, 96);
             this.Btn_quit.TabIndex = 2;
@@ -88,7 +89,7 @@
             // Btn_new_game
             // 
             this.Btn_new_game.Location = new System.Drawing.Point(9, 8);
-            this.Btn_new_game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_new_game.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_new_game.Name = "Btn_new_game";
             this.Btn_new_game.Size = new System.Drawing.Size(217, 96);
             this.Btn_new_game.TabIndex = 3;
@@ -99,7 +100,7 @@
             // Btn_Load
             // 
             this.Btn_Load.Location = new System.Drawing.Point(229, 8);
-            this.Btn_Load.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Load.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Load.Name = "Btn_Load";
             this.Btn_Load.Size = new System.Drawing.Size(217, 96);
             this.Btn_Load.TabIndex = 4;
@@ -110,7 +111,7 @@
             // Btn_Back
             // 
             this.Btn_Back.Location = new System.Drawing.Point(450, 8);
-            this.Btn_Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Back.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Back.Name = "Btn_Back";
             this.Btn_Back.Size = new System.Drawing.Size(217, 96);
             this.Btn_Back.TabIndex = 5;
@@ -121,7 +122,7 @@
             // btn_Assassins
             // 
             this.btn_Assassins.Location = new System.Drawing.Point(9, 8);
-            this.btn_Assassins.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Assassins.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Assassins.Name = "btn_Assassins";
             this.btn_Assassins.Size = new System.Drawing.Size(217, 96);
             this.btn_Assassins.TabIndex = 6;
@@ -132,7 +133,7 @@
             // btn_Quit_InGame
             // 
             this.btn_Quit_InGame.Location = new System.Drawing.Point(1254, 8);
-            this.btn_Quit_InGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Quit_InGame.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Quit_InGame.Name = "btn_Quit_InGame";
             this.btn_Quit_InGame.Size = new System.Drawing.Size(217, 96);
             this.btn_Quit_InGame.TabIndex = 7;
@@ -143,7 +144,7 @@
             // Btn_Missions
             // 
             this.Btn_Missions.Location = new System.Drawing.Point(229, 8);
-            this.Btn_Missions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Missions.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Missions.Name = "Btn_Missions";
             this.Btn_Missions.Size = new System.Drawing.Size(217, 96);
             this.Btn_Missions.TabIndex = 8;
@@ -154,7 +155,7 @@
             // Btn_Save_Load
             // 
             this.Btn_Save_Load.Location = new System.Drawing.Point(450, 8);
-            this.Btn_Save_Load.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Save_Load.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Save_Load.Name = "Btn_Save_Load";
             this.Btn_Save_Load.Size = new System.Drawing.Size(217, 96);
             this.Btn_Save_Load.TabIndex = 9;
@@ -165,7 +166,7 @@
             // btn_Save_1
             // 
             this.btn_Save_1.Location = new System.Drawing.Point(8, 8);
-            this.btn_Save_1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save_1.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save_1.Name = "btn_Save_1";
             this.btn_Save_1.Size = new System.Drawing.Size(217, 96);
             this.btn_Save_1.TabIndex = 10;
@@ -176,7 +177,7 @@
             // btn_Save_2
             // 
             this.btn_Save_2.Location = new System.Drawing.Point(229, 8);
-            this.btn_Save_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save_2.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save_2.Name = "btn_Save_2";
             this.btn_Save_2.Size = new System.Drawing.Size(217, 96);
             this.btn_Save_2.TabIndex = 11;
@@ -187,7 +188,7 @@
             // btn_Save_3
             // 
             this.btn_Save_3.Location = new System.Drawing.Point(450, 8);
-            this.btn_Save_3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save_3.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save_3.Name = "btn_Save_3";
             this.btn_Save_3.Size = new System.Drawing.Size(217, 96);
             this.btn_Save_3.TabIndex = 12;
@@ -198,7 +199,7 @@
             // btn_Save
             // 
             this.btn_Save.Location = new System.Drawing.Point(671, 8);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(217, 96);
             this.btn_Save.TabIndex = 13;
@@ -209,7 +210,7 @@
             // Btn_Load_ingame
             // 
             this.Btn_Load_ingame.Location = new System.Drawing.Point(891, 8);
-            this.Btn_Load_ingame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Load_ingame.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Load_ingame.Name = "Btn_Load_ingame";
             this.Btn_Load_ingame.Size = new System.Drawing.Size(217, 96);
             this.Btn_Load_ingame.TabIndex = 14;
@@ -220,7 +221,7 @@
             // Btn_Back_SL
             // 
             this.Btn_Back_SL.Location = new System.Drawing.Point(1254, 8);
-            this.Btn_Back_SL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Back_SL.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Back_SL.Name = "Btn_Back_SL";
             this.Btn_Back_SL.Size = new System.Drawing.Size(217, 96);
             this.Btn_Back_SL.TabIndex = 15;
@@ -231,7 +232,7 @@
             // btn_save_1_Mainmenu
             // 
             this.btn_save_1_Mainmenu.Location = new System.Drawing.Point(9, 8);
-            this.btn_save_1_Mainmenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_save_1_Mainmenu.Margin = new System.Windows.Forms.Padding(2);
             this.btn_save_1_Mainmenu.Name = "btn_save_1_Mainmenu";
             this.btn_save_1_Mainmenu.Size = new System.Drawing.Size(217, 96);
             this.btn_save_1_Mainmenu.TabIndex = 16;
@@ -242,7 +243,7 @@
             // btn_Save_2_Mainmenu
             // 
             this.btn_Save_2_Mainmenu.Location = new System.Drawing.Point(229, 8);
-            this.btn_Save_2_Mainmenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save_2_Mainmenu.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save_2_Mainmenu.Name = "btn_Save_2_Mainmenu";
             this.btn_Save_2_Mainmenu.Size = new System.Drawing.Size(217, 96);
             this.btn_Save_2_Mainmenu.TabIndex = 17;
@@ -253,7 +254,7 @@
             // Btn_Save_3_Mainmenu
             // 
             this.Btn_Save_3_Mainmenu.Location = new System.Drawing.Point(450, 8);
-            this.Btn_Save_3_Mainmenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Save_3_Mainmenu.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Save_3_Mainmenu.Name = "Btn_Save_3_Mainmenu";
             this.Btn_Save_3_Mainmenu.Size = new System.Drawing.Size(217, 96);
             this.Btn_Save_3_Mainmenu.TabIndex = 18;
@@ -263,7 +264,7 @@
             // btn_Load_Mainmenu
             // 
             this.btn_Load_Mainmenu.Location = new System.Drawing.Point(671, 8);
-            this.btn_Load_Mainmenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Load_Mainmenu.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Load_Mainmenu.Name = "btn_Load_Mainmenu";
             this.btn_Load_Mainmenu.Size = new System.Drawing.Size(217, 96);
             this.btn_Load_Mainmenu.TabIndex = 19;
@@ -276,7 +277,7 @@
             this.List_Moneyyyyyyy.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.List_Moneyyyyyyy.Location = new System.Drawing.Point(1113, 8);
-            this.List_Moneyyyyyyy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.List_Moneyyyyyyy.Margin = new System.Windows.Forms.Padding(2);
             this.List_Moneyyyyyyy.Name = "List_Moneyyyyyyy";
             this.List_Moneyyyyyyy.Size = new System.Drawing.Size(139, 96);
             this.List_Moneyyyyyyy.TabIndex = 20;
@@ -288,12 +289,24 @@
             // 
             this.columnHeader1.Text = "Money";
             // 
+            // News
+            // 
+            this.News.Enabled = false;
+            this.News.FormattingEnabled = true;
+            this.News.ItemHeight = 16;
+            this.News.Location = new System.Drawing.Point(8, 109);
+            this.News.Name = "News";
+            this.News.Size = new System.Drawing.Size(1463, 20);
+            this.News.TabIndex = 21;
+            this.News.SelectedIndexChanged += new System.EventHandler(this.News_SelectedIndexChanged_1);
+            // 
             // btn_star_game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1481, 111);
+            this.ClientSize = new System.Drawing.Size(1481, 139);
+            this.Controls.Add(this.News);
             this.Controls.Add(this.List_Moneyyyyyyy);
             this.Controls.Add(this.btn_Load_Mainmenu);
             this.Controls.Add(this.Btn_Save_3_Mainmenu);
@@ -316,7 +329,7 @@
             this.Controls.Add(this.Btn_Back);
             this.Controls.Add(this.Btn_quit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "btn_star_game";
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.btn_star_game_Load);
@@ -348,6 +361,7 @@
         private System.Windows.Forms.Button btn_Load_Mainmenu;
         private System.Windows.Forms.ListView List_Moneyyyyyyy;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ListBox News;
     }
 }
 

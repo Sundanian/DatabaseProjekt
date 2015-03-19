@@ -8,180 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Xml.Linq;
+using System.Collections;
 
 namespace Guns_For_Hire
 {
+
+
     public partial class btn_star_game : Form
     {
+
+        public static btn_star_game Instance { get { return instance; } }
+        private static btn_star_game instance;
+        
+        static SaveLoad save = new SaveLoad();
+        static Form2 form2 = new Form2();
+
+<<<<<<< HEAD
+        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db");
+        private static String sql = "";
+        private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
+=======
+>>>>>>> 7ca5dd054292fa2366a03c93d26aee968b5649e6
+
         public btn_star_game()
         {
             InitializeComponent();
-<<<<<<< HEAD
-
-            HideMenu2();
-            HideIngameMenu();
-
-            HideSaveLoadMenu();
-            HideSaveLoadMenuMainmenu(); ;
-
-            //Tmp database
-            SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
-            dbcon.Open();
-            String sql = "";
-            SQLiteCommand command = new SQLiteCommand(sql, dbcon);
-            //Save1
-            SQLiteConnection dbcon1 = new SQLiteConnection("Data Source = save1.db;Version=3");
-            dbcon1.Open();
-            String sql1 = "";
-            SQLiteCommand command1 = new SQLiteCommand(sql1, dbcon);
-            //Save2
-            SQLiteConnection dbcon2 = new SQLiteConnection("Data Source = save2.db;Version=3");
-            dbcon2.Open();
-            String sql2 = "";
-            SQLiteCommand command2 = new SQLiteCommand(sql2, dbcon);
-            //Save3
-            SQLiteConnection dbcon3 = new SQLiteConnection("Data Source = save3.db;Version=3");
-            dbcon3.Open();
-            String sql3 = "";
-            SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
-
-            #region AssassinsProfile
-            sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (1, 'Hugo', 0, 1, 500)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (2, 'Fritz', 0, 1, 350)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (3, 'Karl', 0, 1, 370)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (4, 'Olga', 0, 1, 200)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (5, 'Niels', 0, 1, 500)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region Missions
-            //Opretter mission tabel
-            sql = "create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            //Tilføjer 5 missioner
-            sql = "insert or ignore into mission values (1, 2, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 2, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region AssasinStats
-            sql = "create table if not exists AssassinsStats (id integer, charisma int, coverUp int, disguise int)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (1, 70, 10, 50)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (2, 30, 60, 20)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (3, 10, 60, 30)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (4, 30, 20, 30)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (5, 5, 20, 100)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region MissionList
-            //Opretter missionlist tabel
-            sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region TransferWindow
-            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region Toolbar
-            //Opretter missionlist tabel
-            sql = "create table if not exists toolbar (ID integer primary key not NULL, valuta integer)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into toolbar values (1, 0)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            #endregion
-            #region AssassinsList
-            //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-<<<<<<< HEAD
-			#endregion
-
-            #region HowToCheckOrSetCurrency
-            BankAccount bankAcc = new BankAccount();
-
-            bankAcc.Currency = 230;
-
-            int amount=bankAcc.Currency;
-            #endregion
-            //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
-            //sql = "";
-            //command.CommandText = sql;
-            //command.ExecuteNonQuery();
-=======
-            #endregion
-
-            sql = "select Level from mission WHERE id=";
-            command = new SQLiteCommand(sql, dbcon);
-
-            switch (Convert.ToInt32(command.ExecuteScalar()))
-            {
-                case 1:
-                    sql = "Update AssassinsProfile SET XP=XP+100 WHERE id=1";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-
-                case 2:
-                    sql = "Update AssassinsProfile SET XP=XP+200 WHERE id=1";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-
-                case 3:
-                    sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-                default:
-                    break;
-            }
-
-
-
-
-=======
->>>>>>> 1f116208cb10e9de7e49dd75c9b421ed7962292d
->>>>>>> 215fa73f4cb3b2e45422a9a36dcb2390f672715d
         }
 
         //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
@@ -296,6 +148,14 @@ namespace Guns_For_Hire
 
         private void Btn_new_game_Click(object sender, EventArgs e)
         {
+            #region AddCashOnNewGame
+            SQLiteCommand command = new SQLiteCommand();
+            sql = "Update toolbar SET valuta=valuta+500";
+            command = new SQLiteCommand(sql, dbcon);
+            dbcon.Open();
+            command.ExecuteNonQuery();
+            Showcash();
+            #endregion
             HideMenu2();
             ShowIngameMenu();
             Form2 f2 = new Form2();
@@ -339,12 +199,12 @@ namespace Guns_For_Hire
 
         private void btn_Save_1_Click(object sender, EventArgs e)
         {
-
+            save.SaveGame(1);
         }
 
         private void btn_Save_2_Click(object sender, EventArgs e)
         {
-
+            save.LoadGame(2);
         }
 
         private void btn_Save_3_Click(object sender, EventArgs e)
@@ -376,127 +236,99 @@ namespace Guns_For_Hire
             HideIngameMenu();
 
             HideSaveLoadMenu();
-            HideSaveLoadMenuMainmenu(); ;
+            HideSaveLoadMenuMainmenu();
+
+            #region SaveLoadSetup
+            SaveLoad save = new SaveLoad();
+            save.CreateGame(1);
+            save.CreateGame(2);
+            save.CreateGame(3);
+            save.CreateGame(4);
+            #endregion
 
             //Tmp database
-            SQLiteConnection dbcon = new SQLiteConnection("Data Source = current.db;Version=3");
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db;Version=3");
             dbcon.Open();
             String sql = "";
             SQLiteCommand command = new SQLiteCommand(sql, dbcon);
             //Save1
-            SQLiteConnection dbcon1 = new SQLiteConnection("Data Source = save1.db;Version=3");
+            SQLiteConnection dbcon1 = new SQLiteConnection("Data Source = save01.db;Version=3");
             dbcon1.Open();
             String sql1 = "";
             SQLiteCommand command1 = new SQLiteCommand(sql1, dbcon);
             //Save2
-            SQLiteConnection dbcon2 = new SQLiteConnection("Data Source = save2.db;Version=3");
+            SQLiteConnection dbcon2 = new SQLiteConnection("Data Source = save02.db;Version=3");
             dbcon2.Open();
             String sql2 = "";
             SQLiteCommand command2 = new SQLiteCommand(sql2, dbcon);
             //Save3
-            SQLiteConnection dbcon3 = new SQLiteConnection("Data Source = save3.db;Version=3");
+            SQLiteConnection dbcon3 = new SQLiteConnection("Data Source = save03.db;Version=3");
             dbcon3.Open();
             String sql3 = "";
             SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
 
-            #region AssassinsProfile
-            sql = "create table if not exists AssassinsProfile (id integer primary key, navn string, XP int, Level int, Pris int)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (1, 'Hugo', 0, 1, 500)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (2, 'Fritz', 0, 1, 350)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (3, 'Karl', 0, 1, 370)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (4, 'Olga', 0, 1, 200)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsProfile values (5, 'Niels', 0, 1, 500)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region Missions
-            //Opretter mission tabel
-            sql = "create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            //Tilføjer 5 missioner
-            sql = "insert or ignore into mission values (1, 1, 1000, 2, 3, 2, 4, 'PublicAss', 'Infiltration');insert or ignore into mission values (2, 1, 1000, 2, 4, 3, 2, 'Infiltration', 'CharismaKill');insert or ignore into mission values (3, 1, 1000, 3, 2, 4, 2, 'CharismaKill', 'Accident');insert or ignore into mission values (4, 1, 1000, 4, 2, 2, 3, 'Accident', 'PublicAss')";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region AssasinStats
-            sql = "create table if not exists AssassinsStats (id integer, charisma int, coverUp int, disguise int)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (1, 70, 10, 50)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (2, 30, 60, 20)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (3, 10, 60, 30)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (4, 30, 20, 30)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-
-            sql = "insert or ignore into AssassinsStats values (5, 5, 20, 100)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region MissionList
-            //Opretter missionlist tabel
-            sql = "create table if not exists missionList (ID integer primary key not NULL, mission integer references mission(ID))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region TransferWindow
-            sql = "create table if not exists TransferWindow (id integer primary key not NULL, TransferAssassins int references AssassinsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region Toolbar
-            //Opretter missionlist tabel
-            sql = "create table if not exists toolbar (ID integer primary key not NULL, valuta integer)";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region AssassinsList
-            //Opretter lister over egne assassins tabel
-            sql = "create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassonsProfile(id))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
-            #region RetiredAssassins
-            sql = "create table if not exists RetiredAssassins (id integer primary key, assassin integer references AssasinsProfile(ID))";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
-            //command.ExecuteNonQuery();
+            //command.ExecuteNonQuery()
 
-            sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
+            Showcash();
+            ShowNews();
+        }
+
+
+        private void List_Moneyyyyyyy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        public void Showcash()
+        {
+            
+            List_Moneyyyyyyy.Clear();
+            List_Moneyyyyyyy.Columns.Add("Money",80);
+
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db;version=3 ");
+            dbcon.Open();
+            SQLiteCommand list = new SQLiteCommand("select valuta from toolbar", dbcon);
+            SQLiteDataReader reader = list.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["valuta"].ToString());
+
+
+                List_Moneyyyyyyy.Items.Add(item);
+            }
+
+            
+        }
+
+        private void News_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void ShowNews()
+        {
+            //Laver et array af news
+            string[] news = new string[] {"The pope have been assassinated.", "The russian president have not been seen for days. Assassination suspected.", "Police still no clues in german assassination.", "Suicide victim known as O.M. turns out to be assassination.", "Fish assassinated by well known assassin O.M. Assassin is armed and dangerous. Police advice to keep distance." };
+
+            Random rnd = new Random();
+            int r = rnd.Next(1, news.Length);
+            var newsToShow = from n in news
+                             select news[r];
+            foreach (var n in newsToShow)
+            {
+                News.Items.Add(n);
+            }
+        }
+
+        private void News_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
