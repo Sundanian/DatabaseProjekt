@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.IO;
+using System.Data;
 
 namespace Guns_For_Hire
 {
     class SaveLoad
     {
         public string loadedDatabase;
-        int saveSlots;
+
+        static SQLiteDatabaseHelper SQLhelper = new SQLiteDatabaseHelper();
 
         public SaveLoad()
         {
@@ -39,7 +41,7 @@ namespace Guns_For_Hire
                 insert or ignore into AssassinsProfile values (4, 'Olga', 0, 1, 200, 30, 20, 30, 50)");
             #endregion
 
-            #region Missions
+            #region Mission
             //Opretter mission tabel
             SQLhelper.ExecuteNonQuery("create table if not exists mission (ID integer primary key not NULL, Level int, Pay int, Accident int, Infiltration int, CharismaKill int, PublicAss int, 'Primary Type' varchar(20), 'Secondary Type' varchar(20))");
 
@@ -81,7 +83,7 @@ namespace Guns_For_Hire
             SQLhelper.ExecuteNonQuery("insert or ignore into toolbar values (1, 0)");
             #endregion
 
-            #region AssassinsList
+            #region ListOfAssassins
             //Opretter lister over egne assassins tabel
             SQLhelper.ExecuteNonQuery("create table if not exists ListOfAssassins (ID integer primary key not NULL, EgneAssassins integer references AssassinsProfile(id))");
             #endregion
@@ -93,13 +95,204 @@ namespace Guns_For_Hire
 
             #region OnMission
             //Opretter liste over assassins på mission
-            SQLhelper.ExecuteNonQuery("create table if not exists OnMission (id integer primary key, assassin integer references AssasinsProfile(ID))");
+            SQLhelper.ExecuteNonQuery("create table if not exists OnMission (id integer primary key, assassin integer references AssasinsProfile(ID), mission integer references mission(ID))");
             #endregion
         }
 
-        public void LoadGame(string loadDatabase)
+        #region LoadGame Method
+        public void LoadGame(int slot)
         {
-            loadedDatabase = loadDatabase;
+            SQLiteDatabaseHelper loadHelper = new SQLiteDatabaseHelper(string.Format("save0{0}.db", slot.ToString()));
+
+            #region AssassinsProfile
+            SQLhelper.ClearTable("assassinsprofile");
+
+            foreach (DataRow row in loadHelper.GetDataTable("SELECT * FROM assassinsprofile").Rows)
+            {
+                SQLhelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO assassinsprofile (navn, XP, Level, Pris, charisma, coverUp, disguise, getAway)
+                    VALUES ('{0}', {1}, {2}, {3}, {4}, {5}, {6}, {7})",
+                    row["navn"], row["XP"], row["Level"], row["Pris"], row["charisma"], row["coverUp"], row["disguise"], row["getAway"]));
+            }
+            #endregion
+
+            #region ListOfAssassins
+            SQLhelper.ClearTable("ListOfAssassins");
+
+            foreach (DataRow row in loadHelper.GetDataTable("SELECT * FROM ListOfAssassins").Rows)
+            {
+                SQLhelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO ListOfAssassins (EgneAssassins)
+                    VALUES ({0})",
+                    row["EgneAssassins"]));
+            }
+            #endregion
+
+            #region Mission
+            SQLhelper.ClearTable("mission");
+
+            foreach (DataRow row in loadHelper.GetDataTable("SELECT * FROM mission").Rows)
+            {
+                SQLhelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO mission (Level, Pay, Accident, Infiltration, CharismaKill, PublicAss, 'Primary Type', 'Secondary Type')
+                    VALUES ({0}, {1}, {2}, {3}, {4}, {5}, '{6}', '{7}')",
+                    row["Level"], row["Pay"], row["Accident"], row["Infiltration"], row["CharismaKill"], row["PublicAss"], row["Primary Type"], row["Secondary Type"]));
+            }
+            #endregion
+
+            #region MissionList
+            SQLhelper.ClearTable("missionList");
+
+            foreach (DataRow row in loadHelper.GetDataTable("SELECT * FROM missionList").Rows)
+            {
+                SQLhelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO missionList (mission)
+                    VALUES ({0})",
+                    row["mission"]));
+            }
+            #endregion
+
+            #region OnMission
+            SQLhelper.ClearTable("OnMission");
+
+            foreach (DataRow row in loadHelper.GetDataTable("SELECT * FROM OnMission").Rows)
+            {
+                SQLhelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO OnMission (assassin)
+                    VALUES ({0})",
+                    row["assassin"]));
+            }
+            #endregion
+
+            #region RetiredAssassins
+            SQLhelper.ClearTable("RetiredAssassins");
+
+            foreach (DataRow row in loadHelper.GetDataTable("SELECT * FROM RetiredAssassins").Rows)
+            {
+                SQLhelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO RetiredAssassins (assassin)
+                    VALUES ({0})",
+                    row["assassin"]));
+            }
+            #endregion
+
+            #region Toolbar
+            SQLhelper.ClearTable("toolbar");
+
+            foreach (DataRow row in loadHelper.GetDataTable("SELECT * FROM toolbar").Rows)
+            {
+                SQLhelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO toolbar (valuta)
+                    VALUES ({0})",
+                    row["valuta"]));
+            }
+            #endregion
         }
+        #endregion
+
+        #region SaveGame Method
+        public void SaveGame(int slot)
+        {
+            SQLiteDatabaseHelper saveHelper = new SQLiteDatabaseHelper(string.Format("save0{0}.db", slot.ToString()));
+
+            #region AssassinsProfile
+            saveHelper.ClearTable("assassinsprofile");
+
+            foreach (DataRow row in SQLhelper.GetDataTable("SELECT * FROM assassinsprofile").Rows)
+            {
+                saveHelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO assassinsprofile (navn, XP, Level, Pris, charisma, coverUp, disguise, getAway)
+                    VALUES ('{0}', {1}, {2}, {3}, {4}, {5}, {6}, {7})",
+                    row["navn"], row["XP"], row["Level"], row["Pris"], row["charisma"], row["coverUp"], row["disguise"], row["getAway"]));
+            }
+            #endregion
+
+            #region ListOfAssassins
+            saveHelper.ClearTable("ListOfAssassins");
+
+            foreach (DataRow row in SQLhelper.GetDataTable("SELECT * FROM ListOfAssassins").Rows)
+            {
+                saveHelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO ListOfAssassins (EgneAssassins)
+                    VALUES ({0})",
+                    row["EgneAssassins"]));
+            }
+            #endregion
+
+            #region Mission
+            saveHelper.ClearTable("mission");
+
+            foreach (DataRow row in SQLhelper.GetDataTable("SELECT * FROM mission").Rows)
+            {
+                saveHelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO mission (Level, Pay, Accident, Infiltration, CharismaKill, PublicAss, 'Primary Type', 'Secondary Type')
+                    VALUES ({0}, {1}, {2}, {3}, {4}, {5}, '{6}', '{7}')",
+                    row["Level"], row["Pay"], row["Accident"], row["Infiltration"], row["CharismaKill"], row["PublicAss"], row["Primary Type"], row["Secondary Type"]));
+            }
+            #endregion
+
+            #region MissionList
+            saveHelper.ClearTable("missionList");
+
+            foreach (DataRow row in SQLhelper.GetDataTable("SELECT * FROM missionList").Rows)
+            {
+                saveHelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO missionList (mission)
+                    VALUES ({0})",
+                    row["mission"]));
+            }
+            #endregion
+
+            #region OnMission
+            saveHelper.ClearTable("OnMission");
+
+            foreach (DataRow row in SQLhelper.GetDataTable("SELECT * FROM OnMission").Rows)
+            {
+                saveHelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO OnMission (assassin)
+                    VALUES ({0})",
+                    row["assassin"]));
+            }
+            #endregion
+
+            #region RetiredAssassins
+            saveHelper.ClearTable("RetiredAssassins");
+
+            foreach (DataRow row in SQLhelper.GetDataTable("SELECT * FROM RetiredAssassins").Rows)
+            {
+                saveHelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO RetiredAssassins (assassin)
+                    VALUES ({0})",
+                    row["assassin"]));
+            }
+            #endregion
+
+            #region Toolbar
+            saveHelper.ClearTable("toolbar");
+
+            foreach (DataRow row in SQLhelper.GetDataTable("SELECT * FROM toolbar").Rows)
+            {
+                saveHelper.ExecuteNonQuery(
+                    string.Format(
+                    @"INSERT INTO toolbar (valuta)
+                    VALUES ({0})",
+                    row["valuta"]));
+            }
+            #endregion
+        }
+        #endregion
     }
 }

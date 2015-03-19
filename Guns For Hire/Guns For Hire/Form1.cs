@@ -8,14 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Xml.Linq;
+using System.Collections;
 
 namespace Guns_For_Hire
 {
+
+
     public partial class btn_star_game : Form
-    {
+    {        
         static SaveLoad save = new SaveLoad();
         static Form2 form2 = new Form2();
-        
+
+        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db");
+        private static String sql = "";
+        private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
         public btn_star_game()
         {
@@ -134,6 +141,14 @@ namespace Guns_For_Hire
 
         private void Btn_new_game_Click(object sender, EventArgs e)
         {
+            #region AddCashOnNewGame
+            SQLiteCommand command = new SQLiteCommand();
+            sql = "Update toolbar SET valuta=valuta+500";
+            command = new SQLiteCommand(sql, dbcon);
+            dbcon.Open();
+            command.ExecuteNonQuery();
+            Showcash();
+            #endregion
             HideMenu2();
             ShowIngameMenu();
             Form2 f2 = new Form2();
@@ -177,17 +192,17 @@ namespace Guns_For_Hire
 
         private void btn_Save_1_Click(object sender, EventArgs e)
         {
-            save.LoadGame("save01.db");
+            save.SaveGame(1);
         }
 
         private void btn_Save_2_Click(object sender, EventArgs e)
         {
-            save.LoadGame("save02.db");
+            save.LoadGame(2);
         }
 
         private void btn_Save_3_Click(object sender, EventArgs e)
         {
-            save.LoadGame("save03.db");
+
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -200,8 +215,6 @@ namespace Guns_For_Hire
             HideSaveLoadMenu();
             ShowIngameMenu();
             HideSaveLoadMenuMainmenu();
-            Form2 f2 = new Form2();
-            f2.UpdateTables();
         }
 
         private void Btn_Back_SL_Click(object sender, EventArgs e)
@@ -220,7 +233,6 @@ namespace Guns_For_Hire
 
             #region SaveLoadSetup
             SaveLoad save = new SaveLoad();
-            save.LoadGame("save04.db");
             save.CreateGame(1);
             save.CreateGame(2);
             save.CreateGame(3);
@@ -248,33 +260,6 @@ namespace Guns_For_Hire
             String sql3 = "";
             SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
 
-            #region MissionLevelTing
-
-            command = new SQLiteCommand(sql, dbcon);
-
-
-            switch (command1.CommandText)
-            {
-                case "1":
-                    sql = "Update AssassinsProfile SET XP=XP+100";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-
-                case "2":
-                    sql = "Update AssassinsProfile SET XP=XP+200";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-                case "3":
-                    sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-                default:
-                    break;
-            }
-            #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
@@ -282,19 +267,22 @@ namespace Guns_For_Hire
             //command.ExecuteNonQuery()
 
             Showcash();
-
+            ShowNews();
         }
 
 
         private void List_Moneyyyyyyy_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-           
+
 
         }
 
         public void Showcash()
         {
+            
+            List_Moneyyyyyyy.Clear();
+            List_Moneyyyyyyy.Columns.Add("Money",80);
 
 
             List_Moneyyyyyyy.Clear();
@@ -302,7 +290,7 @@ namespace Guns_For_Hire
 
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db;version=3 ");
             dbcon.Open();
-            SQLiteCommand list = new SQLiteCommand("select valuta from toolbar where id= 1", dbcon);
+            SQLiteCommand list = new SQLiteCommand("select valuta from toolbar", dbcon);
             SQLiteDataReader reader = list.ExecuteReader();
 
             while (reader.Read())
@@ -312,7 +300,32 @@ namespace Guns_For_Hire
 
                 List_Moneyyyyyyy.Items.Add(item);
             }
+
+            
         }
 
+        private void News_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void ShowNews()
+        {
+            //Laver et array af news
+            string[] news = new string[] {"The pope have been assassinated.", "The russian president have not been seen for days. Assassination suspected.", "Police still no clues in german assassination.", "Suicide victim known as O.M. turns out to be assassination.", "Fish assassinated by well known assassin O.M. Assassin is armed and dangerous. Police advice to keep distance." };
+
+            Random rnd = new Random();
+            int r = rnd.Next(1, news.Length);
+            var newsToShow = from n in news
+                             select news[r];
+            foreach (var n in newsToShow)
+            {
+                News.Items.Add(n);
+            }
+        }
+
+        private void News_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
