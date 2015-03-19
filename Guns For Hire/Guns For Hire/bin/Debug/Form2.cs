@@ -47,6 +47,24 @@ namespace Guns_For_Hire
         {
             try
             {
+                //#region Removepayment
+                //sql = "select Pris from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+
+                //SQLiteCommand command10 = new SQLiteCommand(sql, dbcon);
+                //SQLiteDataReader reader10 = command10.ExecuteReader();
+                //int variableRemovePay = 0;
+
+
+                //while (reader10.Read())
+                //{
+                //    variableRemovePay = Convert.ToInt32(reader10["Pris"]);
+                //}
+
+                //BankAccount Payment = new BankAccount();
+                //Payment.Currency -= variableRemovePay;
+
+                //#endregion
+
                 command.CommandText = "insert into ListOfAssassins (EgneAssassins) select id from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
                 command.ExecuteNonQuery();
             }
@@ -78,6 +96,24 @@ namespace Guns_For_Hire
         {
             try
             {
+                //#region Removepayment
+                //sql = "select Pris from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+
+                //SQLiteCommand command10 = new SQLiteCommand(sql, dbcon);
+                //SQLiteDataReader reader10 = command10.ExecuteReader();
+                //int variableRemovePay = 0;
+
+
+                //while (reader10.Read())
+                //{
+                //    variableRemovePay = Convert.ToInt32(reader10["Pris"]);
+                //}
+
+                //BankAccount Payment = new BankAccount();
+                //Payment.Currency -= variableRemovePay;
+
+                //#endregion
+
                 command.CommandText = "insert or replace into ListOfAssassins (EgneAssassins) select id from AssassinsProfile where id='" + List_Rehire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
                 command.ExecuteNonQuery();
 

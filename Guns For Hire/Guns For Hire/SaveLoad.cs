@@ -93,7 +93,7 @@ namespace Guns_For_Hire
 
             #region OnMission
             //Opretter liste over assassins på mission
-            SQLhelper.ExecuteNonQuery("create table if not exists OnMission (id integer primary key, assassin integer references AssasinsProfile(ID))");
+            SQLhelper.ExecuteNonQuery("create table if not exists OnMission (id integer primary key, assassin integer references AssasinsProfile(ID), mission integer references mission(ID))");
             #endregion
         }
 
