@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Xml.Linq;
+using System.Collections;
 
 namespace Guns_For_Hire
 {
@@ -15,7 +17,7 @@ namespace Guns_For_Hire
     {
         static SaveLoad save = new SaveLoad();
         static Form2 form2 = new Form2();
-        
+
 
         public btn_star_game()
         {
@@ -279,14 +281,14 @@ namespace Guns_For_Hire
             //command.ExecuteNonQuery()
 
             Showcash();
-
+            ShowNews();
         }
 
 
         private void List_Moneyyyyyyy_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-           
+
 
         }
 
@@ -307,5 +309,28 @@ namespace Guns_For_Hire
             }
         }
 
+        private void News_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void ShowNews()
+        {
+            //Laver et array af news
+            string[] news = new string[] {"The pope have been assassinated.", "The russian president have not been seen for days. Assassination suspected.", "Police still no clues in german assassination.", "Suicide victim known as O.M. turns out to be assassination.", "Fish assassinated by well known assassin O.M. Assassin is armed and dangerous. Police advice to keep distance." };
+
+            Random rnd = new Random();
+            int r = rnd.Next(1, news.Length);
+            var newsToShow = from n in news
+                             select news[r];
+            foreach (var n in newsToShow)
+            {
+                News.Items.Add(n);
+            }
+        }
+
+        private void News_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
