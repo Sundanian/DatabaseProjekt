@@ -66,6 +66,7 @@ namespace Guns_For_Hire
             }
             #endregion
 
+            #region add xp and level
             int MaxXP = 1000 * variableLevel;
 
             int resultXP = variableXP - MaxXP;
@@ -81,6 +82,7 @@ namespace Guns_For_Hire
                 command.CommandText = sql;
                 command.ExecuteNonQuery();
             }
+            #endregion
         }
 
         private void Btn_Select_Mission_Click(object sender, EventArgs e)
@@ -145,6 +147,7 @@ namespace Guns_For_Hire
             Available_Assassins.Columns.Add("XP", 75);
             Available_Assassins.Columns.Add("Level", 75);
             #endregion
+            #region show
             SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile INNER JOIN ListOfAssassins ON AssassinsProfile.id = ListOfAssassins.Egneassassins LEFT JOIN OnMission ON AssassinsProfile.id = OnMission.assassin WHERE OnMission.assassin IS NULL", dbcon);
             SQLiteDataReader reader = list.ExecuteReader();
             while (reader.Read())
@@ -188,6 +191,7 @@ namespace Guns_For_Hire
                 item.SubItems.Add(reader["secondary type"].ToString());
                 list_Mission_Ongoing.Items.Add(item);
             }
+            #endregion 
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -202,6 +206,8 @@ namespace Guns_For_Hire
 
         public void button2_Click(object sender, EventArgs e)
         {
+
+            #region send on and finish Mission
             try
             {
 
@@ -277,10 +283,14 @@ namespace Guns_For_Hire
             {
 
             }
+            #endregion
+
+            #region update money list
             if (System.Windows.Forms.Application.OpenForms["btn_star_game"] != null)
             {
                 (System.Windows.Forms.Application.OpenForms["btn_star_game"] as btn_star_game).Showcash();
             }
+            #endregion
 
         }
     }

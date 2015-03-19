@@ -20,6 +20,8 @@ namespace Guns_For_Hire
         static SaveLoad save = new SaveLoad();
         static Form2 form2 = new Form2();
 
+        int selectedSlot = 0;
+
         private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db");
         private static String sql = "";
         private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
@@ -127,6 +129,7 @@ namespace Guns_For_Hire
         {
             HideMenu1();
             ShowMenu2();
+
         }
 
         private void Btn_how_to_play_Click(object sender, EventArgs e)
@@ -192,29 +195,40 @@ namespace Guns_For_Hire
 
         private void btn_Save_1_Click(object sender, EventArgs e)
         {
-            save.SaveGame(1);
+            selectedSlot = 1;
         }
 
         private void btn_Save_2_Click(object sender, EventArgs e)
         {
-            save.LoadGame(2);
+            selectedSlot = 2;
         }
 
         private void btn_Save_3_Click(object sender, EventArgs e)
         {
-
+            selectedSlot = 3;
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-
+            if (selectedSlot != 0)
+            {
+                save.SaveGame(selectedSlot);
+                selectedSlot = 0;
+            }
         }
 
         private void Btn_Load_ingame_Click(object sender, EventArgs e)
         {
-            HideSaveLoadMenu();
-            ShowIngameMenu();
-            HideSaveLoadMenuMainmenu();
+            if (selectedSlot != 0)
+            {
+                save.LoadGame(selectedSlot);
+
+                HideSaveLoadMenu();
+                ShowIngameMenu();
+                HideSaveLoadMenuMainmenu();
+                selectedSlot = 0;
+            }
+
         }
 
         private void Btn_Back_SL_Click(object sender, EventArgs e)
