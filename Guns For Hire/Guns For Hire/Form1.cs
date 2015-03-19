@@ -11,11 +11,20 @@ using System.Data.SQLite;
 
 namespace Guns_For_Hire
 {
+
+
     public partial class btn_star_game : Form
     {
+
+        public static btn_star_game Instance { get { return instance; } }
+        private static btn_star_game instance;
+        
         static SaveLoad save = new SaveLoad();
         static Form2 form2 = new Form2();
-        
+
+        private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db");
+        private static String sql = "";
+        private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
         public btn_star_game()
         {
@@ -134,6 +143,14 @@ namespace Guns_For_Hire
 
         private void Btn_new_game_Click(object sender, EventArgs e)
         {
+            #region AddCashOnNewGame
+            SQLiteCommand command = new SQLiteCommand();
+            sql = "Update toolbar SET valuta=valuta+500";
+            command = new SQLiteCommand(sql, dbcon);
+            dbcon.Open();
+            command.ExecuteNonQuery();
+            Showcash();
+            #endregion
             HideMenu2();
             ShowIngameMenu();
             Form2 f2 = new Form2();
@@ -245,33 +262,6 @@ namespace Guns_For_Hire
             String sql3 = "";
             SQLiteCommand command3 = new SQLiteCommand(sql3, dbcon);
 
-            #region MissionLevelTing
-
-            command = new SQLiteCommand(sql, dbcon);
-
-
-            switch (command1.CommandText)
-            {
-                case "1":
-                    sql = "Update AssassinsProfile SET XP=XP+100";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-
-                case "2":
-                    sql = "Update AssassinsProfile SET XP=XP+200";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-                case "3":
-                    sql = "Update AssassinsProfile SET XP=XP+300 WHERE id=1";
-                    command.CommandText = sql;
-                    command.ExecuteNonQuery();
-                    break;
-                default:
-                    break;
-            }
-            #endregion
 
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
@@ -292,10 +282,13 @@ namespace Guns_For_Hire
 
         public void Showcash()
         {
+            
+            List_Moneyyyyyyy.Clear();
+            List_Moneyyyyyyy.Columns.Add("Money",80);
 
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db;version=3 ");
             dbcon.Open();
-            SQLiteCommand list = new SQLiteCommand("select valuta from toolbar where id= 1", dbcon);
+            SQLiteCommand list = new SQLiteCommand("select valuta from toolbar", dbcon);
             SQLiteDataReader reader = list.ExecuteReader();
 
             while (reader.Read())
@@ -305,6 +298,8 @@ namespace Guns_For_Hire
 
                 List_Moneyyyyyyy.Items.Add(item);
             }
+
+            
         }
 
     }

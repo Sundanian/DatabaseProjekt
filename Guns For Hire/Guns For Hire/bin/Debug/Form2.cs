@@ -46,42 +46,34 @@ namespace Guns_For_Hire
         private void Btn_Hire_Assassin_Click(object sender, EventArgs e)
         {
 
-            #region Removepayment
-            sql = "select Pris from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
 
-            SQLiteCommand command10 = new SQLiteCommand(sql, dbcon);
-            SQLiteDataReader reader10 = command10.ExecuteReader();
-            int variableRemovePay = 0;
-
-
-            while (reader10.Read())
-            {
-                variableRemovePay = Convert.ToInt32(reader10["Pris"]);
-            }
-
-            BankAccount Payment = new BankAccount();
-            Payment.Currency -= variableRemovePay;
-
-            #endregion
             try
             {
-                //#region Removepayment
-                //sql = "select Pris from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+                #region Removepayment
+                sql = "select Pris from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
 
-                //SQLiteCommand command10 = new SQLiteCommand(sql, dbcon);
-                //SQLiteDataReader reader10 = command10.ExecuteReader();
-                //int variableRemovePay = 0;
+                SQLiteCommand command11 = new SQLiteCommand(sql, dbcon);
+                SQLiteDataReader reader11 = command11.ExecuteReader();
+                int variableRemovePay2 = 0;
 
 
-                //while (reader10.Read())
-                //{
-                //    variableRemovePay = Convert.ToInt32(reader10["Pris"]);
-                //}
+                while (reader11.Read())
+                {
+                    variableRemovePay2 = Convert.ToInt32(reader11["Pris"]);
+                }
 
-                //BankAccount Payment = new BankAccount();
-                //Payment.Currency -= variableRemovePay;
+                //BankAccount Payment2 = new BankAccount();
+                //Payment.Currency -= variableRemovePay2;
+                sql = " Update toolbar SET valuta = valuta-'" + variableRemovePay2 + "'";
+                command.CommandText = sql;
+                command.ExecuteNonQuery();
 
-                //#endregion
+                if (System.Windows.Forms.Application.OpenForms["btn_star_game"] != null)
+                {
+                    (System.Windows.Forms.Application.OpenForms["btn_star_game"] as btn_star_game).Showcash();
+                }
+
+                #endregion
 
                 command.CommandText = "insert into ListOfAssassins (EgneAssassins) select id from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
                 command.ExecuteNonQuery();
@@ -108,29 +100,38 @@ namespace Guns_For_Hire
 
             }
             UpdateTables();
+
         }
 
         private void btn_Rehire_Click(object sender, EventArgs e)
         {
             try
             {
-                //#region Removepayment
-                //sql = "select Pris from AssassinsProfile where id='" + List_Hire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
+                #region Removepayment
+                sql = "select Pris from AssassinsProfile where id='" + List_Rehire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
 
-                //SQLiteCommand command10 = new SQLiteCommand(sql, dbcon);
-                //SQLiteDataReader reader10 = command10.ExecuteReader();
-                //int variableRemovePay = 0;
+                SQLiteCommand command10 = new SQLiteCommand(sql, dbcon);
+                SQLiteDataReader reader10 = command10.ExecuteReader();
+                int variableRemovePay = 0;
 
 
-                //while (reader10.Read())
-                //{
-                //    variableRemovePay = Convert.ToInt32(reader10["Pris"]);
-                //}
+                while (reader10.Read())
+                {
+                    variableRemovePay = Convert.ToInt32(reader10["Pris"]);
+                }
 
                 //BankAccount Payment = new BankAccount();
                 //Payment.Currency -= variableRemovePay;
+                sql = " Update toolbar SET valuta = valuta-'" + variableRemovePay + "'";
+                command.CommandText = sql;
+                command.ExecuteNonQuery();
 
-                //#endregion
+                if (System.Windows.Forms.Application.OpenForms["btn_star_game"] != null)
+                {
+                    (System.Windows.Forms.Application.OpenForms["btn_star_game"] as btn_star_game).Showcash();
+                }
+
+                #endregion
 
                 command.CommandText = "insert or replace into ListOfAssassins (EgneAssassins) select id from AssassinsProfile where id='" + List_Rehire_Assassin.SelectedItems[0].SubItems[0].Text + "'";
                 command.ExecuteNonQuery();

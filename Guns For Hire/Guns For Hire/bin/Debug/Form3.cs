@@ -18,6 +18,7 @@ namespace Guns_For_Hire
         private static String sql = "";
         private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
 
+        
 
 
         public Form3()
@@ -37,11 +38,11 @@ namespace Guns_For_Hire
             Close();
         }
 
-        public void Assassins_Level_Check()
+        public void Assassins_Level_Check(string assassinID)
         {
             #region TurnXPToVariable
 
-            sql = "select id, XP from AssassinsProfile Where id ='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+            sql = "select id, XP from AssassinsProfile Where id ='" + assassinID + "'";
             SQLiteCommand command2 = new SQLiteCommand(sql, dbcon);
             SQLiteDataReader reader5 = command2.ExecuteReader();
             int variableXP = 0;
@@ -52,9 +53,9 @@ namespace Guns_For_Hire
             }
             #endregion
 
-            #region TurnLevelToVariable
 
-            sql = "select id, Level from AssassinsProfile where id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+            #region TurnLevelToVariable
+            sql = "select id, Level from AssassinsProfile where id='" + assassinID + "'";
             SQLiteCommand command3 = new SQLiteCommand(sql, dbcon);
             SQLiteDataReader reader2 = command3.ExecuteReader();
             int variableLevel = 0;
@@ -72,11 +73,11 @@ namespace Guns_For_Hire
             if (variableXP >= MaxXP)
             {
                 variableLevel++;
-                sql = " Update AssassinsProfile SET Level = ('" + variableLevel + "') where id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                sql = " Update AssassinsProfile SET Level = ('" + variableLevel + "') where id='" + assassinID + "'";
                 command.CommandText = sql;
                 command.ExecuteNonQuery();
 
-                sql = "Update AssassinsProfile SET XP= ('" + resultXP + "') where id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";
+                sql = "Update AssassinsProfile SET XP= ('" + resultXP + "') where id='" + assassinID + "'";
                 command.CommandText = sql;
                 command.ExecuteNonQuery();
             }
@@ -203,23 +204,7 @@ namespace Guns_For_Hire
         {
             try
             {
-                //#region Addpayment
-                //sql = "select Pay from mission where id='" + list_Mission.SelectedItems[0].SubItems[0].Text + "'";
 
-                //SQLiteCommand command8 = new SQLiteCommand(sql, dbcon);
-                //SQLiteDataReader reader8 = command8.ExecuteReader();
-                //int variablePay = 0;
-
-
-                //while (reader8.Read())
-                //{
-                //    variablePay = Convert.ToInt32(reader8["Pay"]);
-                //}
-
-                //BankAccount Payment = new BankAccount();
-                //Payment.Currency += variablePay;
-
-                //#endregion
                 SQLiteCommand loop = new SQLiteCommand("select * from OnMission", dbcon);
                 SQLiteDataReader reader = loop.ExecuteReader();
                 while (reader.Read())
@@ -227,6 +212,8 @@ namespace Guns_For_Hire
                     string MissionLV = "";
                     SQLiteCommand loop2 = new SQLiteCommand("select * from Mission where id = '" + reader["mission"].ToString() + "'", dbcon);
                     SQLiteDataReader reader2 = loop2.ExecuteReader();
+
+
                     while (reader2.Read())
                     {
                         MissionLV = reader2["Level"].ToString();
@@ -237,23 +224,45 @@ namespace Guns_For_Hire
                             sql = "Update AssassinsProfile SET XP=XP+100 WHERE id='" + reader["assassin"].ToString() + "'";
                             command.CommandText = sql;
                             command.ExecuteNonQuery();
-                            Assassins_Level_Check();
+                            Assassins_Level_Check(reader["assassin"].ToString());
                             break;
                         case "2":
                             sql = "Update AssassinsProfile SET XP=XP+200 WHERE id='" + reader["assassin"].ToString() + "'";
                             command.CommandText = sql;
                             command.ExecuteNonQuery();
-                            Assassins_Level_Check();
+                            Assassins_Level_Check(reader["assassin"].ToString());
                             break;
                         case "3":
                             sql = "Update AssassinsProfile SET XP=XP+300 WHERE id='" + reader["assassin"].ToString() + "'";
                             command.CommandText = sql;
                             command.ExecuteNonQuery();
-                            Assassins_Level_Check();
+                            Assassins_Level_Check(reader["assassin"].ToString());
                             break;
                         default:
                             break;
                     }
+                    
+
+                    #region Addpayment
+                    sql = "select Pay from mission where id='" + reader["mission"] + "'";
+
+                    SQLiteCommand command8 = new SQLiteCommand(sql, dbcon);
+                    SQLiteDataReader reader8 = command8.ExecuteReader();
+                    int variablePay = 0;
+
+                   
+                    while (reader8.Read())
+                    {
+                        variablePay = Convert.ToInt32(reader8["Pay"]);
+                    }
+
+                    //BankAccount Payment = new BankAccount();
+                    //Payment.Currency += variablePay;
+                    sql = " Update toolbar SET valuta = valuta+'" + variablePay + "'";
+                    command.CommandText = sql;
+                    command.ExecuteNonQuery();
+
+                    #endregion
                     reader2.Close();
                 }
 
@@ -268,6 +277,11 @@ namespace Guns_For_Hire
             {
 
             }
+            if (System.Windows.Forms.Application.OpenForms["btn_star_game"] != null)
+            {
+                (System.Windows.Forms.Application.OpenForms["btn_star_game"] as btn_star_game).Showcash();
+            }
+
         }
     }
 }
