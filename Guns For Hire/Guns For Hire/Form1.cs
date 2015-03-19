@@ -300,8 +300,7 @@ namespace Guns_For_Hire
 
                 List_Moneyyyyyyy.Items.Add(item);
             }
-
-            
+          
         }
 
         private void News_SelectedIndexChanged(object sender, EventArgs e)

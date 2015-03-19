@@ -28,21 +28,6 @@ namespace Guns_For_Hire
             InitializeComponent();
         }
 
-        private void List_Hire_Assassins_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void List_Current_Assassins_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void List_Retired_Assassins_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_Hire_Assassin_Click(object sender, EventArgs e)
         {
 
@@ -121,8 +106,7 @@ namespace Guns_For_Hire
                     variableRemovePay = Convert.ToInt32(reader10["Pris"]);
                 }
 
-                //BankAccount Payment = new BankAccount();
-                //Payment.Currency -= variableRemovePay;
+                
                 sql = " Update toolbar SET valuta = valuta-'" + variableRemovePay + "'";
                 command.CommandText = sql;
                 command.ExecuteNonQuery();
@@ -209,6 +193,7 @@ namespace Guns_For_Hire
             List_Retire_Assassin.Columns.Add("GetAway", 75);
             
             #endregion
+            #region Write
             SQLiteCommand list = new SQLiteCommand("select * from AssassinsProfile LEFT JOIN ListOfAssassins ON AssassinsProfile.id = ListOfAssassins.Egneassassins where ListOfAssassins.EgneAssassins IS NULL", dbcon);
             SQLiteDataReader reader = list.ExecuteReader();
 
@@ -260,6 +245,7 @@ namespace Guns_For_Hire
                 item.SubItems.Add(reader["getAway"].ToString());
                 List_Rehire_Assassin.Items.Add(item);
             }
+            #endregion 
         }
     }
 }
