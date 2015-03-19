@@ -13,7 +13,8 @@ namespace Guns_For_Hire
 {
     public partial class Form3 : Form
     {
-                static SaveLoad save = new SaveLoad();
+       
+        static SaveLoad save = new SaveLoad();
         private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db");
         private static String sql = "";
         private static SQLiteCommand command = new SQLiteCommand(sql, dbcon);
@@ -84,7 +85,7 @@ namespace Guns_For_Hire
 
         private void Btn_Select_Mission_Click(object sender, EventArgs e)
         {
-#region Addpayment
+            #region Addpayment
             sql = "select Pay from mission where id='" + list_Mission.SelectedItems[0].SubItems[0].Text + "'";
 
             SQLiteCommand command8 = new SQLiteCommand(sql, dbcon);
@@ -96,11 +97,11 @@ namespace Guns_For_Hire
             {
                 variablePay = Convert.ToInt32(reader8["Pay"]);
             }
-            
+
             BankAccount Payment = new BankAccount();
             Payment.Currency += variablePay;
 
-#endregion
+            #endregion
             try
             {
                 #region MissionLevelTing
@@ -145,7 +146,7 @@ namespace Guns_For_Hire
                         break;
                 }
                 #endregion
-				#region Move item
+                #region Move item
                 command.CommandText = "insert into missionList (mission) select id from mission where id='" + list_Mission.SelectedItems[0].SubItems[0].Text + "'";
                 command.ExecuteNonQuery();
                 command.CommandText = "insert into OnMission (assassin) select id from AssassinsProfile where id='" + Available_Assassins.SelectedItems[0].SubItems[0].Text + "'";

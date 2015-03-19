@@ -15,6 +15,8 @@ namespace Guns_For_Hire
     public partial class Form2 : Form
     {
 
+        static btn_star_game form1 = new btn_star_game();
+
         static SaveLoad save = new SaveLoad();
 
         private static SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db");
@@ -73,6 +75,7 @@ namespace Guns_For_Hire
 
             }
             UpdateTables();
+            form1.Showcash();
         }
 
         private void btn_Retire_Assassin_Click(object sender, EventArgs e)
@@ -107,6 +110,7 @@ namespace Guns_For_Hire
 
             }
             UpdateTables();
+            form1.Showcash();
         }
 
         private void Form2_Load(object sender, EventArgs e)

@@ -73,6 +73,7 @@ namespace Guns_For_Hire
 
             }
             UpdateTables();
+            
         }
 
         private void btn_Retire_Assassin_Click(object sender, EventArgs e)
@@ -107,6 +108,7 @@ namespace Guns_For_Hire
 
             }
             UpdateTables();
+            form1.Showcash();
         }
 
         private void Form2_Load(object sender, EventArgs e)

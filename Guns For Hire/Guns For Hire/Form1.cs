@@ -296,6 +296,10 @@ namespace Guns_For_Hire
         public void Showcash()
         {
 
+
+            List_Moneyyyyyyy.Clear();
+            List_Moneyyyyyyy.Columns.Add("Money", 100);
+
             SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db;version=3 ");
             dbcon.Open();
             SQLiteCommand list = new SQLiteCommand("select valuta from toolbar where id= 1", dbcon);
