@@ -15,6 +15,7 @@ namespace Guns_For_Hire
     {
         static SaveLoad save = new SaveLoad();
         static Form2 form2 = new Form2();
+        
 
         public btn_star_game()
         {
@@ -176,17 +177,17 @@ namespace Guns_For_Hire
 
         private void btn_Save_1_Click(object sender, EventArgs e)
         {
-            save.LoadGame("save01.db");
+            save.SaveGame(1);
         }
 
         private void btn_Save_2_Click(object sender, EventArgs e)
         {
-            save.LoadGame("save02.db");
+            save.LoadGame(2);
         }
 
         private void btn_Save_3_Click(object sender, EventArgs e)
         {
-            save.LoadGame("save03.db");
+
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -199,8 +200,6 @@ namespace Guns_For_Hire
             HideSaveLoadMenu();
             ShowIngameMenu();
             HideSaveLoadMenuMainmenu();
-            Form2 f2 = new Form2();
-            f2.UpdateTables();
         }
 
         private void Btn_Back_SL_Click(object sender, EventArgs e)
@@ -219,7 +218,6 @@ namespace Guns_For_Hire
 
             #region SaveLoadSetup
             SaveLoad save = new SaveLoad();
-            save.LoadGame("save04.db");
             save.CreateGame(1);
             save.CreateGame(2);
             save.CreateGame(3);
@@ -278,7 +276,36 @@ namespace Guns_For_Hire
             //Brug følgende 3 linjer for at køre en SQL command, som ikke er en reader.
             //sql = "";
             //command.CommandText = sql;
-            //command.ExecuteNonQuery();
+            //command.ExecuteNonQuery()
+
+            Showcash();
+
         }
+
+
+        private void List_Moneyyyyyyy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+           
+
+        }
+
+        public void Showcash()
+        {
+
+            SQLiteConnection dbcon = new SQLiteConnection("Data Source = save04.db;version=3 ");
+            dbcon.Open();
+            SQLiteCommand list = new SQLiteCommand("select valuta from toolbar where id= 1", dbcon);
+            SQLiteDataReader reader = list.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["valuta"].ToString());
+
+
+                List_Moneyyyyyyy.Items.Add(item);
+            }
+        }
+
     }
 }

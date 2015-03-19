@@ -9,11 +9,11 @@ namespace Guns_For_Hire
 {
     class BankAccount
     {
-        int currency;
-        string database;
+        int currency = 0;
 
         public BankAccount()
         {
+            
         }
 
         SQLiteDatabaseHelper SQLhelper = new SQLiteDatabaseHelper();
@@ -27,7 +27,7 @@ namespace Guns_For_Hire
 
             set
             {
-                if (currency - value >= 0)
+                if (currency - value >= 0 )
                 {
                     Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
