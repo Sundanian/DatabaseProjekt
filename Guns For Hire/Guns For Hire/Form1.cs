@@ -155,6 +155,7 @@ namespace Guns_For_Hire
             HideMenu2();
             ShowIngameMenu();
             Form2 f2 = new Form2();
+            save.NewGame();
         }
 
         private void Btn_Load_Click(object sender, EventArgs e)
